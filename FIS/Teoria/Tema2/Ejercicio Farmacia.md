@@ -6,13 +6,13 @@
 
 **Requisitos no funcionales encontrados en el texto:**
 
-* El sistema de gestión de inventario debe incluir los pedidos de renovación de fármacos.  ??
+* El sistema de gestión de inventario debe incluir los pedidos de renovación de fármacos.
 
-* El sistema dispensador debe aceptar tarjetas de seguridad social y recetas médicas. ??
+* El sistema dispensador debe aceptar tarjetas de seguridad social y recetas médicas. 
 
-* El historial de medicinas debe poder ser operado por la farmacia.
+* El historial de medicinas debe ser operado por la farmacia.
 
-* Confidencialidad de los datos de los clientes. (requisito de información??)
+* Confidencialidad de los datos de los clientes.
 
 * El mantenimiento y actualización debe mantenerse durante 10 años al menos.
 
