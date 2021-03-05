@@ -66,7 +66,7 @@
 <set var="ampm"><date format="%p" jformat="a"/></set>
 </think>
 <condition>
-<li value="AM" var="ampm">Manyana</li>
+<li value="a. m." var="ampm">Manyana</li>
 <li><condition var="hour">
     <li value="12">Manyana</li>
     <li value="1">Tarde</li>
@@ -179,7 +179,7 @@
 
 <category><pattern>DATE IN <set>number</set> DAYS</pattern>
 <template><think><set var="days"><star/></set>
-<set var="date"><date format="%B %d %Y" jformat="dd MMMMMMMMM yy"/></set>
+<set var="date"><date format="%d %B %Y" jformat="dd MMMMMMMMM yy"/></set>
 </think>
 <condition var="days">
 <li value="0"><get var="date"/></li>
@@ -213,14 +213,14 @@
 </category>
 
 <category><pattern>DATE A WEEK FROM <set>weekday_es</set></pattern>
-<template><srai>DATE IN 
-<srai>SUCCESSOR 
-<srai>SUCCESSOR 
-<srai>SUCCESSOR 
-<srai>SUCCESSOR 
-<srai>SUCCESSOR 
-<srai>SUCCESSOR 
-<srai>SUCCESSOR 
+<template><srai>DATE IN
+<srai>SUCCESSOR
+<srai>SUCCESSOR
+<srai>SUCCESSOR
+<srai>SUCCESSOR
+<srai>SUCCESSOR
+<srai>SUCCESSOR
+<srai>SUCCESSOR
 <srai>DAYS UNTIL <star/></srai>
 </srai>
 </srai>
