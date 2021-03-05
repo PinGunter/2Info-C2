@@ -1,6 +1,6 @@
-name: Joaquin
+name:botForIA
 email:nobody@nowhere.com
 gender:male
-botmaster:Salva	
-organization:Betis Real Balompié
+botmaster:theBoss	
+organization:ugr
 version:0.0.4
