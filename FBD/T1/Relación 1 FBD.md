@@ -56,7 +56,7 @@ La independencia lógica permite tener dos esquemas o vistas, de manera que se p
 
 **Fiabilidad:** indica que la base de datos funciona correctamente. Que los datos mantienen consistencia y son precisos.
 
-**Seguridad:** conjunto de herramientos, controles y medidas diseñadas a establecer y preservar la confidencialidad, integridad y disponibilidad de una base de datos.
+**Seguridad:** conjunto de herramientas, controles y medidas diseñadas a establecer y preservar la confidencialidad, integridad y disponibilidad de una base de datos.
 
 Los ordenaría como Integridad > Fiabilidad > Seguridad. Puesto que lo más importante es que la base de datos tenga datos e información correcta, siendo totalmente inservible si no cumple la propiedad de integridad. En segundo puesto, la fiabilidad puesto que es importante que el funcionamiento sea correcto. Finalmente, la seguridad puesto que si ya hemos cumplido que los datos y el funcionamiento sea correcto, ahora toca protegerlos.
 
@@ -64,16 +64,16 @@ La integridad de los datos es especialmente a la hora de crear la base de datos 
 
 **7. Definir y situar históricamente lo siguientes términos**
 * **COBOL** Primer lenguaje de orientado a la definición de datos en los 60.
-* **Acceso secuencial** Signigica que se debe recuperar todos los registros de un determinado archivo almacenado. 
+* **Acceso secuencial** Significa que se debe recuperar todos los registros de un determinado archivo almacenado. 
 * **CODASYL** (COnference On DAta SYstems) Empresa que desarrolló COBOL en los 60.
 * **DBTG** Subgrupo de CODASYL que introdujo un lenguaje de descripción de datos y otro de definición de datos en el 69.
 * **SQL** es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de SGBD. Apareció en 1974.
 * **Ingres** Sistema de bases de datos basado en el modelo relacional por la Universidad de Berkeley. Años 80.
 * **Calculo relacional** Lenguaje de consulta que describe la respuesta deseada sobre una base de datos sin especificar como obtenerla.
 * **Consultas recursivas** Consulta en la que el servidor consulta al enviador.
-* **Modelo semántico** Modelo de datos en el que se describe el significado de sus instancias. Es una abstracción que define como los símbolos almacenados se relacionan con el mundo real. Tomó gran intereś a finales de los setenta.
+* **Modelo semántico** Modelo de datos en el que se describe el significado de sus instancias. Es una abstracción que define como los símbolos almacenados se relacionan con el mundo real. Tomó gran interés a finales de los setenta.
 * **Base de datos orientada a objetos** La información se representa mediante objetos como los presentes en la programación orientada a objetos. Finales de los 60.
-* **Base de datos multimedia** Almacenan además de texto, información de Audio y Vídeo, permitiendo su manipulación y recuperació.
+* **Base de datos multimedia** Almacenan además de texto, información de Audio y Vídeo, permitiendo su manipulación y recuperación.
 * **Base de datos XML** 
 * Una base de datos XML constituye un sistema software que da persistencia a datos almacenados en formato XML. Estos datos pueden ser interrogados, exportados y serializados.
 * **Base de datos móviles** Es una Base de datos donde los usuarios pueden acceder a la información lejos de donde se encuentra almacenada la base de datos, se hace utilizando una conexión inalámbrica
