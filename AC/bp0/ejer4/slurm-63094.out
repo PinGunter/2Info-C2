@@ -1,0 +1,91 @@
+Id. usuario del trabajo: a1estudiante23
+Id. del trabajo: 63094
+Nombre del trabajo especificado por usuario: helloOMP
+Directorio de trbajo (en el que se ejecuta el script): /home/a1estudiante23/bp0/ejer4
+Cola: ac
+Nodo que ejecuta este trabajo: atcgrid.ugr.es
+Nº de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 24
+
+1. Ejecución helloOMP una vez sin cambiar nº de threads (valor por defecto):
+
+[[1]] -> Hello
+<- World [[1]]
+[[9]] -> Hello
+<- World [[9]]
+[[11]] -> Hello
+<- World [[11]]
+[[2]] -> Hello
+<- World [[2]]
+[[3]] -> Hello
+<- World [[3]]
+[[7]] -> Hello
+<- World [[7]]
+[[0]] -> Hello
+<- World [[0]]
+[[8]] -> Hello
+<- World [[8]]
+[[4]] -> Hello
+<- World [[4]]
+[[5]] -> Hello
+<- World [[5]]
+[[10]] -> Hello
+<- World [[10]]
+[[6]] -> Hello
+<- World [[6]]
+
+2. Ejecución helloOMP varias veces con distinto nº de threads:
+
+
+ - Para 12 threads:
+[[3]] -> Hello
+<- World [[3]]
+[[10]] -> Hello
+<- World [[10]]
+[[5]] -> Hello
+<- World [[5]]
+[[0]] -> Hello
+<- World [[0]]
+[[4]] -> Hello
+<- World [[4]]
+[[2]] -> Hello
+<- World [[2]]
+[[1]] -> Hello
+<- World [[1]]
+[[6]] -> Hello
+<- World [[6]]
+[[11]] -> Hello
+<- World [[11]]
+[[8]] -> Hello
+<- World [[8]]
+[[9]] -> Hello
+<- World [[9]]
+[[7]] -> Hello
+<- World [[7]]
+
+ - Para 6 threads:
+[[2]] -> Hello
+<- World [[2]]
+[[3]] -> Hello
+<- World [[3]]
+[[0]] -> Hello
+<- World [[0]]
+[[4]] -> Hello
+<- World [[4]]
+[[1]] -> Hello
+<- World [[1]]
+[[5]] -> Hello
+<- World [[5]]
+
+ - Para 3 threads:
+[[1]] -> Hello
+<- World [[1]]
+[[0]] -> Hello
+<- World [[0]]
+[[2]] -> Hello
+<- World [[2]]
+
+ - Para 1 threads:
+[[0]] -> Hello
+<- World [[0]]
