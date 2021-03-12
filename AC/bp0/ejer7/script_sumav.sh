@@ -1,7 +1,7 @@
 #!/bin/bash
 #Órdenes para el Gestor de carga de un trabajo:
 #1. Asigna al trabajo un nombre
-#SBATCH --job-name=helloOMP
+#SBATCH --job-name=SumaLocal
 #2. Asignar el trabajo a una partición (cola)
 #SBATCH --partition=ac
 #3. Asignar el trabajo a un account
@@ -18,11 +18,23 @@ echo "Nº de nodos asignados al trabajo: $SLURM_JOB_NUM_NODES"
 echo "Nodos asignados al trabajo: $SLURM_JOB_NODELIST"
 echo "CPUs por nodo: $SLURM_JOB_CPUS_PER_NODE"
 #Instrucciones del script para ejecutar código:
+echo "VECTORES LOCALES"
+for ((P=65536;P<=67108864;P=P*2))
+do
+	./SumaVectores $P
+done
 
-srun lscpu
+echo "VECTORES GLOBALES"
+for ((P=65536;P<=67108864;P=P*2))
+do
+        ./SumaVectoresGlobal $P
+done
 
-# for ((P=65536;P<=67108864;P=P*2))
-# do
-# 	srun ./SumaVectores $P
-# done
+echo "VECTORES DINAMICOS"
+for ((P=65536;P<=67108864;P=P*2))
+do
+        ./SumaVectoresDin $P
+done
+
+
 
