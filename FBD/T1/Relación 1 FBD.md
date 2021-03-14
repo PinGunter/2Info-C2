@@ -69,12 +69,11 @@ La integridad de los datos es especialmente a la hora de crear la base de datos 
 * **DBTG** Subgrupo de CODASYL que introdujo un lenguaje de descripción de datos y otro de definición de datos en el 69.
 * **SQL** es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de SGBD. Apareció en 1974.
 * **Ingres** Sistema de bases de datos basado en el modelo relacional por la Universidad de Berkeley. Años 80.
-* **Calculo relacional** Lenguaje de consulta que describe la respuesta deseada sobre una base de datos sin especificar como obtenerla.
+* **Calculo relacional** Lenguaje de consulta que describe la respuesta deseada sobre una base de datos sin especificar como obtenerla. 1970-1978
 * **Consultas recursivas** Consulta en la que el servidor consulta al enviador.
 * **Modelo semántico** Modelo de datos en el que se describe el significado de sus instancias. Es una abstracción que define como los símbolos almacenados se relacionan con el mundo real. Tomó gran interés a finales de los setenta.
-* **Base de datos orientada a objetos** La información se representa mediante objetos como los presentes en la programación orientada a objetos. Finales de los 60.
+* **Base de datos orientada a objetos** La información se representa mediante objetos como los presentes en la programación orientada a objetos. Finales de los 80.
 * **Base de datos multimedia** Almacenan además de texto, información de Audio y Vídeo, permitiendo su manipulación y recuperación.
-* **Base de datos XML** 
-* Una base de datos XML constituye un sistema software que da persistencia a datos almacenados en formato XML. Estos datos pueden ser interrogados, exportados y serializados.
+* **Base de datos XML** Una base de datos XML constituye un sistema software que da persistencia a datos almacenados en formato XML. Estos datos pueden ser interrogados, exportados y serializados. XML es un  lenguaje de descripción de información semi-estructurado. 
 * **Base de datos móviles** Es una Base de datos donde los usuarios pueden acceder a la información lejos de donde se encuentra almacenada la base de datos, se hace utilizando una conexión inalámbrica
-* **Minería de Datos** es un campo de la estadística y las ciencias de la computación referido al proceso que intenta descubrir patrones en grandes volúmenes de conjuntos de datos. Finales de los 80.
+* **Minería de Datos** es un campo de la estadística y las ciencias de la computación referido al proceso que intenta descubrir patrones en grandes volúmenes de conjuntos de datos.  Son técnicas de extracción de conocimiento en bases de datos. Finales de los 80.
