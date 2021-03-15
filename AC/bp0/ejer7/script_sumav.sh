@@ -21,19 +21,19 @@ echo "CPUs por nodo: $SLURM_JOB_CPUS_PER_NODE"
 echo "VECTORES LOCALES"
 for ((P=65536;P<=67108864;P=P*2))
 do
-	./SumaVectores $P
+	./SumaVectores $P #srun ./SumaVectores $P
 done
 
 echo "VECTORES GLOBALES"
 for ((P=65536;P<=67108864;P=P*2))
 do
-        ./SumaVectoresGlobal $P
+        ./SumaVectoresGlobal $P #srun ./SumaVectoresGlobal $P
 done
 
 echo "VECTORES DINAMICOS"
 for ((P=65536;P<=67108864;P=P*2))
 do
-        ./SumaVectoresDin $P
+        ./SumaVectoresDin $P	#srun ./SumaVectoresDin $P
 done
 
 
