@@ -10,7 +10,7 @@
 
 <!-- Segunda regla -->
 <category>
-<pattern>^ y tu</pattern>
+<pattern>* y tu</pattern>
 <template>Estoy loquisimo y soy del Betis</template>
 </category>
 
