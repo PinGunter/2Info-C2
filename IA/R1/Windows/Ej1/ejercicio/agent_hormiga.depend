@@ -1,0 +1,142 @@
+# depslib dependency file v1.0
+1616576006 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\environment.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	"stdlib.h"
+	"environment.h"
+	"include/GL/glui.h"
+
+1616576006 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\environment.h
+	<fstream>
+	"agent_hormiga.h"
+
+1616577392 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\agent_hormiga.h
+	<string>
+	<iostream>
+
+1616576008 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\gl\glui.h
+	"openglut.h"
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<string>
+	<vector>
+
+1616576008 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\gl\openglut.h
+	"openglut_std.h"
+	"openglut_ext.h"
+
+1616576008 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\gl\openglut_std.h
+	<windows.h>
+	"gl.h"
+	"glu.h"
+
+1616576008 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\gl\gl.h
+
+1616576008 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\gl\glu.h
+	<stddef.h>
+	"gl.h"
+
+1616576008 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\gl\openglut_ext.h
+
+1616576006 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\gui.cpp
+	<fstream>
+	<sstream>
+	<iomanip>
+	<iostream>
+	<unistd.h>
+	"GUI.h"
+	<stdlib.h>
+	"environment.h"
+	"agent_hormiga.h"
+
+1616576006 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\gui.h
+	<fstream>
+	"include/GL/glui.h"
+	"environment.h"
+
+1616576006 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui.cpp
+	"glui_internal_control.h"
+
+1616576007 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_internal_control.h
+	"GL/glui.h"
+	"glui_internal.h"
+
+1616576007 c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_internal.h
+	<cstdio>
+	<cmath>
+
+1616576006 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_bitmap_img_data.cpp
+
+1616576006 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_bitmaps.cpp
+	"GL/glui.h"
+	"glui_internal.h"
+	<cassert>
+
+1616576006 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_button.cpp
+	"glui_internal_control.h"
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_column.cpp
+	"glui_internal_control.h"
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_control.cpp
+	"glui_internal_control.h"
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_edittext.cpp
+	"glui_internal_control.h"
+	<cassert>
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_filebrowser.cpp
+	"GL/glui.h"
+	"glui_internal.h"
+	<sys/types.h>
+	<dirent.h>
+	<unistd.h>
+	<windows.h>
+	<sys/stat.h>
+	<iostream>
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_list.cpp
+	"glui_internal_control.h"
+	<cmath>
+	<sys/timeb.h>
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_node.cpp
+	"GL/glui.h"
+	"glui_internal.h"
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_panel.cpp
+	"glui_internal_control.h"
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_radio.cpp
+	"glui_internal_control.h"
+	<cassert>
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_rollout.cpp
+	"glui_internal_control.h"
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_scrollbar.cpp
+	"glui_internal_control.h"
+	<cmath>
+	<cassert>
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_spinner.cpp
+	"glui_internal_control.h"
+	<cmath>
+	<cassert>
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_statictext.cpp
+	"glui_internal_control.h"
+
+1616576007 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_string.cpp
+	"GL/glui.h"
+	<stdarg.h>
+
+1616576008 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\include\glui_window.cpp
+	"GL/glui.h"
+	"glui_internal.h"
+
+1616576006 source:c:\users\pingu\2info-c2\ia\r1\windows\ej1\ejercicio\main.cpp
+	"GUI.h"
+
