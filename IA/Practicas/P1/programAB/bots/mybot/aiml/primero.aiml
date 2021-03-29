@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Primera regla -->
+<category>
+<pattern>Hola</pattern>
+<template>Hola, que tal?</template>
+</category>
+
+
+<!-- Segunda regla -->
+<category>
+<pattern>* y tu</pattern>
+<template>Estoy loquisimo y soy del Betis</template>
+</category>
+
+<!-- Tercera regla -->
+<category>
+<pattern>Yo tambien soy del betis</pattern>
+<template>Ole ole ole beti ole</template>
+</category>
+
+<!-- Cuarta regla -->
+<category>
+<pattern>Me llamo *</pattern>
+<template>Hola, <star/> yo me llamo <bot name="name"/></template>
+</category>
+
+<!-- Quinta regla -->
+<category>
+<pattern>Estudio * en * </pattern>
+<template>Me han dicho que estudiar <star index="1"/> está bastante facha. Encima en <star index="2"/> hace bastante buen tiempo</template>
+</category>
+</aiml>
