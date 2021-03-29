@@ -1,0 +1,4 @@
+hoy:DAY
+manyana:TOMORROW
+pasado:DAY AFTER TOMORROW
+pasado manyana: DAY AFTER TOMORROW

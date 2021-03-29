@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<!-- REGLA 1 -->
+<category>
+  <pattern>En que [estacion epoca] (del anyo) estamos ^</pattern>
+  <template>Estamos en <srai>SEASON</srai></template>
+</category>
+
+<category>
+  <pattern>Cual es la [estacion epoca] (actual) (del anyo)</pattern>
+  <template><srai>EN QUE ESTACION ESTAMOS</srai></template>
+</category>
+<!-- REGLA 2 -->
+<category>
+  <pattern>^ [fase parte] del dia ^</pattern>
+  <template>Estamos en la <srai>DAY PHASE</srai></template>
+</category>
+<!-- REGLA 3-->
+<category>
+  <pattern>Que dia (de la semana) es *</pattern>
+  <template><star/> es <srai><map name="dia_relativo"><star/></map></srai></template>
+</category>
+<!-- REGLA 4 -->
+<category>
+  <pattern>^ fecha [sera es] (dentro de) (en) [una 1] semana</pattern>
+  <template>Dentro de una semana será <srai>DATE IN 7 DAYS</srai></template>
+</category>
+
+<category>
+  <pattern>^ fecha [sera es] (la) semana (que viene) (proxima) (siguiente)</pattern>
+  <template> <srai>FECHA ES EN 1 SEMANA</srai></template>
+</category>
+<!-- REGLA 5 -->
+<category>
+  <pattern>Que fecha [sera es] el [proximo siguiente] <set>weekday_es</set></pattern>
+  <template>El proximo <star/> será <srai>DATE A WEEK FROM <star/></srai></template>
+</category>
+
+<category>
+  <pattern>Que fecha [sera es] el <set>weekday_es</set> (que viene) (proximo) (siguiente)</pattern>
+  <template>El proximo <star/> será <srai>DATE A WEEK FROM <star/></srai></template>
+</category>
+</aiml>
