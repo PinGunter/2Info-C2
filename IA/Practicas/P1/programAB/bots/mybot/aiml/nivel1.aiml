@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-
+<!-- Informar de si hay horas libres durante el dia -->
 <category>
   <pattern>LIBRE <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
   <template>
     <think>
-      <set var="fecha"><star jformat="dd"/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="fecha"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
       <set var="horario"><srai>SUBLIST FROM 9 TO 21 OF <srai>LIST OF DAY <get var="fecha"/></srai></srai></set>
       <set var="iter"> <srai> ITERATE <get var="horario"/> </srai> </set>
     </think>
@@ -21,14 +21,46 @@
         <loop/>
       </li>
     </condition>
-
-
-</template>
+  </template>
 </category>
 
+<!-- en esta regla usamos una lista inversa de las horas para que se muestre de menor a mayor por pantalla al finalizar -->
+<category>
+  <pattern>HORASLIBRES <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
+  <template>
+    <think>
+      <set var="fecha"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="l_horas"><srai>SUBLIST FROM 4 TO 17 OF <map name="reverse_horas">h</map></srai></set>
+      <set var="contador"><srai>ITERATE <get var="l_horas"/></srai></set>
+      <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/> </srai></set>
+      <set var="res">.</set>
+    </think>
+    <condition var="contador">
+      <li value="07"></li>
+      <li value="$"></li>
+      <li><condition var="iter">
+            <li value="FALSE">
+              <think>
+              <set var="res"><srai>ADDITEM <get var="contador"/>:00 IN <get var="res"/></srai></set>
+              </think>
+            </li>
+            <li></li>
+          </condition>
+          <think>
+            <set var="contador"><srai>NEXT</srai></set>
+            <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/></srai></set>
+          </think>
+          <loop/>
+      </li>
 
-
-
+    </condition>
+    <!-- borramos el punto final auxiliar -->
+    <think>
+    <set var="res"><srai>REMOVEITEM <srai>COUNT <get var="res"/></srai> IN <get var="res"/> </srai> </set>
+  </think>
+    <get var="res"/>
+  </template>
+</category>
 
 
 </aiml>
