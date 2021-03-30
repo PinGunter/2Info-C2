@@ -25,18 +25,19 @@
 </category>
 
 <!-- en esta regla usamos una lista inversa de las horas para que se muestre de menor a mayor por pantalla al finalizar -->
+<!-- usamos finditem para convertir las horas a las posiciones reales en el map -->
 <category>
   <pattern>HORASLIBRES <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
   <template>
     <think>
       <set var="fecha"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
-      <set var="l_horas"><srai>SUBLIST FROM 4 TO 17 OF <map name="reverse_horas">h</map></srai></set>
+      <set var="l_horas"><srai>SUBLIST FROM <srai>FINDITEM 20 IN <map name="reverse_horas">h</map></srai> TO <srai>FINDITEM 07 IN <map name="reverse_horas">h</map></srai> OF <map name="reverse_horas">h</map></srai></set>
       <set var="contador"><srai>ITERATE <get var="l_horas"/></srai></set>
       <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/> </srai></set>
       <set var="res">.</set>
     </think>
     <condition var="contador">
-      <li value="07"></li>
+      <li value="07"></li> <!-- hasta una hora menos que las 8 (la que empieza) -->
       <li value="$"></li>
       <li><condition var="iter">
             <li value="FALSE">
@@ -62,5 +63,84 @@
   </template>
 </category>
 
+<!-- hubiera sido mejor hacer una version generica que calculase
+    las horas libres en un intervalo. Sin embargo, para la condicion del bucle
+    <condition var=""> parece ser necesario usar un valor literal por lo que no
+    puedo ajustar el fin del bucle segun la entrada. La solucion ha sido repetir
+    para la mañana y la tarde el codigo completo anterior con la modificacion de los
+    limites del bucles -->
 
+<category>
+  <pattern>HLMANYANA <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
+  <template>
+    <think>
+      <set var="fecha"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="l_horas"><srai>SUBLIST FROM <srai>FINDITEM 12 IN <map name="reverse_horas">h</map></srai> TO <srai>FINDITEM 07 IN <map name="reverse_horas">h</map></srai> OF <map name="reverse_horas">h</map></srai></set>
+      <set var="contador"><srai>ITERATE <get var="l_horas"/></srai></set>
+      <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/> </srai></set>
+      <set var="res">.</set>
+    </think>
+    <condition var="contador">
+      <li value="07"></li> <!-- hasta una hora menos que las 8 (la que empieza) -->
+      <li value="$"></li>
+      <li><condition var="iter">
+            <li value="FALSE">
+              <think>
+              <set var="res"><srai>ADDITEM <get var="contador"/>:00 IN <get var="res"/></srai></set>
+              </think>
+            </li>
+            <li></li>
+          </condition>
+          <think>
+            <set var="contador"><srai>NEXT</srai></set>
+            <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/></srai></set>
+          </think>
+          <loop/>
+      </li>
+
+    </condition>
+    <!-- borramos el punto final auxiliar -->
+    <think>
+    <set var="res"><srai>REMOVEITEM <srai>COUNT <get var="res"/></srai> IN <get var="res"/> </srai> </set>
+  </think>
+    <get var="res"/>
+  </template>
+</category>
+
+<category>
+  <pattern>HLTARDE <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
+  <template>
+    <think>
+      <set var="fecha"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="l_horas"><srai>SUBLIST FROM <srai>FINDITEM 20 IN <map name="reverse_horas">h</map></srai> TO <srai>FINDITEM 12 IN <map name="reverse_horas">h</map></srai> OF <map name="reverse_horas">h</map></srai></set>
+      <set var="contador"><srai>ITERATE <get var="l_horas"/></srai></set>
+      <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/> </srai></set>
+      <set var="res">.</set>
+    </think>
+    <condition var="contador">
+      <li value="12"></li> <!-- hasta una hora menos que las 13 (la que empieza) -->
+      <li value="$"></li>
+      <li><condition var="iter">
+            <li value="FALSE">
+              <think>
+              <set var="res"><srai>ADDITEM <get var="contador"/>:00 IN <get var="res"/></srai></set>
+              </think>
+            </li>
+            <li></li>
+          </condition>
+          <think>
+            <set var="contador"><srai>NEXT</srai></set>
+            <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/></srai></set>
+          </think>
+          <loop/>
+      </li>
+
+    </condition>
+    <!-- borramos el punto final auxiliar -->
+    <think>
+    <set var="res"><srai>REMOVEITEM <srai>COUNT <get var="res"/></srai> IN <get var="res"/> </srai> </set>
+  </think>
+    <get var="res"/>
+  </template>
+</category>
 </aiml>
