@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+<category>
+  <pattern>LIBRE <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
+  <template>
+    <think>
+      <set var="fecha"><star jformat="dd"/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="horario"><srai>SUBLIST FROM 9 TO 21 OF <srai>LIST OF DAY <get var="fecha"/></srai></srai></set>
+      <set var="iter"> <srai> ITERATE <get var="horario"/> </srai> </set>
+    </think>
+    <condition var="iter">
+        <li value="LIBRE">SI</li>
+        <li value="$">NO</li>
+        <li value="unknown">NO</li>
+        <li>
+          <think>
+            <set var="iter"><srai>NEXT</srai></set>
+          </think>
+        <loop/>
+      </li>
+    </condition>
+
+
+</template>
+</category>
+
+
+
+
+
+
+</aiml>
