@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
+<category>
+  <pattern>LIBREGEN <set>number</set> de <set>month_es</set> [del de] <set>number</set> de <set>number</set> a <set>number</set></pattern>
+  <template>
+    <think>
+      <set var="fecha"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="horario"><srai>SUBLIST FROM <srai>PLUS <star index="4"/> 1</srai> TO <srai>PLUS <star index="5"/> 1</srai> OF <srai>LIST OF DAY <get var="fecha"/></srai></srai></set>
+      <set var="iter"> <srai> ITERATE <get var="horario"/> </srai> </set>
+    </think>
+    <condition var="iter">
+        <li value="LIBRE">SI</li>
+        <li value="$">NO</li>
+        <li value="unknown">NO</li>
+        <li>
+          <think>
+            <set var="iter"><srai>NEXT</srai></set>
+          </think>
+        <loop/>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
 <!-- Informar de si hay horas libres durante el dia -->
 <category>
   <pattern>LIBRE <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
@@ -23,6 +46,7 @@
     </condition>
   </template>
 </category>
+
 
 <!-- en esta regla usamos una lista inversa de las horas para que se muestre de menor a mayor por pantalla al finalizar -->
 <!-- usamos finditem para convertir las horas a las posiciones reales en el map -->
@@ -143,4 +167,37 @@
     <get var="res"/>
   </template>
 </category>
+
+<!-- reglas para mantener conversacion -->
+<category>
+  <pattern>[quisiera quiero] una cita (para) el (dia) <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
+  <template>
+    <think>
+      <set name="topic">citas_fecha_bien</set>
+      <set name="fecha_c"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="libre"><srai>LIBRE <star/> de <star index="2"/> del <star index="3"/></srai></set>
+    </think>
+    <condition var="libre">
+      <li value="SI">El dia esta disponible. Desea una cita?</li>
+      <li>El dia no esta disponible, quiere cambiar la fecha?</li>
+    </condition>
+  </template>
+</category>
+
+<!-- QUIERE UNA CITA -->
+<topic name="citas_fecha_bien">
+  <category>
+  <pattern>si</pattern>
+  <template>
+  </template>
+  </category>
+
+<!-- NO QUIERE CITA -->
+  <category>
+  <pattern>no</pattern>
+  <template>Bueno, otra vez será. Que tenga un buen día.</template>
+  </category>
+
+</topic>
+
 </aiml>
