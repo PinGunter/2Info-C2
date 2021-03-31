@@ -154,16 +154,16 @@
 
 <!-- reglas para mantener conversacion -->
 <category>
-  <pattern>[quisiera quiero] una cita (para) el (dia) <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
+  <pattern>[quisiera quiero tiene] una cita (para) el (dia) <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
   <template>
     <think>
-      <set name="topic">citas_fecha_bien</set>
-      <set name="fecha_c"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set name="fecha_formato_cita"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set name="fecha_natural_cita"><star/> de <star index="2"/> del <star index="3"/></set>
       <set var="libre"><srai>LIBRE <star/> de <star index="2"/> del <star index="3"/></srai></set>
     </think>
     <condition var="libre">
-      <li value="SI">El dia esta disponible. Desea una cita?</li>
-      <li>El dia no esta disponible, quiere cambiar la fecha?</li>
+      <li value="SI"><think><set name="topic">citas_fecha_bien</set></think>El dia esta disponible. Desea una cita?</li>
+      <li><think><set name="topic">citas_fecha_mal</set></think>El dia no esta disponible, quiere cambiar la fecha?</li>
     </condition>
   </template>
 </category>
@@ -171,20 +171,94 @@
 <!-- QUIERE UNA CITA -->
 <topic name="citas_fecha_bien">
   <category>
-  <pattern>si</pattern>
+  <pattern>[si afirmativo confirmo vale]</pattern>
   <template>
     <think>
-
+      <set name="topic">escoger_hora</set> 
+      <set var="man_libre"><srai>LIBREGEN <get name="fecha_natural_cita"/> de 08 a 12</srai></set>
+      <set var="tar_libre"><srai>LIBREGEN <get name="fecha_natural_cita"/> de 13 a 20</srai></set>
     </think>
+    <condition var="man_libre">
+      <li value="SI">Por la mañana están disponibles las <srai>HLMANYANA <get name="fecha_natural_cita"/></srai></li>
+      <li>No quedan horas por la mañana</li> <!-- esta puesto todo en una linea muy grande para que no aparezca con saltos de linea -->
+    </condition><condition var="tar_libre"><li value="SI"> y por la tarde están disponibles las <srai>HLTARDE <get name="fecha_natural_cita"/></srai></li><li> y la tarde está ocupada</li></condition>
+    Desea alguna hora en concreto?
   </template>
   </category>
 
 <!-- NO QUIERE CITA -->
   <category>
-  <pattern>no</pattern>
+  <pattern>[no negativo cancela]</pattern>
   <template>Bueno, otra vez será. Que tenga un buen día.</template>
   </category>
 
+</topic>
+
+<topic name="citas_fecha_mal">
+  <category>
+    <pattern>[si afirmativo confirmo vale]</pattern>
+    <template><think><set name="topic">cambiar_fecha</set></think>Cual es la nueva fecha que desea?</template>
+  </category>
+
+  <category>
+    <pattern>[no negativo cancela]</pattern>
+    <template>Bueno, otra vez será. Que tenga un buen día.</template>
+  </category>
+</topic>
+
+<topic name="cambiar_fecha">
+  <category>
+    <pattern><set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
+    <template>
+    <think>
+      <set name="topic">citas_fecha_bien</set>
+    </think>
+    <srai>QUIERO UNA CITA PARA EL <star/> de <star index="2"/> del <star index="3"/> </srai>
+  </template>
+</category>
+</topic>
+
+
+<topic name="escoger_hora">
+  <category>
+    <pattern>[si afirmativo confirmo vale] (a las) <set>number</set> ^ </pattern>
+    <template>
+      <think>
+        <set var="ok"><srai>IS BUSY DAY <get name="fecha_formato_cita"/> AT <star/> </srai></set>
+      </think>
+      <condition var="ok">
+        <li value="FALSE">Okay, lo apunto en la agenda.<think><srai>MARK NOLIBRE AT <star/> ON <get name="fecha_formato_cita"/> </srai></think></li>
+        <li></li>
+      </condition>
+    </template>
+  </category>
+
+  <category>
+    <pattern>(no) (negativo) (no me importa) (me da igual) (me es igual) ^ </pattern>
+    <template>
+      <think>
+          <set var="horario"><srai>SUBLIST FROM 9 TO 21 OF <map name="horas">h</map></srai></set>
+          <set var="contador"><srai>ITERATE <get var="horario"/></srai></set>
+          <set var="iter"><srai>IS BUSY DAY <get name="fecha_formato_cita"/> AT <get var="contador"/> </srai></set>
+      </think>
+      <condition var="iter">
+      <li value="FALSE">
+          <think>
+            <srai>MARK NOLIBRE AT <get var="contador"/> ON <get name="fecha_formato_cita"/> </srai>
+          </think>
+          Perfecto, lo he apuntado en la agenda a las <get var="contador"/>
+      </li>
+      <li>
+          <think>
+            <set var="contador"><srai>NEXT</srai></set>
+            <set var="iter"><srai>IS BUSY DAY <get name="fecha_formato_cita"/> AT <get var="contador"/></srai></set>
+          </think>
+          <loop/>
+      </li> <!-- hasta una hora menos que las 8 (la que empieza) -->
+
+    </condition>
+    </template>
+  </category>
 </topic>
 
 </aiml>

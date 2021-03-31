@@ -2,7 +2,7 @@
 <aiml version="2.0">
 <!-- REGLA 1 -->
 <category>
-  <pattern>En que [estacion epoca] (del anyo) estamos ^</pattern>
+  <pattern>^ [estacion epoca] (del anyo) ^ est+ ^</pattern>
   <template>Estamos en <srai>SEASON</srai></template>
 </category>
 
