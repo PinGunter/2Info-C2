@@ -221,7 +221,7 @@
 
 <topic name="escoger_hora">
   <category>
-    <pattern>[si afirmativo confirmo vale] (a las) <set>number</set> ^ </pattern>
+    <pattern>(si) (afirmativo) (confirmo) (vale) (a las) <set>number</set> ^ </pattern>
     <template>
       <think>
         <set var="ok"><srai>IS BUSY DAY <get name="fecha_formato_cita"/> AT <star/> </srai></set>
