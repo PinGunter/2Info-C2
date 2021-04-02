@@ -26,10 +26,7 @@
     </template>
 </category>
 
-<category>
-    <pattern> TRANSFORMA FECHA <set>number</set> <set>month_es</set> <set>number</set> </pattern>
-    <template> <map name="num_dias"><star/></map> de <star index="2"/> del <star index="3"/></template>
-</category>
+
 
 <category>
     <pattern> FORMATEA FECHA <set>number</set> de <set>month_es</set> [del de] <set>number</set> </pattern>

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+
+<category>
+    <pattern> TRANSFORMA FECHA <set>number</set> <set>month_es</set> <set>number</set> </pattern>
+    <template> <map name="num_dias"><star/></map> de <star index="2"/> del <star index="3"/></template>
+</category>
+
 <!-- REGLA 1 -->
 <category>
   <pattern>^ [estacion epoca] (del anyo) ^ est+ ^</pattern>
@@ -17,13 +23,13 @@
 </category>
 <!-- REGLA 3-->
 <category>
-  <pattern>Que dia (de la semana) es *</pattern>
+  <pattern>Que dia (de la semana) es <set>dia_relativo</set></pattern>
   <template><star/> es <srai><map name="dia_relativo"><star/></map></srai></template>
 </category>
 <!-- REGLA 4 -->
 <category>
   <pattern>^ fecha [sera es] (dentro de) (en) [una 1] semana</pattern>
-  <template>Dentro de una semana será <srai>DATE IN 7 DAYS</srai></template>
+  <template>Dentro de una semana será <srai>TRANSFORMA FECHA <srai>DATE IN 7 DAYS</srai></srai></template>
 </category>
 
 <category>
@@ -33,11 +39,11 @@
 <!-- REGLA 5 -->
 <category>
   <pattern>Que fecha [sera es] el [proximo siguiente] <set>weekday_es</set></pattern>
-  <template>El proximo <star/> será <srai>DATE A WEEK FROM <star/></srai></template>
+  <template>El proximo <star/> será <srai> TRANSFORMA FECHA <srai>DATE A WEEK FROM <star/></srai> </srai></template>
 </category>
 
 <category>
   <pattern>Que fecha [sera es] el <set>weekday_es</set> (que viene) (proximo) (siguiente)</pattern>
-  <template>El proximo <star/> será <srai>DATE A WEEK FROM <star/></srai></template>
+  <template><srai>QUE FECHA SERA EL PROXIMO <star/></srai></template>
 </category>
 </aiml>
