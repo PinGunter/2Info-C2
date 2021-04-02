@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
+<category>
+  <pattern> FORMATEA SINGLEDIGIT <set>number</set> </pattern>
+  <template> <map name="num_dias"><star/></map></template>
+</category>
+
 <!-- regla generica para ver si esta libre una determinada franja horaria-->
 <category>
   <pattern>LIBREGEN <set>number</set> de <set>month_es</set> [del de] <set>number</set> de <set>number</set> a <set>number</set></pattern>
   <template>
     <think>
-      <set var="fecha"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
-      <set var="horario"><srai>SUBLIST FROM <srai>PLUS <star index="4"/> 1</srai> TO <srai>PLUS <star index="5"/> 1</srai> OF <srai>LIST OF DAY <get var="fecha"/></srai></srai></set>
+      <set var="fecha"><srai>FORMATEA SINGLEDIGIT <star/></srai>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="horario"><srai>SUBLIST FROM <srai>PLUS <srai>FORMATEA SINGLEDIGIT <star index="4"/></srai> 1</srai> TO <srai>PLUS <srai>FORMATEA SINGLEDIGIT <star index="5"/></srai> 1</srai> OF <srai>LIST OF DAY <get var="fecha"/></srai></srai></set>
       <set var="iter"> <srai> ITERATE <get var="horario"/> </srai> </set>
     </think>
     <condition var="iter">
@@ -38,7 +43,7 @@
   <pattern>HORASLIBRES <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
   <template>
     <think>
-      <set var="fecha"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="fecha"><srai>FORMATEA SINGLEDIGIT <star/></srai>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
       <set var="l_horas"><srai>SUBLIST FROM <srai>FINDITEM 20 IN <map name="reverse_horas">h</map></srai> TO <srai>FINDITEM 07 IN <map name="reverse_horas">h</map></srai> OF <map name="reverse_horas">h</map></srai></set>
       <set var="contador"><srai>ITERATE <get var="l_horas"/></srai></set>
       <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/> </srai></set>
@@ -85,7 +90,7 @@
   <pattern>HLMANYANA <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
   <template>
     <think>
-      <set var="fecha"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="fecha"><srai>FORMATEA SINGLEDIGIT <star/></srai>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
       <set var="l_horas"><srai>SUBLIST FROM <srai>FINDITEM 12 IN <map name="reverse_horas">h</map></srai> TO <srai>FINDITEM 07 IN <map name="reverse_horas">h</map></srai> OF <map name="reverse_horas">h</map></srai></set>
       <set var="contador"><srai>ITERATE <get var="l_horas"/></srai></set>
       <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/> </srai></set>
@@ -124,7 +129,7 @@
   <pattern>HLTARDE <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
   <template>
     <think>
-      <set var="fecha"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set var="fecha"><srai>FORMATEA SINGLEDIGIT <star/></srai>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
       <set var="l_horas"><srai>SUBLIST FROM <srai>FINDITEM 20 IN <map name="reverse_horas">h</map></srai> TO <srai>FINDITEM 12 IN <map name="reverse_horas">h</map></srai> OF <map name="reverse_horas">h</map></srai></set>
       <set var="contador"><srai>ITERATE <get var="l_horas"/></srai></set>
       <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/> </srai></set>
@@ -164,8 +169,8 @@
   <pattern>[quisiera quiero tiene] una cita (para) el (dia) <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
   <template>
     <think>
-      <set name="fecha_formato_cita"><star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
-      <set name="fecha_natural_cita"><star/> de <star index="2"/> del <star index="3"/></set>
+      <set name="fecha_formato_cita"><srai>FORMATEA SINGLEDIGIT <star/></srai>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></set>
+      <set name="fecha_natural_cita"><srai>FORMATEA SINGLEDIGIT <star/></srai> de <star index="2"/> del <star index="3"/></set>
       <set var="libre"><srai>LIBRE <star/> de <star index="2"/> del <star index="3"/></srai></set>
     </think>
     <condition var="libre">
@@ -220,7 +225,7 @@
     <think>
       <set name="topic">citas_fecha_bien</set>
     </think>
-    <srai>QUIERO UNA CITA PARA EL <star/> de <star index="2"/> del <star index="3"/> </srai>
+    <srai>QUIERO UNA CITA PARA EL <srai>FORMATEA SINGLEDIGIT <star/></srai> de <star index="2"/> del <star index="3"/> </srai>
   </template>
 </category>
 </topic>
@@ -231,19 +236,30 @@
     <pattern>(si) (afirmativo) (confirmo) (vale) (a las) <set>number</set> ^ </pattern>
     <template>
       <think>
-        <set var="ok"><srai>IS BUSY DAY <get name="fecha_formato_cita"/> AT <star/> </srai></set>
+        <set var="ok"><srai>IS BUSY DAY <get name="fecha_formato_cita"/> AT <srai>FORMATEA SINGLEDIGIT <star/></srai> </srai></set>
       </think>
       <condition var="ok">
-        <li value="FALSE">Okay, lo apunto en la agenda.<think><srai>MARK NOLIBRE AT <star/> ON <get name="fecha_formato_cita"/> </srai></think></li>
-        <li></li>
+        <li value="FALSE">Okay, lo apunto en la agenda.<think>
+              <set name="topic">unknown</set>
+              <srai>MARK NOLIBRE AT <srai>FORMATEA SINGLEDIGIT <star/></srai> ON <get name="fecha_formato_cita"/> </srai>
+              </think>
+        </li>
+        <li>Esa hora no está disponible.</li>
       </condition>
     </template>
   </category>
 
   <category>
+    <pattern>(si) (afirmativo) (confirmo) (vale)</pattern>
+    <template>A que hora desea?</template>
+  </category>
+  
+
+  <category>
     <pattern>(no) (negativo) (no me importa) (me da igual) (me es igual) ^ </pattern>
     <template>
       <think>
+          <set name="topic">unknown</set>
           <set var="horario"><srai>SUBLIST FROM 9 TO 21 OF <map name="horas">h</map></srai></set>
           <set var="contador"><srai>ITERATE <get var="horario"/></srai></set>
           <set var="iter"><srai>IS BUSY DAY <get name="fecha_formato_cita"/> AT <get var="contador"/> </srai></set>
