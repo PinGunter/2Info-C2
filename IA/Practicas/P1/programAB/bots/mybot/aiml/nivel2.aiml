@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+    <pattern> REVERSE * </pattern>
+    <template>
+        <think>
+            <set var="antigua"><star/></set>
+            <set var="nueva">.</set>
+            <set var="contador"><srai>ITERATE <star/></srai></set>
+        </think>
+        <condition var="contador">
+            <li value="$"></li>
+            <li>
+                <think>
+                    <set var="nueva"><srai>ADDITEM <get var="contador"/> IN <get var="nueva"/> </srai></set>
+                    <set var="contador"><srai>NEXT</srai></set>
+                </think>
+                <loop/> 
+            </li>
+        </condition>
+    <think>
+        <set var="nueva"><srai>REMOVEITEM <srai>COUNT <get var="nueva"/></srai> IN <get var="nueva"/> </srai> </set>
+    </think>
+        <get var="nueva"/>
+    </template>
+</category>
+
+<category>
+    <pattern> TRANSFORMA FECHA <set>number</set> <set>month_es</set> <set>number</set> </pattern>
+    <template> <map name="num_dias"><star/></map> de <star index="2"/> del <star index="3"/></template>
+</category>
+
+<category>
+    <pattern> FORMATEA FECHA <set>number</set> de <set>month_es</set> [del de] <set>number</set> </pattern>
+    <template> <star/>_<map name="meses_index"><star index="2"/></map>_<star index="3"/></template>
+</category>
+
+<category>
+    <pattern>LIBRE [PROXIMO SIGUIENTE] <set>weekday_es</set></pattern>
+    <template>
+        <srai>LIBRE
+            <srai> TRANSFORMA FECHA
+                <srai>DATE ON <star/> </srai> 
+            </srai> 
+        </srai>
+    </template>
+</category>
+
+<category>
+    <pattern> LIBRE <set>dia_relativo</set></pattern>
+    <template>
+        <srai> LIBRE PROXIMO
+                <srai>
+                    <map name="dia_relativo"><star/></map>
+                </srai>
+        </srai>
+    </template>
+</category>
+
+<category>
+    <pattern> HORASLIBRES [PROXIMO SIGUIENTE] <set>weekday_es</set></pattern>
+    <template>
+        <srai>HORASLIBRES <srai>TRANSFORMA FECHA <srai> DATE ON <star/> </srai> </srai> </srai>
+    </template>
+</category>
+
+<category>
+    <pattern> HORASLIBRES [PROXIMO SIGUIENTE] <set>weekday_es</set> POR LA *</pattern>
+    <template>
+    <think>
+        <set var="eleccion"><star index="2"/></set>
+    </think>
+        <condition var="eleccion">
+        <li value="TARDE">
+            <srai>HLTARDE <srai>TRANSFORMA FECHA <srai> DATE ON <star/> </srai> </srai> </srai>
+        </li>
+        <li value="MANYANA">
+            <srai>HLMANYANA <srai>TRANSFORMA FECHA <srai> DATE ON <star/> </srai> </srai> </srai>
+        </li>
+        </condition>
+    </template>
+</category>
+
+<category>
+    <pattern> HORASLIBRES <set>dia_relativo</set></pattern>
+    <template>
+        <srai>HORASLIBRES PROXIMO <srai><map name="dia_relativo"><star/></map> </srai> </srai>
+    </template>
+</category>
+
+<category>
+    <pattern> HORASLIBRES <set>dia_relativo</set> POR LA *</pattern>
+    <template>
+        <srai>HORASLIBRES PROXIMO <srai><map name="dia_relativo"><star/></map> </srai> POR LA <star index="2"/> </srai>
+    </template>
+</category>
+
+<category>
+    <pattern> HORASLIBRES [PROXIMO SIGUIENTE] <set>weekday_es</set> A PARTIR DE LAS <set>number</set> ^ </pattern>
+    <template>
+    <think>
+        <set var="fecha"><srai> FORMATEA FECHA <srai>TRANSFORMA FECHA <srai> DATE ON <star/> </srai> </srai> </srai></set>
+        <set var="l_horas"><srai>SUBLIST FROM <srai>FINDITEM  <star index="2"/>  IN <map name="horas">h</map></srai> TO <srai>FINDITEM 21 IN <map name="horas">h</map></srai> OF <map name="horas">h</map></srai></set>
+        <set var="contador"><srai>ITERATE <get var="l_horas"/></srai></set>
+        <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/> </srai></set>
+        <set var="res">.</set>
+    </think>
+<condition var="contador">
+      <li value="21"></li> <!-- hasta una hora menos que las 8 (la que empieza) -->
+      <li value="$"></li>
+      <li>
+        <condition var="iter">
+                <li value="FALSE">
+                <think>
+                <set var="res"><srai>ADDITEM <get var="contador"/>:00 IN <get var="res"/></srai></set>
+                </think>
+                </li>
+        </condition>
+        <think>
+            <set var="contador"><srai>NEXT</srai></set>
+            <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/></srai></set>
+        </think>
+        <loop/>
+        </li>   
+
+    </condition>
+    <think>
+        <set var="res"><srai>REMOVEITEM <srai>COUNT <get var="res"/></srai> IN <get var="res"/> </srai> </set>
+    </think>
+     <condition var="res">
+        <li value="NIL">No quedan horas libres</li>
+        <li><srai> REVERSE <get var="res"/> </srai></li>
+    </condition>
+    </template>
+</category>
+
+<category>
+    <pattern> HORASLIBRES <set>dia_relativo</set> A PARTIR DE LAS <set>number</set> </pattern>
+    <template> <srai> HORASLIBRES PROXIMO <srai><map name="dia_relativo"><star/></map> </srai> A PARTIR DE LAS <star index="2"/></srai></template>
+</category>
+</aiml>

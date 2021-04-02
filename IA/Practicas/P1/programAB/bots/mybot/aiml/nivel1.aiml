@@ -67,7 +67,10 @@
     <think>
     <set var="res"><srai>REMOVEITEM <srai>COUNT <get var="res"/></srai> IN <get var="res"/> </srai> </set>
   </think>
-    <get var="res"/>
+  <condition var="res">
+  <li value="NIL">No quedan horas libres</li>
+  <li><get var="res"/></li>
+  </condition>
   </template>
 </category>
 
@@ -111,8 +114,10 @@
     <think>
     <set var="res"><srai>REMOVEITEM <srai>COUNT <get var="res"/></srai> IN <get var="res"/> </srai> </set>
   </think>
-    <get var="res"/>
-  </template>
+  <condition var="res">
+  <li value="NIL">No quedan horas libres</li>
+  <li><get var="res"/></li>
+  </condition>  </template>
 </category>
 
 <category>
@@ -148,8 +153,10 @@
     <think>
     <set var="res"><srai>REMOVEITEM <srai>COUNT <get var="res"/></srai> IN <get var="res"/> </srai> </set>
   </think>
-    <get var="res"/>
-  </template>
+  <condition var="res">
+  <li value="NIL">No quedan horas libres</li>
+  <li><get var="res"/></li>
+  </condition>  </template>
 </category>
 
 <!-- reglas para mantener conversacion -->
