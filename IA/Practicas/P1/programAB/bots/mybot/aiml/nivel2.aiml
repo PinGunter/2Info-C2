@@ -26,7 +26,15 @@
     </template>
 </category>
 
+<category>
+    <pattern> TRANSHORA <set>horas</set></pattern>
+    <template><srai>FORMATEA SINGLEDIGIT <srai> MINUS <srai> ORDINAL <star/></srai> 1 </srai></srai></template>
+</category>
 
+<category>
+    <pattern> NUMAHORA <set>number</set> </pattern>
+    <template> <srai> FORMATEA SINGLEDIGIT <star/> </srai>:00</template>
+</category>
 
 <category>
     <pattern> FORMATEA FECHA <set>number</set> de <set>month_es</set> [del de] <set>number</set> </pattern>
@@ -94,11 +102,11 @@
 </category>
 
 <category>
-    <pattern> HORASLIBRES [PROXIMO SIGUIENTE] <set>weekday_es</set> A PARTIR DE LAS <set>number</set> ^ </pattern>
+    <pattern> HORASLIBRES [PROXIMO SIGUIENTE] <set>weekday_es</set> A PARTIR DE LAS <set>horas</set> ^ </pattern>
     <template>
     <think>
         <set var="fecha"><srai> FORMATEA FECHA <srai>TRANSFORMA FECHA <srai> DATE ON <star/> </srai> </srai> </srai></set>
-        <set var="l_horas"><srai>SUBLIST FROM <srai>FINDITEM  <star index="2"/>  IN <map name="horas">h</map></srai> TO <srai>FINDITEM 21 IN <map name="horas">h</map></srai> OF <map name="horas">h</map></srai></set>
+        <set var="l_horas"><srai>SUBLIST FROM <srai>FINDITEM  <srai>TRANSHORA <star index="2"/></srai>  IN <map name="horas">h</map></srai> TO <srai>FINDITEM 21 IN <map name="horas">h</map></srai> OF <map name="horas">h</map></srai></set>
         <set var="contador"><srai>ITERATE <get var="l_horas"/></srai></set>
         <set var="iter"><srai>IS BUSY DAY <get var="fecha"/> AT <get var="contador"/> </srai></set>
         <set var="res">.</set>
@@ -133,7 +141,17 @@
 </category>
 
 <category>
-    <pattern> HORASLIBRES <set>dia_relativo</set> A PARTIR DE LAS <set>number</set> </pattern>
+    <pattern> HORASLIBRES <set>dia_relativo</set> A PARTIR DE LAS <set>horas</set> </pattern>
     <template> <srai> HORASLIBRES PROXIMO <srai><map name="dia_relativo"><star/></map> </srai> A PARTIR DE LAS <star index="2"/></srai></template>
+</category>
+
+<category>
+    <pattern> HORASLIBRES [PROXIMO SIGUIENTE] <set>weekday_es</set> A PARTIR DE LAS <set>number</set> ^  </pattern>
+    <template> <srai> HORASLIBRES PROXIMO <star/>  A PARTIR DE LAS <srai>NUMAHORA <star index="2"/></srai></srai></template>
+</category>
+
+<category>
+    <pattern> HORASLIBRES <set>dia_relativo</set> A PARTIR DE LAS <set>number</set> </pattern>
+    <template> <srai> HORASLIBRES PROXIMO <srai><map name="dia_relativo"><star/></map> </srai> A PARTIR DE LAS <srai>NUMAHORA <star index="2"/></srai></srai></template>
 </category>
 </aiml>

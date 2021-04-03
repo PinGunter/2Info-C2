@@ -180,6 +180,11 @@
   </template>
 </category>
 
+<category>
+  <pattern> Me gustaria una cita (para) el (dia) <set>number</set> de <set>month_es</set> [del de] <set>number</set></pattern>
+  <template><srai>QUIERO UNA CITA PARA EL <star/> de <star index="2"/> del <star index="3"/></srai></template>
+</category>
+
 <!-- QUIERE UNA CITA -->
 <topic name="citas_fecha_bien">
   <category>
@@ -233,20 +238,25 @@
 
 <topic name="escoger_hora">
   <category>
-    <pattern>(si) (afirmativo) (confirmo) (vale) (a las) <set>number</set> ^ </pattern>
+    <pattern>(si) (afirmativo) (confirmo) (vale) (a las) <set>horas</set> </pattern>
     <template>
       <think>
-        <set var="ok"><srai>IS BUSY DAY <get name="fecha_formato_cita"/> AT <srai>FORMATEA SINGLEDIGIT <star/></srai> </srai></set>
+        <set var="ok"><srai>IS BUSY DAY <get name="fecha_formato_cita"/> AT <srai>FORMATEA SINGLEDIGIT <srai> MINUS <srai> ORDINAL <star/></srai> 1 </srai></srai></srai></set>
       </think>
       <condition var="ok">
         <li value="FALSE">Okay, lo apunto en la agenda.<think>
               <set name="topic">unknown</set>
-              <srai>MARK NOLIBRE AT <srai>FORMATEA SINGLEDIGIT <star/></srai> ON <get name="fecha_formato_cita"/> </srai>
+              <srai>MARK NOLIBRE AT <srai>FORMATEA SINGLEDIGIT <srai> MINUS <srai> ORDINAL <star/></srai> 1 </srai></srai> ON <get name="fecha_formato_cita"/> </srai>
               </think>
         </li>
         <li>Esa hora no está disponible.</li>
       </condition>
     </template>
+  </category>
+
+  <category>
+    <pattern> (si) (afirmativo) (confirmo) (vale) (a las) * </pattern>
+    <template><think><set name="topic">escoger_hora</set></think><srai>SI A LAS <srai>FORMATEA SINGLEDIGIT <star/> </srai>:00 </srai> </template>
   </category>
 
   <category>
