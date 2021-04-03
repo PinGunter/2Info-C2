@@ -294,4 +294,10 @@
   </category>
 </topic>
 
+<!-- Saludos -->
+<category>
+  <pattern>^ [hola buenas] ^</pattern>
+  <template> Buenas, bienvenido al asistente virtual de gestión de citas. En que puedo ayudarle? </template>
+</category>
+
 </aiml>
