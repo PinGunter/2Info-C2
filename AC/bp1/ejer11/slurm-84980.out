@@ -1,0 +1,22 @@
+Id. usuario del trabajo: a1estudiante23
+Id. del trabajo: 84980
+Nombre del trabajo especificado por usuario: SumaLocal
+Directorio de trbajo (en el que se ejecuta el script): /home/a1estudiante23/bp1/ejer11
+Cola: ac
+Nodo que ejecuta este trabajo: atcgrid.ugr.es
+Nº de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 24
+BINARIO EJER7
+Tiempo:0.019505050	 / Tamaño Vectores:8388608	/ V1[0]+V2[0]=V3[0](1.254480+2.165835=3.420315) / / V1[8388607]+V2[8388607]=V3[8388607](0.331921+0.217840=0.549761) /
+8.48user 64.19system 0:06.92elapsed 1048%CPU (0avgtext+0avgdata 203632maxresident)k
+32inputs+0outputs (0major+1519minor)pagefaults 0swaps
+Tiempo:0.034794204	 / Tamaño Vectores:16777216	/ V1[0]+V2[0]=V3[0](0.556479+1.620647=2.177125) / / V1[16777215]+V2[16777215]=V3[16777215](0.530747+4.209535=4.740282) /
+16.66user 130.53system 0:13.84elapsed 1063%CPU (0avgtext+0avgdata 400236maxresident)k
+0inputs+0outputs (0major+1810minor)pagefaults 0swaps
+Tiempo:0.065324470	 / Tamaño Vectores:33554432	/ V1[0]+V2[0]=V3[0](1.355236+0.745205=2.100442) / / V1[33554431]+V2[33554431]=V3[33554431](0.977682+0.658735=1.636417) /
+32.77user 256.76system 0:27.25elapsed 1062%CPU (0avgtext+0avgdata 787324maxresident)k
+0inputs+0outputs (0major+2377minor)pagefaults 0swaps
+Tiempo:0.066412561	 / Tamaño Vectores:33554432	/ V1[0]+V2[0]=V3[0](5.907043+1.256755=7.163798) / / V1[33554431]+V2[33554431]=V3[33554431](1.683908+0.410936=2.094844) /
+31.08user 254.95system 0:26.68elapsed 1071%CPU (0avgtext+0avgdata 787320maxresident)k
+0inputs+0outputs (0major+2317minor)pagefaults 0swaps
