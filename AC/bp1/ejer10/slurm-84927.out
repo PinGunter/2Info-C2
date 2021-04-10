@@ -1,0 +1,26 @@
+Id. usuario del trabajo: a1estudiante23
+Id. del trabajo: 84927
+Nombre del trabajo especificado por usuario: SumaLocal
+Directorio de trbajo (en el que se ejecuta el script): /home/a1estudiante23/bp1/ejer10
+Cola: ac
+Nodo que ejecuta este trabajo: atcgrid.ugr.es
+Nº de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 24
+BINARIO EJER7
+Tiempo:0.001178082	 / Tamaño Vectores:16384	/ V1[0]+V2[0]=V3[0](1.022908+0.530634=1.553541) / / V1[16383]+V2[16383]=V3[16383](1.916164+1.349435=3.265599) /
+Tiempo:0.001191583	 / Tamaño Vectores:32768	/ V1[0]+V2[0]=V3[0](0.655898+0.583138=1.239035) / / V1[32767]+V2[32767]=V3[32767](0.694464+4.350748=5.045211) /
+Tiempo:0.004652940	 / Tamaño Vectores:65536	/ V1[0]+V2[0]=V3[0](0.486768+1.031854=1.518622) / / V1[65535]+V2[65535]=V3[65535](8.491502+7.291950=15.783452) /
+Tiempo:0.003950506	 / Tamaño Vectores:131072	/ V1[0]+V2[0]=V3[0](1.753284+0.970588=2.723872) / / V1[131071]+V2[131071]=V3[131071](2.934955+1.235654=4.170610) /
+Tiempo:0.005074792	 / Tamaño Vectores:262144	/ V1[0]+V2[0]=V3[0](1.897849+1.678788=3.576638) / / V1[262143]+V2[262143]=V3[262143](1.113325+0.130050=1.243375) /
+Tiempo:0.005820032	 / Tamaño Vectores:524288	/ V1[0]+V2[0]=V3[0](1.897849+1.678788=3.576638) / / V1[524287]+V2[524287]=V3[524287](1.566049+0.791325=2.357374) /
+Tiempo:0.006058585	 / Tamaño Vectores:1048576	/ V1[0]+V2[0]=V3[0](0.501558+0.737055=1.238613) / / V1[1048575]+V2[1048575]=V3[1048575](0.072221+0.277029=0.349250) /
+Tiempo:0.005826052	 / Tamaño Vectores:2097152	/ V1[0]+V2[0]=V3[0](0.040923+8.426289=8.467212) / / V1[2097151]+V2[2097151]=V3[2097151](1.537242+2.723540=4.260781) /
+Tiempo:0.009822287	 / Tamaño Vectores:4194304	/ V1[0]+V2[0]=V3[0](1.286459+4.065572=5.352030) / / V1[4194303]+V2[4194303]=V3[4194303](0.755653+3.321209=4.076862) /
+Tiempo:0.016397648	 / Tamaño Vectores:8388608	/ V1[0]+V2[0]=V3[0](2.908826+0.826526=3.735352) / / V1[8388607]+V2[8388607]=V3[8388607](1.994805+0.726117=2.720922) /
+Tiempo:0.033309288	 / Tamaño Vectores:16777216	/ V1[0]+V2[0]=V3[0](0.166729+10.702736=10.869465) / / V1[16777215]+V2[16777215]=V3[16777215](0.312211+3.153437=3.465648) /
+Tiempo:0.072183140	 / Tamaño Vectores:33554432	/ V1[0]+V2[0]=V3[0](1.844633+0.180790=2.025422) / / V1[33554431]+V2[33554431]=V3[33554431](0.585667+0.893341=1.479009) /
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 84927 ON atcgrid1 CANCELLED AT 2021-04-10T01:30:59 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 84927.12 ON atcgrid1 CANCELLED AT 2021-04-10T01:30:59 DUE TO TIME LIMIT ***
+srun: error: atcgrid1: task 0: Terminated

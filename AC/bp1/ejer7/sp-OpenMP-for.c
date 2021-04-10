@@ -33,8 +33,6 @@ double v1[MAX], v2[MAX], v3[MAX];
 int main(int argc, char** argv)
 {
 
-    int i;
-
     double ini, fin;
     double ncgt; //para tiempo de ejecución
 
@@ -70,7 +68,7 @@ int main(int argc, char** argv)
     //Inicializar vectores
     srand(time(0));
     #pragma omp parallel for
-    for (i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         v1[i] = rand() / ((double)rand());
         v2[i] = rand() / ((double)rand()); //printf("%d:%f,%f/",i,v1[i],v2[i]);
@@ -80,7 +78,7 @@ int main(int argc, char** argv)
 
     //Calcular suma de vectores
     #pragma omp parallel for
-    for (i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
         v3[i] = v1[i] + v2[i];
     fin = omp_get_wtime();
 
@@ -90,7 +88,7 @@ int main(int argc, char** argv)
     if (N < 10)
     {
         printf("Tiempo:%11.9f\t / Tamaño Vectores:%u\n", ncgt, N);
-        for (i = 0; i < N; i++)
+        for (int i = 0; i < N; i++)
             printf("/ V1[%d]+V2[%d]=V3[%d](%8.6f+%8.6f=%8.6f) /\n",
                 i, i, i, v1[i], v2[i], v3[i]);
     }
