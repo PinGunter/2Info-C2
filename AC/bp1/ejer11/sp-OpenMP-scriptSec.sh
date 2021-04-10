@@ -19,8 +19,8 @@ echo "Nodos asignados al trabajo: $SLURM_JOB_NODELIST"
 echo "CPUs por nodo: $SLURM_JOB_CPUS_PER_NODE"
 #Instrucciones del script para ejecutar código:
 
-echo BINARIO EJER7
+echo BINARIO SECUENCIAL
 for ((P=8388608;P<=67108864;P=P*2))
 do
-	time ./sumavectores $P
+	srun time ./sumavectores $P
 done

@@ -22,5 +22,5 @@ echo "CPUs por nodo: $SLURM_JOB_CPUS_PER_NODE"
 echo BINARIO EJER7
 for ((P=8388608;P<=67108864;P=P*2))
 do
-	time ./sp-OpenMP-for $P
+	srun time ./sp-OpenMP-for $P
 done
