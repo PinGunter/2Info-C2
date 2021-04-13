@@ -1,0 +1,9 @@
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/rebuild_cache.dir
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/edit_cache.dir
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/BelkanSG.dir
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/Belkan.dir
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/motorLib.dir
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/GLUILib.dir
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/comportamientosLib.dir
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/modelosBelkanLib.dir
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir
