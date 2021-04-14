@@ -5,6 +5,7 @@
 #include <cmath>
 #include <set>
 #include <stack>
+#include <queue>
 
 
 // Este es el método principal que se piden en la practica.
@@ -78,8 +79,8 @@ Action ComportamientoJugador::think(Sensores sensores) {
 // Level representa el comportamiento en el que fue iniciado el agente.
 bool ComportamientoJugador::pathFinding (int level, const estado &origen, const list<estado> &destino, list<Action> &plan){
 	switch (level){
+		estado un_objetivo;
 		case 0: cout << "Demo\n";
-						estado un_objetivo;
 						un_objetivo = objetivos.front();
 						cout << "fila: " << un_objetivo.fila << " col:" << un_objetivo.columna << endl;
 			      return pathFinding_Profundidad(origen,un_objetivo,plan);
@@ -87,7 +88,9 @@ bool ComportamientoJugador::pathFinding (int level, const estado &origen, const 
 
 		case 1: cout << "Optimo numero de acciones\n";
 			      // Incluir aqui la llamada al busqueda en anchura
-						cout << "No implementado aun\n";
+						un_objetivo = objetivos.front();
+						cout << "fila: " << un_objetivo.fila << " col:" << un_objetivo.columna << endl;
+					return pathFinding_Anchura(origen,un_objetivo,plan);
 						break;
 		case 2: cout << "Optimo en coste 1 Objetivo\n";
 						// Incluir aqui la llamada al busqueda de costo uniforme
@@ -104,7 +107,6 @@ bool ComportamientoJugador::pathFinding (int level, const estado &origen, const 
 	}
 	return false;
 }
-
 
 //---------------------- Implementación de la busqueda en profundidad ---------------------------
 
@@ -307,4 +309,75 @@ void ComportamientoJugador::VisualizaPlan(const estado &st, const list<Action> &
 
 int ComportamientoJugador::interact(Action accion, int valor){
   return false;
+}
+
+
+/* ========== BUSQUEDA EN ANCHURA =========== *\*/
+bool ComportamientoJugador::pathFinding_Anchura(const estado &origen, const estado &destino, list<Action> &plan) {
+	//Borro la lista
+	cout << "Calculando plan\n";
+	plan.clear();
+	set<estado,ComparaEstados> Cerrados; // Lista de Cerrados
+	queue<nodo> Abiertos;				 // Cola de Abiertos
+
+  	nodo current;
+	current.st = origen;
+	current.secuencia.empty();
+
+	Abiertos.push(current);
+
+  while (!Abiertos.empty() and (current.st.fila!=destino.fila or current.st.columna != destino.columna)){
+
+		Abiertos.pop();
+		Cerrados.insert(current.st);
+
+		// Generar descendiente de girar a la derecha
+		nodo hijoTurnR = current;
+		hijoTurnR.st.orientacion = (hijoTurnR.st.orientacion+1)%4;
+		if (Cerrados.find(hijoTurnR.st) == Cerrados.end()){
+			hijoTurnR.secuencia.push_back(actTURN_R);
+			Abiertos.push(hijoTurnR);
+
+		}
+
+		// Generar descendiente de girar a la izquierda
+		nodo hijoTurnL = current;
+		hijoTurnL.st.orientacion = (hijoTurnL.st.orientacion+3)%4;
+		if (Cerrados.find(hijoTurnL.st) == Cerrados.end()){
+			hijoTurnL.secuencia.push_back(actTURN_L);
+			Abiertos.push(hijoTurnL);
+		}
+
+		// Generar descendiente de avanzar
+		nodo hijoForward = current;
+		if (!HayObstaculoDelante(hijoForward.st)){
+			if (Cerrados.find(hijoForward.st) == Cerrados.end()){
+				hijoForward.secuencia.push_back(actFORWARD);
+				Abiertos.push(hijoForward);
+			}
+		}
+
+		// Tomo el siguiente valor de la Abiertos
+		if (!Abiertos.empty()){
+			current = Abiertos.front();
+		}
+	}
+
+  cout << "Terminada la busqueda\n";
+
+	if (current.st.fila == destino.fila and current.st.columna == destino.columna){
+		cout << "Cargando el plan\n";
+		plan = current.secuencia;
+		cout << "Longitud del plan: " << plan.size() << endl;
+		PintaPlan(plan);
+		// ver el plan en el mapa
+		VisualizaPlan(origen, plan);
+		return true;
+	}
+	else {
+		cout << "No encontrado plan\n";
+	}
+
+
+	return false;
 }
