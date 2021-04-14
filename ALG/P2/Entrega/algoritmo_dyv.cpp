@@ -39,16 +39,19 @@ int main(int argc, char const *argv[]) {
     vector<int> v = generar_vector(n);
      
     //Mostramos los valores del vector
-    // cout << "Vector: ";
-    // for (auto e : v){ //
-    //     cout << e << " ";
-    // }
-    // cout << endl;
+     cout << "Vector: ";
+     for (auto e : v){ //
+         cout << e << " ";
+     }
+     cout << endl;
 
-    auto inicio = clock();
     int res = enteroEnSuPosicion(v);
-    auto fin = clock();
-    cout  << n << " " << (double)(fin-inicio) / CLOCKS_PER_SEC << endl;
+
+    if (res != -1){
+    	cout << "Se cumple la condición con el elemento: " << res << endl;
+    } else{
+    	cout << "Ningún elemento cumple la condición " << endl;
+    }
     return 0;
 
 }

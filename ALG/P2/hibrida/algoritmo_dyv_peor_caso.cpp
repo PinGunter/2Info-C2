@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include "generador.h"
 #include <cmath>
 using namespace std;
 
@@ -38,21 +37,14 @@ int main(int argc, char const *argv[]) {
     int n = atoi(argv[1]); // Tamanio del vector
     vector<int> v(n);
     for (long long int i=0; i < n; i++)
-	v[i] = i+1;
+	    v[i] = i+1;
  
  
-     //Mostramos los valores del vector
-    // cout << "Vector: ";
-    // for (auto e : v){ //
-    //     cout << e << " ";
-    // }
-    // cout << endl;
-
     auto inicio = clock();
-    for (int i=0; i < 10000; i++)
+    for (int i=0; i < 100000; i++)
         int res = enteroEnSuPosicion(v);
     auto fin = clock();
-    auto tiempo = (fin - inicio) / 10000.0;
+    auto tiempo = (fin - inicio) / 100000.0;
     //cout << res << endl;
     cout  << n << " " << (double)(tiempo) / CLOCKS_PER_SEC << endl;
     return 0;

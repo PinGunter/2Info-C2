@@ -20,9 +20,7 @@ int main(int argc, char const *argv[])
     }
     
     int n = atoi(argv[1]); // Tamanio del vector
-    vector<int> v(n);
-    for (long long int i=0; i < n; i++)
-	    v[i] = i+1;
+    vector<int> v = generar_vector(n);
 
     //Mostramos los valores del vector
     // cout << "Vector: ";
