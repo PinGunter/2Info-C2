@@ -8,14 +8,14 @@
 int main()
 {
     int i,n = 7;
-    int a[n], suma;
+    int a[n], suma = 1310;
 
     for (i=0; i < n; i++)
         a[i] = i;
     
     #pragma omp parallel private(suma)
     {
-        suma = 1310;
+        suma = 0;
         #pragma omp for
         for (i=0; i < n; i++){
             suma = suma + a[i];
