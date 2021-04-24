@@ -7,7 +7,7 @@
 #endif
 
 int main(int argc, char **argv){
-    int i, n = 20, a[n], suma = 10;
+    int i, n = 20, a[n], suma = 0;
 
     if (argc < 2){
         fprintf(stderr, "Falta iteraciones\n");
@@ -16,15 +16,23 @@ int main(int argc, char **argv){
 
     n = atoi(argv[1]);
     if (n > 20){
+        n=20;
         printf("n=%d",n);
     }
 
     for (i=0; i < n; i++)
         a[i] = i;
     
-    #pragma omp parallel for reduction(+:suma)
-    for (i=0; i < n; i++)
-        suma += a[i];
+    #pragma omp parallel
+    {
+        int suma_local = 0;
+
+        #pragma omp for
+        for (i=0; i < n; i++)
+            suma_local += a[i];
+        #pragma omp atomic
+            suma += suma_local;
+    } 
     
     printf("Tras 'parallel' suma = %d\n", suma);
 }
