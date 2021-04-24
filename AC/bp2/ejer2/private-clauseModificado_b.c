@@ -15,7 +15,6 @@ int main()
     
     #pragma omp parallel private(suma)
     {
-        suma = 0;
         #pragma omp for
         for (i=0; i < n; i++){
             suma = suma + a[i];
