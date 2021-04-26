@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
 			}
 
 			#pragma omp atomic
-			v3[i] += 
+			v3[i] += aux;
 		}
 	}
 

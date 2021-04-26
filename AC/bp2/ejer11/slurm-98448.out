@@ -1,0 +1,238 @@
+Id. usuario del trabajo: a1estudiante23
+Id. del trabajo: 98448
+Nombre del trabajo especificado por usuario: SumaLocal
+Directorio de trbajo (en el que se ejecuta el script): /home/a1estudiante23/bp2/ejer11
+Cola: ac
+Nodo que ejecuta este trabajo: atcgrid.ugr.es
+Nº de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid1
+CPUs por nodo: 24
+SECUENCIAL
+Tamaño: 7500
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.08042311.9
+Tamaño: 50000
+Matriz m[0][0] = 0.000000 <--> m[49999][49999] = 0.000000
+V1[0] = 0.000000 <--> V1[49999] = 4999.900000
+Resultado V3[0] = -416654166750.000000 <--> V3[49999] = 208320833500.003296
+Tiempo: 5.54789311.9
+PARALELO
+Tamaño: 7500
+ -- Numero de cores: 1 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.08227411.9
+ -- Numero de cores: 2 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.04625111.9
+ -- Numero de cores: 3 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03612511.9
+ -- Numero de cores: 4 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03119311.9
+ -- Numero de cores: 5 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03015711.9
+ -- Numero de cores: 6 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02749811.9
+ -- Numero de cores: 7 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03637311.9
+ -- Numero de cores: 8 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02261611.9
+ -- Numero de cores: 9 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02050911.9
+ -- Numero de cores: 10 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02085111.9
+ -- Numero de cores: 11 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03010011.9
+ -- Numero de cores: 12 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02674511.9
+ -- Numero de cores: 13 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02080711.9
+ -- Numero de cores: 14 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02960311.9
+ -- Numero de cores: 15 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03004611.9
+ -- Numero de cores: 16 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02912711.9
+ -- Numero de cores: 17 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02873111.9
+ -- Numero de cores: 18 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02984811.9
+ -- Numero de cores: 19 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03126811.9
+ -- Numero de cores: 20 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02719611.9
+ -- Numero de cores: 21 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02716011.9
+ -- Numero de cores: 22 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02966411.9
+ -- Numero de cores: 23 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03035511.9
+ -- Numero de cores: 24 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02382711.9
+ -- Numero de cores: 25 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03007711.9
+ -- Numero de cores: 26 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03002111.9
+ -- Numero de cores: 27 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02991911.9
+ -- Numero de cores: 28 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02939111.9
+ -- Numero de cores: 29 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02959611.9
+ -- Numero de cores: 30 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.02979411.9
+ -- Numero de cores: 31 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03012311.9
+ -- Numero de cores: 32 -- 
+Matriz m[0][0] = 0.000000 <--> m[7499][7499] = 0.000000
+V1[0] = 0.000000 <--> V1[7499] = 749.900000
+Resultado V3[0] = -1405968762.500000 <--> V3[7499] = 702843775.000018
+Tiempo: 0.03059711.9
+Tamaño: 50000
+ -- Numero de cores: 1 -- 
+Matriz m[0][0] = 0.000000 <--> m[49999][49999] = 0.000000
+V1[0] = 0.000000 <--> V1[49999] = 4999.900000
+Resultado V3[0] = -416654166750.000000 <--> V3[49999] = 208320833500.003296
+Tiempo: 5.95107911.9
+ -- Numero de cores: 2 -- 
+Matriz m[0][0] = 0.000000 <--> m[49999][49999] = 0.000000
+V1[0] = 0.000000 <--> V1[49999] = 4999.900000
+Resultado V3[0] = -416654166750.000000 <--> V3[49999] = 208320833500.003296
+Tiempo: 3.39692111.9
+ -- Numero de cores: 3 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 4 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 5 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 6 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 7 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 8 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 9 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 10 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 11 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 12 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 13 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 14 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 15 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 16 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 17 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 18 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 19 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 20 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 21 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 22 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 23 -- 
+srun: error: Unable to create step for job 98448: Job/step already completing or completed
+ -- Numero de cores: 24 -- 
+slurmstepd: error: *** JOB 98448 ON atcgrid1 CANCELLED AT 2021-04-26T23:36:36 DUE TO TIME LIMIT ***
+srun: error: Slurm job 98448 has expired

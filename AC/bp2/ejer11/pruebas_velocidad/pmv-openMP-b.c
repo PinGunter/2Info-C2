@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
 	for (i = 0; i < dimension; i++) {
 		v1[i] = 0.1*i;
 		v3[i] = 0;
-	#pragma omp parallel
+	#pragma omp parallel for 
 		for (j = 0; j < dimension; j++) {
 			m[i][j] = 0.1*i - 0.1*j;
 		}

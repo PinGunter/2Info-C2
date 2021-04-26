@@ -37,28 +37,34 @@ int main(int argc, char** argv) {
 	}
 #endif
 
-	//inicializacion de datos de la matriz y los vectores
-	#pragma omp parallel for
-	for (i = 0; i < dimension; i++) {
-		for (j = 0; j < dimension; j++) {
-			m[i][j] = 0.1*i - 0.1*j;
+	#pragma omp parallel 
+	{
+		//inicializacion de datos de la matriz y los vectores
+		#pragma omp for
+		for (i = 0; i < dimension; i++) {
+			for (j = 0; j < dimension; j++) {
+				m[i][j] = 0.1*i - 0.1*j;
+			}
+			v1[i] = 0.1*i;
+			v3[i] = 0;
 		}
-		v1[i] = 0.1*i;
-		v3[i] = 0;
-	}
 
-	// calculo
-	inicio = omp_get_wtime();
-	
-	#pragma omp parallel for private(i,j)
-	for (i = 0; i < dimension; i++) {
-		for (j = 0; j < dimension; j++) {
-			v3[i] += m[i][j] * v1[j];
+		// calculo
+		#pragma omp single
+		inicio = omp_get_wtime();
+		
+		#pragma omp for private(i,j)
+		for (i = 0; i < dimension; i++) {
+			for (j = 0; j < dimension; j++) {
+				v3[i] += m[i][j] * v1[j];
+			}
+		}
+		#pragma omp single
+		{
+			final = omp_get_wtime();
+			tiempo = final - inicio;
 		}
 	}
-
-	final = omp_get_wtime();
-	tiempo = final - inicio;
 	// muestra de resultados
 	if (dimension <= 10) {
 		printf("Matriz: \n");

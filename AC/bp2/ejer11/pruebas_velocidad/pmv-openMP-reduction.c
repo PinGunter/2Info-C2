@@ -51,11 +51,15 @@ int main(int argc, char** argv) {
 	inicio = omp_get_wtime();
 	int aux = 0;
 	for (i = 0; i < dimension; i++) {
-		#pragma omp parallel for reduction(+:aux)
+		#pragma omp parallel 
+		{
+			#pragma omp for reduction(+:aux)
 			for (j = 0; j < dimension; j++) {
 				aux += m[i][j] * v1[j];
 			}
+
 			v3[i] += aux;
+		}
 	}
 
 	final = omp_get_wtime();
