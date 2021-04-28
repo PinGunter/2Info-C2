@@ -1,0 +1,831 @@
+
+Table "ALUMNOS" creado.
+
+
+Table "ASIGNA" creado.
+
+
+Table "MATRICULA" creado.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+

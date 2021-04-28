@@ -3,3 +3,5 @@ create table proyecto(
     nompj varchar2(20) constraint nompj_no_nulo not null,
     ciudad varchar2(15)
 );
+
+DESCRIBE proyecto
