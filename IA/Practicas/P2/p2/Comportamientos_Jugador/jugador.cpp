@@ -359,9 +359,6 @@ bool ComportamientoJugador::pathFinding_Anchura(const estado &origen, const esta
 
 		// Tomo el siguiente valor de la Abiertos
 		if (!Abiertos.empty()){
-
-			//TODO: comprobar que no se haya añadido a cerrados
-
 			current = Abiertos.front();
 		}
 	}
