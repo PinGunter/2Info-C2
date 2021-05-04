@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/aldeano.cpp" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/comportamientosLib.dir/Comportamientos_Jugador/aldeano.cpp.o"
-  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/jugador.cpp" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/comportamientosLib.dir/Comportamientos_Jugador/jugador.cpp.o"
-  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/comportamientos/comportamiento.cpp" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/comportamientosLib.dir/src/comportamientos/comportamiento.cpp.o"
+  "/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/aldeano.cpp" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/comportamientosLib.dir/Comportamientos_Jugador/aldeano.cpp.o"
+  "/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/jugador.cpp" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/comportamientosLib.dir/Comportamientos_Jugador/jugador.cpp.o"
+  "/home/salva/LosMaravillososMundosDeBelkan/src/comportamientos/comportamiento.cpp" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/comportamientosLib.dir/src/comportamientos/comportamiento.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

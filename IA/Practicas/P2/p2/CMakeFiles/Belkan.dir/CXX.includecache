@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/bin_src/juego.cc
+/home/salva/LosMaravillososMundosDeBelkan/bin_src/juego.cc
 fstream
 -
 motorlib.hpp
-/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/bin_src/motorlib.hpp
+/home/salva/LosMaravillososMundosDeBelkan/bin_src/motorlib.hpp
 
 Comportamientos_Jugador/aldeano.hpp
 chrono

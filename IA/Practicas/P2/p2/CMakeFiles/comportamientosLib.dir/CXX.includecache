@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/jugador.cpp
+/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/jugador.cpp
 ../Comportamientos_Jugador/jugador.hpp
-/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/jugador.hpp
+/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/jugador.hpp
 motorlib/util.h
-/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/motorlib/util.h
+/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/motorlib/util.h
 iostream
 -
 cmath
@@ -19,10 +19,12 @@ set
 -
 stack
 -
+queue
+-
 
-/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/jugador.hpp
+/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/jugador.hpp
 comportamientos/comportamiento.hpp
-/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/comportamientos/comportamiento.hpp
+/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/comportamientos/comportamiento.hpp
 list
 -
 

@@ -1,6 +1,18 @@
 #ifndef COMPORTAMIENTOJUGADOR_H
 #define COMPORTAMIENTOJUGADOR_H
 
+//defines con los pesos
+#define GIRO_BIKINI 5
+#define GIRO_ZAPATILLAS 1
+#define GIRO_AGUA 500
+#define GIRO_BOSQUE 3
+#define GIRO_ARENA 2
+#define AVANZA_AGUA 200
+#define AVANZA_BOSQUE 100
+#define AVANZA_BIKINI 10
+#define AVANZA_ZAPATILLAS 15
+#define AVANZA_ARENA 2
+
 #include "comportamientos/comportamiento.hpp"
 
 #include <list>
@@ -42,13 +54,15 @@ class ComportamientoJugador : public Comportamiento {
     bool pathFinding(int level, const estado &origen, const list<estado> &destino, list<Action> &plan);
     bool pathFinding_Profundidad(const estado &origen, const estado &destino, list<Action> &plan);
     bool pathFinding_Anchura(const estado &origen, const estado &destino, list<Action> &plan);
-    bool pathFinding_Aestrella(const estado &origen, const estado &destino, list<Action> &plan);
+    bool pathFinding_CosteUniforme(const estado &origen, const estado &destino, list<Action> &plan);
 
-    int determinarPeso(const estado & actual, const estado & siguiente);
+
+    int determinarPeso(estado & actual, estado & siguiente);
     int calculaDistanciaManhattan(const estado & origen, const estado & destino);
     void PintaPlan(list<Action> plan);
     bool HayObstaculoDelante(estado &st);
 
 };
+
 
 #endif

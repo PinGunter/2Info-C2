@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/bin_src/juego.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/Belkan.dir/bin_src/juego.cc.o"
+  "/home/salva/LosMaravillososMundosDeBelkan/bin_src/juego.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/Belkan.dir/bin_src/juego.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,11 +15,11 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/DependInfo.cmake"
-  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/motorLib.dir/DependInfo.cmake"
-  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/modelosBelkanLib.dir/DependInfo.cmake"
-  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/GLUILib.dir/DependInfo.cmake"
-  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/comportamientosLib.dir/DependInfo.cmake"
+  "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/DependInfo.cmake"
+  "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/motorLib.dir/DependInfo.cmake"
+  "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/modelosBelkanLib.dir/DependInfo.cmake"
+  "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/GLUILib.dir/DependInfo.cmake"
+  "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/comportamientosLib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
