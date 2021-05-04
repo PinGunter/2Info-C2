@@ -18,6 +18,8 @@ Action ComportamientoJugador::think(Sensores sensores) {
 	actual.fila        = sensores.posF;
 	actual.columna     = sensores.posC;
 	actual.orientacion = sensores.sentido;
+	actual.bikini = false;
+	actual.zapatillas = false;
 
 	cout << "Fila: " << actual.fila << endl;
 	cout << "Col : " << actual.columna << endl;
@@ -93,8 +95,9 @@ bool ComportamientoJugador::pathFinding (int level, const estado &origen, const 
 					return pathFinding_Anchura(origen,un_objetivo,plan);
 						break;
 		case 2: cout << "Optimo en coste 1 Objetivo\n";
-						// Incluir aqui la llamada al busqueda de costo uniforme
-						cout << "No implementado aun\n";
+						un_objetivo = objetivos.front();
+						cout << "fila: " << un_objetivo.fila << " col:" << un_objetivo.columna << endl;
+						return pathFinding_Aestrella(origen,un_objetivo,plan);
 						break;
 		case 3: cout << "Optimo en coste 3 Objetivos\n";
 						// Incluir aqui la llamada al algoritmo de busqueda para 3 objetivos
@@ -155,6 +158,7 @@ bool ComportamientoJugador::HayObstaculoDelante(estado &st){
 
 struct nodo{
 	estado st;
+	int coste;
 	list<Action> secuencia;
 };
 
@@ -380,4 +384,57 @@ bool ComportamientoJugador::pathFinding_Anchura(const estado &origen, const esta
 
 
 	return false;
+}
+
+int ComportamientoJugador::determinarPeso(const estado & actual, const estado &siguiente){
+	char casilla_siguiente = mapaResultado[siguiente.fila][siguiente.columna];
+	char casilla_actual = mapaResultado[actual.fila][actual.columna];
+	int peso = 0;
+	//bikini - k
+	//zapatillas - d
+	//bosque - b |--
+	//agua - a	 |	|- pesos mas grandes
+	//arena - t  |--
+
+	
+
+
+}
+
+int ComportamientoJugador::calculaDistanciaManhattan(const estado & origen, const estado & destino){
+	int x = abs(destino.fila - origen.fila);
+	int y = abs(destino.columna - origen.columna);
+	return (x+y);
+}
+
+bool ComportamientoJugador::pathFinding_Aestrella(const estado &origen, const estado &destino, list<Action> &plan) {
+	cout << "Calculando plan A*" << endl;
+	plan.clear();
+	priority_queue<nodo> abiertos;
+	set<estado> cerrados;	
+
+	nodo current;
+	current.st = origen;
+	current.secuencia.empty();
+	current.st.h = calculaDistanciaManhattan(current.st, destino);
+	abiertos.push(current);
+
+	while (!abiertos.empty() and (current.st.fila != destino.fila or current.st.columna != destino.columna)){
+		abiertos.pop();
+		cerrados.insert(current.st);
+
+		nodo hijo_derecho = current;
+		hijo_derecho.st.orientacion = (hijo_derecho.st.orientacion+1) % 4;
+		hijo_derecho.st.h = calculaDistanciaManhattan(hijo_derecho.st, destino);	
+		
+		if (!HayObstaculoDelante(hijo_derecho.st)){
+			if (cerrados.find(hijo_derecho.st) == cerrados.end()){
+
+			}
+		}
+
+
+
+	}
+
 }
