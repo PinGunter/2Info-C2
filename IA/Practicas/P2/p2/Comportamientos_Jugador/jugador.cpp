@@ -6,6 +6,7 @@
 #include <set>
 #include <stack>
 #include <queue>
+#include <unistd.h>
 
 
 // Este es el método principal que se piden en la practica.
@@ -42,12 +43,12 @@ Action ComportamientoJugador::think(Sensores sensores) {
 
 	if (hayPlan and plan.size() > 0){
 		accion = plan.front();
-		plan.erase(plan.begin());	
+		plan.erase(plan.begin());
 	} else{
 		cout << "No tengo planes" << endl;
 	}
 
-	// --- PARTE DEL TUTORIAL ---- \\\ 
+	// --- PARTE DEL TUTORIAL ---- \\\
 
 	// unsigned char contenidoCasilla;
 	// mapaResultado[sensores.posF][sensores.posC] = sensores.terreno[0];
@@ -56,7 +57,7 @@ Action ComportamientoJugador::think(Sensores sensores) {
 	// 	case norte: contenidoCasilla = mapaResultado[sensores.posF-1][sensores.posC];
 	// 		break;
 	// 	case este: contenidoCasilla = mapaResultado[sensores.posF][sensores.posC+1];
-	// 		break;	
+	// 		break;
 	// 	case sur: contenidoCasilla = mapaResultado[sensores.posF+1][sensores.posC];
 	// 		break;
 	// 	case oeste: contenidoCasilla = mapaResultado[sensores.posF][sensores.posC-1];
@@ -162,28 +163,17 @@ struct nodo{
 	list<Action> secuencia;
 };
 
-struct ComparaEstados{
-	bool operator()(const estado &a, const estado &n) const{
-		if ((a.fila > n.fila) or (a.fila == n.fila and a.columna > n.columna) or
-	      (a.fila == n.fila and a.columna == n.columna and a.orientacion > n.orientacion))
-			return true;
-		else
-			return false;
-	}
-};
-struct ComparaNodos {
-    bool operator()(const nodo &uno, const nodo &otro) { //operador para la priority queue
-        return uno.coste < otro.coste;
-    }
-};
+bool operator<(const nodo &uno, const nodo &otro) { //operador para la priority queue
+    return uno.coste > otro.coste;
+}
 
 bool operator==(const estado & uno, const estado & otro){
     return
-        uno.zapatillas == otro.zapatillas &&
-        uno.bikini == otro.bikini &&
-        uno.fila == otro.fila &&
-        uno.columna == otro.columna &&
-        uno.orientacion == otro.orientacion;
+            uno.zapatillas == otro.zapatillas &&
+            uno.bikini == otro.bikini &&
+            uno.fila == otro.fila &&
+            uno.columna == otro.columna &&
+            uno.orientacion == otro.orientacion;
 }
 
 bool operator==(const nodo & uno, const nodo & otro){
@@ -193,14 +183,22 @@ bool operator==(const nodo & uno, const nodo & otro){
             uno.coste == otro.coste;
 }
 
-multiset<nodo,ComparaNodos>::const_iterator buscaNodo(const multiset<nodo,ComparaNodos> & abiertos,const nodo & n){
-    for (auto it = abiertos.begin(); it != abiertos.end(); ++it){
-        if (*(it) == n){
-            return it;
-        }
-    }
-    return abiertos.end();
-}
+
+
+struct ComparaEstados{
+	bool operator()(const estado &a, const estado &n) const{
+		if ((a.fila > n.fila) or (a.fila == n.fila and a.columna > n.columna) or
+	      (a.fila == n.fila and a.columna == n.columna and a.orientacion > n.orientacion)
+	      or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas > n.zapatillas)
+             or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini > n.bikini))
+			return true;
+		else
+			return false;
+	}
+};
+
+
+
 // Implementación de la busqueda en profundidad.
 // Entran los puntos origen y destino y devuelve la
 // secuencia de acciones en plan, una lista de acciones.
@@ -485,54 +483,36 @@ int ComportamientoJugador::calculaDistanciaManhattan(const estado & origen, cons
 bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, const estado &destino, list<Action> &plan) {
 	cout << "Calculando plan costo uniforme" << endl;
 	plan.clear();
-	multiset<nodo,ComparaNodos> abiertos; //no podemos usar una priority queue porque no podremos buscar en ella un elemento :(
+	priority_queue<nodo> abiertos;
 	set<estado,ComparaEstados> cerrados;
 
 	nodo current;
 	current.st = origen;
 	current.secuencia.empty();
-	abiertos.insert(current);
+	abiertos.push(current);
 
 	while (!abiertos.empty() and (current.st.fila != destino.fila or current.st.columna != destino.columna)){
-        abiertos.erase(abiertos.begin());
+        abiertos.pop();
         cerrados.insert(current.st);
 
         //expandimos hijo derecho
         nodo hijo_derecho = current;
-        hijo_derecho.st.orientacion = (hijo_derecho.st.orientacion +1)%4;
+        hijo_derecho.st.orientacion = (hijo_derecho.st.orientacion+1)%4;
         //si no esta en cerrados:
         if (cerrados.find(hijo_derecho.st) == cerrados.end()){
             hijo_derecho.coste += determinarPeso(current.st,hijo_derecho.st); //calculamos el peso de pasar al hijo derecho
-            auto it = buscaNodo(abiertos,hijo_derecho);
-            if (it != abiertos.cend()){
-                if (hijo_derecho.coste <= it->coste){
-                    abiertos.erase(it);
-                    hijo_derecho.secuencia.push_back(actTURN_R);
-                    abiertos.insert(hijo_derecho);
-                }
-            }else {
-                hijo_derecho.secuencia.push_back(actTURN_R);
-                abiertos.insert(hijo_derecho);
-            }
+            hijo_derecho.secuencia.push_back(actTURN_R);
+            abiertos.push(hijo_derecho);
         }
 
         //expandimos hijo izquierdo
         nodo hijo_izquierdo = current;
-        hijo_izquierdo.st.orientacion = (hijo_izquierdo.st.orientacion +3)%4;
+        hijo_izquierdo.st.orientacion = (hijo_izquierdo.st.orientacion+3)%4;
         //si no esta en cerrados:
         if (cerrados.find(hijo_izquierdo.st) == cerrados.end()){
             hijo_izquierdo.coste += determinarPeso(current.st,hijo_izquierdo.st); //calculamos el peso de pasar al hijo izquierdo
-            auto it = buscaNodo(abiertos,hijo_izquierdo);
-            if (it != abiertos.cend()){
-                if (hijo_izquierdo.coste <= it->coste){
-                    abiertos.erase(it);
-                    hijo_izquierdo.secuencia.push_back(actTURN_L);
-                    abiertos.insert(hijo_izquierdo);
-                }
-            }else {
-                hijo_izquierdo.secuencia.push_back(actTURN_L);
-                abiertos.insert(hijo_izquierdo);
-            }
+            hijo_izquierdo.secuencia.push_back(actTURN_L);
+            abiertos.push(hijo_izquierdo);
         }
 
         //expandimos hijo de ir hacia delante
@@ -541,27 +521,18 @@ bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, cons
         if (!HayObstaculoDelante(hijo_avanzar.st)){
             if (cerrados.find(hijo_avanzar.st) == cerrados.end()){
                 hijo_avanzar.coste += determinarPeso(current.st, hijo_avanzar.st);
-                auto it = buscaNodo(abiertos,hijo_avanzar);
-                if (it != abiertos.cend()){
-                    if (hijo_avanzar.coste <= it->coste){
-                        abiertos.erase(it);
-                        hijo_avanzar.secuencia.push_back(actFORWARD);
-                        abiertos.insert(hijo_avanzar);
-                    }
-                }else {
-                    hijo_avanzar.secuencia.push_back(actFORWARD);
-                    abiertos.insert(hijo_avanzar);
+                hijo_avanzar.secuencia.push_back(actFORWARD);
+                abiertos.push(hijo_avanzar);
                 }
-            }
         }
 
         if (!abiertos.empty()){
-            current = *(abiertos.begin());
+            current = abiertos.top();
         }
 	}
     cout << "Terminada la busqueda\n";
 
-   // if (current.st.fila == destino.fila and current.st.columna == destino.columna){
+    if (current.st.fila == destino.fila and current.st.columna == destino.columna){
         cout << "Cargando el plan\n";
         plan = current.secuencia;
         cout << "Longitud del plan: " << plan.size() << endl;
@@ -569,10 +540,10 @@ bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, cons
         // ver el plan en el mapa
         VisualizaPlan(origen, plan);
         return true;
-//    }
-//    else {
-//        cout << "No encontrado plan\n";
-//    }
+    }
+    else {
+        cout << "No encontrado plan\n";
+    }
 
 
     return false;
