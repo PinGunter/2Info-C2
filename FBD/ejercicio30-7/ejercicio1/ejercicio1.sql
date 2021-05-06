@@ -2,7 +2,7 @@
 select distinct codpro from ventas where codpj='J1';
 
 -- b --
-select distinct ventas.* from ventas,pieza where cantidad>100;
+select distinct * from ventas where cantidad>100;
 
 -- c --
 select distinct nompro, nompie, nompj from proveedor,pieza,proyecto where proveedor.ciudad=pieza.ciudad and proveedor.ciudad=proyecto.ciudad;
