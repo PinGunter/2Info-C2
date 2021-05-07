@@ -26,7 +26,7 @@ Por tanto, no está conforme a lo que se obtiene en el AR, puesto que la proyecc
 **Ejercicio 3.2**
 
 ```sql
-select distinct codpro, codpie, codpj from ventas;
+select codpro, codpie, codpj from ventas;
 ```
 
 Salida:
@@ -43,7 +43,7 @@ Salida:
  S5  P3  J3 
  ```
 
-Es necesario usar `DISTINCT`porque la proyección no duplica tuplas.
+No es necesario usar `DISTINCT` porque se está proyectando sobre la llave primaria.
 
 **Ejercicio 3.3**
 

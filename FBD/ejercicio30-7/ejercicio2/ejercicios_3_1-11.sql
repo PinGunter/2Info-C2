@@ -1,7 +1,7 @@
 -- ejercicio 3.1 --
 select ciudad from proyecto;
 -- ejercicio 3.2 -- 
-select distinct codpro, codpie, codpj from ventas;
+select codpro, codpie, codpj from ventas;
 -- ejercicio 3.3 -- 
 select distinct * from pieza where (color='Gris' or color='Rojo') and ciudad='Madrid';
 -- ejercicio 3.4 -- 
