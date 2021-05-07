@@ -14,4 +14,4 @@ select distinct nompie from ventas, proveedor,pieza where ventas.codpro=proveedo
 select distinct proveedor.ciudad, proyecto.ciudad from proveedor,proyecto,ventas where ventas.codpro=proveedor.codpro and ventas.codpj=proyecto.codpj;
 
 -- f --
-select distinct pieza.codpie from pieza,proveedor,proyecto,ventas where ventas.codpie=pieza.codpie and ventas.codpj=proyecto.codpj and ventas.codpro=proveedor.codpro and proveedor.ciudad=proyecto.ciudad;
+select distinct codpie from proveedor,proyecto,ventas where ventas.codpj=proyecto.codpj and ventas.codpro=proveedor.codpro and proveedor.ciudad=proyecto.ciudad;
