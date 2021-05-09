@@ -414,7 +414,7 @@ bool ComportamientoJugador::pathFinding_Anchura(const estado &origen, const esta
 
 int ComportamientoJugador::determinarPeso(estado & actual, estado &siguiente){
 	char casilla_actual = mapaResultado[actual.fila][actual.columna];
-	char casilla_siguiente = mapaResultado[siguiente.fila][siguiente.columna];
+//	char casilla_siguiente = mapaResultado[siguiente.fila][siguiente.columna];
 	int peso = 0;
 	//bikini - k
 	//zapatillas - d
@@ -422,11 +422,11 @@ int ComportamientoJugador::determinarPeso(estado & actual, estado &siguiente){
 	//agua - a	 |	|- pesos mas grandes
 	//arena - t  |--
 
-	if (casilla_siguiente == 'K') {
+	if (casilla_actual == 'K') {
         actual.bikini = true;
         actual.zapatillas = false; //solo se permite un objeto;
     }
-	if (casilla_siguiente == 'D') {
+	if (casilla_actual == 'D') {
         actual.zapatillas = true;
         actual.bikini = false; //solo se permite un objeto;
     }
@@ -481,36 +481,41 @@ int ComportamientoJugador::calculaDistanciaManhattan(const estado & origen, cons
 }
 
 bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, const estado &destino, list<Action> &plan) {
-	cout << "Calculando plan costo uniforme" << endl;
-	plan.clear();
-	priority_queue<nodo> abiertos;
-	set<estado,ComparaEstados> cerrados;
+    cout << "Calculando plan costo uniforme" << endl;
+    plan.clear();
+    priority_queue<nodo> abiertos;
+    set<estado, ComparaEstados> cerrados;
 
-	nodo current;
-	current.st = origen;
-	current.secuencia.empty();
-	abiertos.push(current);
+    nodo current;
+    current.st = origen;
+    current.secuencia.empty();
+    abiertos.push(current);
 
-	while (!abiertos.empty() and (current.st.fila != destino.fila or current.st.columna != destino.columna)){
-        abiertos.pop();
+    while (!abiertos.empty() and (current.st.fila != destino.fila or current.st.columna != destino.columna)) {
+        while (cerrados.find(current.st) != cerrados.end()){
+            abiertos.pop();
+            current = abiertos.top();
+        }
         cerrados.insert(current.st);
 
         //expandimos hijo derecho
         nodo hijo_derecho = current;
-        hijo_derecho.st.orientacion = (hijo_derecho.st.orientacion+1)%4;
+        hijo_derecho.st.orientacion = (hijo_derecho.st.orientacion + 1) % 4;
         //si no esta en cerrados:
-        if (cerrados.find(hijo_derecho.st) == cerrados.end()){
-            hijo_derecho.coste += determinarPeso(current.st,hijo_derecho.st); //calculamos el peso de pasar al hijo derecho
+        if (cerrados.find(hijo_derecho.st) == cerrados.end()) {
+            hijo_derecho.coste += determinarPeso(current.st,
+                                                 hijo_derecho.st); //calculamos el peso de pasar al hijo derecho
             hijo_derecho.secuencia.push_back(actTURN_R);
             abiertos.push(hijo_derecho);
         }
 
         //expandimos hijo izquierdo
         nodo hijo_izquierdo = current;
-        hijo_izquierdo.st.orientacion = (hijo_izquierdo.st.orientacion+3)%4;
+        hijo_izquierdo.st.orientacion = (hijo_izquierdo.st.orientacion + 3) % 4;
         //si no esta en cerrados:
-        if (cerrados.find(hijo_izquierdo.st) == cerrados.end()){
-            hijo_izquierdo.coste += determinarPeso(current.st,hijo_izquierdo.st); //calculamos el peso de pasar al hijo izquierdo
+        if (cerrados.find(hijo_izquierdo.st) == cerrados.end()) {
+            hijo_izquierdo.coste += determinarPeso(current.st,
+                                                   hijo_izquierdo.st); //calculamos el peso de pasar al hijo izquierdo
             hijo_izquierdo.secuencia.push_back(actTURN_L);
             abiertos.push(hijo_izquierdo);
         }
@@ -518,21 +523,21 @@ bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, cons
         //expandimos hijo de ir hacia delante
         nodo hijo_avanzar = current;
 
-        if (!HayObstaculoDelante(hijo_avanzar.st)){
-            if (cerrados.find(hijo_avanzar.st) == cerrados.end()){
+        if (!HayObstaculoDelante(hijo_avanzar.st)) {
+            if (cerrados.find(hijo_avanzar.st) == cerrados.end()) {
                 hijo_avanzar.coste += determinarPeso(current.st, hijo_avanzar.st);
                 hijo_avanzar.secuencia.push_back(actFORWARD);
                 abiertos.push(hijo_avanzar);
-                }
+            }
         }
 
-        if (!abiertos.empty()){
+        if (!abiertos.empty()) {
             current = abiertos.top();
         }
-	}
+    }
     cout << "Terminada la busqueda\n";
 
-    if (current.st.fila == destino.fila and current.st.columna == destino.columna){
+    if (current.st.fila == destino.fila and current.st.columna == destino.columna) {
         cout << "Cargando el plan\n";
         plan = current.secuencia;
         cout << "Longitud del plan: " << plan.size() << endl;
@@ -540,12 +545,83 @@ bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, cons
         // ver el plan en el mapa
         VisualizaPlan(origen, plan);
         return true;
-    }
-    else {
+    } else {
         cout << "No encontrado plan\n";
     }
 
 
     return false;
 
+}
+
+bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const estado &destino, list<Action> &plan){
+    cout << "Calculando plan costo uniforme" << endl;
+    plan.clear();
+    priority_queue<nodo> abiertos;
+    set<estado, ComparaEstados> cerrados;
+
+    nodo current;
+    current.st = origen;
+    current.secuencia.empty();
+    abiertos.push(current);
+
+    int cumplidos = 0;
+
+    while (!abiertos.empty() and (current.st.fila != destino.fila or current.st.columna != destino.columna)) {
+        abiertos.pop();
+        cerrados.insert(current.st);
+
+        //expandimos hijo derecho
+        nodo hijo_derecho = current;
+        hijo_derecho.st.orientacion = (hijo_derecho.st.orientacion + 1) % 4;
+        //si no esta en cerrados:
+        if (cerrados.find(hijo_derecho.st) == cerrados.end()) {
+            hijo_derecho.coste += determinarPeso(current.st,
+                                                 hijo_derecho.st); //calculamos el peso de pasar al hijo derecho
+            hijo_derecho.secuencia.push_back(actTURN_R);
+            abiertos.push(hijo_derecho);
+        }
+
+        //expandimos hijo izquierdo
+        nodo hijo_izquierdo = current;
+        hijo_izquierdo.st.orientacion = (hijo_izquierdo.st.orientacion + 3) % 4;
+        //si no esta en cerrados:
+        if (cerrados.find(hijo_izquierdo.st) == cerrados.end()) {
+            hijo_izquierdo.coste += determinarPeso(current.st,
+                                                   hijo_izquierdo.st); //calculamos el peso de pasar al hijo izquierdo
+            hijo_izquierdo.secuencia.push_back(actTURN_L);
+            abiertos.push(hijo_izquierdo);
+        }
+
+        //expandimos hijo de ir hacia delante
+        nodo hijo_avanzar = current;
+
+        if (!HayObstaculoDelante(hijo_avanzar.st)) {
+            if (cerrados.find(hijo_avanzar.st) == cerrados.end()) {
+                hijo_avanzar.coste += determinarPeso(current.st, hijo_avanzar.st);
+                hijo_avanzar.secuencia.push_back(actFORWARD);
+                abiertos.push(hijo_avanzar);
+            }
+        }
+
+        if (!abiertos.empty()) {
+            current = abiertos.top();
+        }
+    }
+    cout << "Terminada la busqueda\n";
+
+    if (current.st.fila == destino.fila and current.st.columna == destino.columna) {
+        cout << "Cargando el plan\n";
+        plan = current.secuencia;
+        cout << "Longitud del plan: " << plan.size() << endl;
+        PintaPlan(plan);
+        // ver el plan en el mapa
+        VisualizaPlan(origen, plan);
+        return true;
+    } else {
+        cout << "No encontrado plan\n";
+    }
+
+
+    return false;
 }
