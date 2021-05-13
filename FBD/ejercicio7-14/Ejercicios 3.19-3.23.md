@@ -1,5 +1,7 @@
 ### Ejercicios 3.19-3.23
 
+###### Salvador Romero Cortés
+
 **Ejercicio 3.19. Mostrar las piezas vendidas por los proveedores de Madrid. (Fragmentando la consulta con ayuda del operador IN.) Compara la solución con la del ejercicio 3.15**
 
 ``` sql

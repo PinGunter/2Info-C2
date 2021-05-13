@@ -18,4 +18,4 @@ select dni,nombre,ape1,ape2 from alumnos where nota >= all (select nota from alu
 select dni, nombre, ape1, ape2 from alumnos minus select alumnos.dni,alumnos.nombre,alumnos.ape1,alumnos.ape2 from alumnos, alumnos alu where alumnos.nota < alu.nota;
 
 -- apartado f --
-
+select matricula.dni from matricula minus select matricula.dni from matricula mat, matricula where matricula.dni = mat.dni and matricula.codasi# != mat.codasi#;
