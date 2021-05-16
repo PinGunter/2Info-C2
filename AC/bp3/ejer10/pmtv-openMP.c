@@ -93,7 +93,7 @@ int main(int argc, char** argv) {
 		printf("Resultado V3[0] = %f <--> V3[%d] = %f\n",
 			v3[0], n - 1, v3[n - 1]);
 	}
-	printf("Tiempo: %11.9f\n", tiempo);
+	printf("Tiempo: %f11.9\n", tiempo);
 //liberacion de memoria dinamica
 	for (int i = 0; i < n; i++)
 		free(m[i]);

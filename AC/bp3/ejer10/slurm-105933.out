@@ -1,0 +1,41 @@
+Id. usuario del trabajo: a1estudiante23
+Id. del trabajo: 105933
+Nombre del trabajo especificado por usuario: SumaLocal
+Directorio de trbajo (en el que se ejecuta el script): /home/a1estudiante23/bp3/ejer10
+Cola: ac
+Nodo que ejecuta este trabajo: atcgrid.ugr.es
+Nº de nodos asignados al trabajo: 1
+Nodos asignados al trabajo: atcgrid2
+CPUs por nodo: 24
+PLANIFICACIÓN CON CHUNKS POR DEFECTO TAMAÑO 11520
+STATIC
+Matriz m[0][0] = 0.000000 <--> m[11519][11519] = 0.606002
+V1[0] = 0.000985 <--> V1[11519] = 0.387567
+Resultado V3[0] = 0.000000 <--> V3[11519] = 2865.917184
+Tiempo: 0.089376
+DYNAMIC
+Matriz m[0][0] = 0.000000 <--> m[11519][11519] = 0.606002
+V1[0] = 0.000985 <--> V1[11519] = 0.387567
+Resultado V3[0] = 0.000000 <--> V3[11519] = 2865.917184
+Tiempo: 0.061604
+GUIDED
+Matriz m[0][0] = 0.000000 <--> m[11519][11519] = 0.606002
+V1[0] = 0.000985 <--> V1[11519] = 0.387567
+Resultado V3[0] = 0.000000 <--> V3[11519] = 2865.917184
+Tiempo: 0.034893
+PLANIFICACIÓN CON CHUNKS POR DEFECTO TAMAÑO 23040
+STATIC
+Matriz m[0][0] = 0.000000 <--> m[23039][23039] = 0.376615
+V1[0] = 0.000985 <--> V1[23039] = 0.155590
+Resultado V3[0] = 0.000000 <--> V3[23039] = 5782.177710
+Tiempo: 0.615148
+DYNAMIC
+Matriz m[0][0] = 0.000000 <--> m[23039][23039] = 0.376615
+V1[0] = 0.000985 <--> V1[23039] = 0.155590
+Resultado V3[0] = 0.000000 <--> V3[23039] = 5782.177710
+Tiempo: 0.447272
+GUIDED
+Matriz m[0][0] = 0.000000 <--> m[23039][23039] = 0.376615
+V1[0] = 0.000985 <--> V1[23039] = 0.155590
+Resultado V3[0] = 0.000000 <--> V3[23039] = 5782.177710
+Tiempo: 0.421403
