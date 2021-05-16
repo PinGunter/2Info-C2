@@ -81,9 +81,10 @@ Action ComportamientoJugador::think(Sensores sensores) {
 // Llama al algoritmo de busqueda que se usara en cada comportamiento del agente
 // Level representa el comportamiento en el que fue iniciado el agente.
 bool ComportamientoJugador::pathFinding (int level, const estado &origen, const list<estado> &destino, list<Action> &plan){
-	switch (level){
-		estado un_objetivo;
-		case 0: cout << "Demo\n";
+    estado un_objetivo;
+    list<estado>::const_iterator it = destino.cbegin();
+    switch (level){
+        case 0: cout << "Demo\n";
 						un_objetivo = objetivos.front();
 						cout << "fila: " << un_objetivo.fila << " col:" << un_objetivo.columna << endl;
 			      return pathFinding_Profundidad(origen,un_objetivo,plan);
@@ -101,12 +102,15 @@ bool ComportamientoJugador::pathFinding (int level, const estado &origen, const 
 						return pathFinding_CosteUniforme(origen,un_objetivo,plan);
 						break;
 		case 3: cout << "Optimo en coste 3 Objetivos\n";
-						// Incluir aqui la llamada al algoritmo de busqueda para 3 objetivos
-						cout << "No implementado aun\n";
-						break;
+						cout << "Objetivo A:\nfila: " << (*it).fila << " col: " << (*it).columna << endl;
+						++it;
+                        cout << "Objetivo B:\nfila: " << (*it).fila << " col: " << (*it).columna << endl;
+                        ++it;
+                        cout << "Objetivo C:\nfila: " << (*it).fila << " col: " << (*it).columna << endl;
+                        return pathFinding_3_objetivos(origen,destino,plan);
+                        break;
 		case 4: cout << "Algoritmo de busqueda usado en el reto\n";
-						// Incluir aqui la llamada al algoritmo de busqueda usado en el nivel 2
-						cout << "No implementado aun\n";
+//						return pathFinding_Reto(origen,destino, plan);
 						break;
 	}
 	return false;
@@ -154,17 +158,20 @@ bool ComportamientoJugador::HayObstaculoDelante(estado &st){
 	}
 }
 
-
-
-
 struct nodo{
 	estado st;
 	int coste;
 	list<Action> secuencia;
 };
 
+bool masObjetivos(const estado & a, const estado & b){
+    return a.destinos.size() < b.destinos.size();
+}
+
 bool operator<(const nodo &uno, const nodo &otro) { //operador para la priority queue
-    return uno.coste > otro.coste;
+    if ((otro.coste < uno.coste) or (otro.coste < uno.coste and masObjetivos(otro.st,uno.st)))
+        return true;
+     else return false;
 }
 
 bool operator==(const estado & uno, const estado & otro){
@@ -190,7 +197,9 @@ struct ComparaEstados{
 		if ((a.fila > n.fila) or (a.fila == n.fila and a.columna > n.columna) or
 	      (a.fila == n.fila and a.columna == n.columna and a.orientacion > n.orientacion)
 	      or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas > n.zapatillas)
-             or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini > n.bikini))
+             or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini > n.bikini)
+                or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini > n.bikini and
+                masObjetivos(n,a)))
 			return true;
 		else
 			return false;
@@ -270,11 +279,6 @@ bool ComportamientoJugador::pathFinding_Profundidad(const estado &origen, const 
 
 	return false;
 }
-
-
-
-
-
 
 
 // Sacar por la consola la secuencia del plan obtenido
@@ -470,14 +474,28 @@ int ComportamientoJugador::determinarPeso(estado & actual, estado &siguiente){
         }
 	}
 
+	for (auto it = actual.destinos.begin(); it != actual.destinos.end(); ++it){
+	    if (actual.fila == (*it).fila and actual.columna == (*it).columna){
+	        actual.destinos.erase(it);
+	    }
+	}
+
 	return peso;
 
 }
 
-int ComportamientoJugador::calculaDistanciaManhattan(const estado & origen, const estado & destino){
-	int x = abs(destino.fila - origen.fila);
-	int y = abs(destino.columna - origen.columna);
-	return (x+y);
+
+void actualizaObjetivos(estado & st, const list<estado> & destinos){
+
+    //    int i=0;
+//    for (auto it = destinos.cbegin(); it != destinos.cend(); ++it){
+//        if (st.fila == (*it).fila and st.columna == (*it).columna){
+//            st.objetivos[i] = true;
+//            cout << "HE PASADO POR EL OBJETIVO [" << i << "] - (" << (*it).fila << ", " << (*it).columna << ") " << endl;
+//            cout << "LLEVO " << st.objetivos[0]+st.objetivos[1]+st.objetivos[2] << " OBJETIVOS COMPLETOS" << endl;
+//        }
+//        i++;
+//    }
 }
 
 bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, const estado &destino, list<Action> &plan) {
@@ -554,7 +572,7 @@ bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, cons
 
 }
 
-bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const estado &destino, list<Action> &plan){
+bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const list<estado> & destinos, list<Action> &plan){
     cout << "Calculando plan costo uniforme" << endl;
     plan.clear();
     priority_queue<nodo> abiertos;
@@ -565,9 +583,8 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
     current.secuencia.empty();
     abiertos.push(current);
 
-    int cumplidos = 0;
 
-    while (!abiertos.empty() and (current.st.fila != destino.fila or current.st.columna != destino.columna)) {
+    while (!abiertos.empty() and (!current.st.destinos.empty())) {
         abiertos.pop();
         cerrados.insert(current.st);
 
@@ -578,6 +595,7 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
         if (cerrados.find(hijo_derecho.st) == cerrados.end()) {
             hijo_derecho.coste += determinarPeso(current.st,
                                                  hijo_derecho.st); //calculamos el peso de pasar al hijo derecho
+//            actualizaObjetivos(hijo_derecho.st,destinos);
             hijo_derecho.secuencia.push_back(actTURN_R);
             abiertos.push(hijo_derecho);
         }
@@ -589,6 +607,7 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
         if (cerrados.find(hijo_izquierdo.st) == cerrados.end()) {
             hijo_izquierdo.coste += determinarPeso(current.st,
                                                    hijo_izquierdo.st); //calculamos el peso de pasar al hijo izquierdo
+//            actualizaObjetivos(hijo_izquierdo.st,destinos);
             hijo_izquierdo.secuencia.push_back(actTURN_L);
             abiertos.push(hijo_izquierdo);
         }
@@ -599,6 +618,7 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
         if (!HayObstaculoDelante(hijo_avanzar.st)) {
             if (cerrados.find(hijo_avanzar.st) == cerrados.end()) {
                 hijo_avanzar.coste += determinarPeso(current.st, hijo_avanzar.st);
+//                actualizaObjetivos(hijo_avanzar.st,destinos);
                 hijo_avanzar.secuencia.push_back(actFORWARD);
                 abiertos.push(hijo_avanzar);
             }
@@ -610,7 +630,7 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
     }
     cout << "Terminada la busqueda\n";
 
-    if (current.st.fila == destino.fila and current.st.columna == destino.columna) {
+//    if (current.st.destinos.empty()) {
         cout << "Cargando el plan\n";
         plan = current.secuencia;
         cout << "Longitud del plan: " << plan.size() << endl;
@@ -618,9 +638,9 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
         // ver el plan en el mapa
         VisualizaPlan(origen, plan);
         return true;
-    } else {
-        cout << "No encontrado plan\n";
-    }
+//   } else {
+//       cout << "No encontrado plan\n";
+//   }
 
 
     return false;

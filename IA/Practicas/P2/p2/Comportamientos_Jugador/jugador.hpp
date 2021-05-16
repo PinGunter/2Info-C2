@@ -22,17 +22,24 @@ struct estado {
   int columna;
   int orientacion;
   bool bikini, zapatillas;
+  list<estado> destinos;
 };
 
 class ComportamientoJugador : public Comportamiento {
   public:
     ComportamientoJugador(unsigned int size) : Comportamiento(size) {
-      // Inicializar Variables de Estado
+        char ** mapa_unk;
+        mapa_unk = new char * [size];
+        for (int i=1; i < size; i++){
+            mapa_unk[i] = new char[size];
+        }
+        list<estado> destino;
       hayPlan = false;
     }
     ComportamientoJugador(std::vector< std::vector< unsigned char> > mapaR) : Comportamiento(mapaR) {
       // Inicializar Variables de Estado
       hayPlan = false;
+
 
     }
     ComportamientoJugador(const ComportamientoJugador & comport) : Comportamiento(comport){}
@@ -55,11 +62,11 @@ class ComportamientoJugador : public Comportamiento {
     bool pathFinding_Profundidad(const estado &origen, const estado &destino, list<Action> &plan);
     bool pathFinding_Anchura(const estado &origen, const estado &destino, list<Action> &plan);
     bool pathFinding_CosteUniforme(const estado &origen, const estado &destino, list<Action> &plan);
-    bool pathFinding_3_objetivos(const estado &origen, const estado &destino, list<Action> &plan);  //falta implementar
+    bool pathFinding_3_objetivos(const estado &origen, const list<estado> & destinos, list<Action> &plan);  //falta implementar
+    bool pathFinding_Reto(const estado &origen, const list<estado> &destinos, list<Action> &plan);
 
 
     int determinarPeso(estado & actual, estado & siguiente);
-    int calculaDistanciaManhattan(const estado & origen, const estado & destino);
     void PintaPlan(list<Action> plan);
     bool HayObstaculoDelante(estado &st);
 
