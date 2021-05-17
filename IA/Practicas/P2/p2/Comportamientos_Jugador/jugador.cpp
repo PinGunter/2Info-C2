@@ -164,10 +164,6 @@ struct nodo{
 	list<Action> secuencia;
 };
 
-bool masObjetivos(const estado & a, const estado & b){
-    return a.objetivos.size() < b.objetivos.size();
-}
-
 bool operator<(const nodo &uno, const nodo &otro) { //operador para la priority queue
     if ((otro.coste < uno.coste) or
         ((otro.coste == uno.coste) and (otro.st.objetivos.size() < uno.st.objetivos.size())))
@@ -192,7 +188,14 @@ bool operator==(const nodo & uno, const nodo & otro){
             uno.coste == otro.coste;
 }
 
-
+bool operator<(const list<estado> & uno, const list<estado> & otro){
+    for (auto it = uno.cbegin(), et = otro.cbegin(); it != uno.cend() && et!=otro.cend(); ++it, ++et){
+        if (((*it).fila > (*et).fila) or ((*it).fila == (*et).fila and (*it).columna > (*et).columna)){
+            return true;
+        }
+    }
+    return false;
+}
 
 struct ComparaEstados{
 	bool operator()(const estado &a, const estado &n) const{
@@ -200,7 +203,8 @@ struct ComparaEstados{
 	      (a.fila == n.fila and a.columna == n.columna and a.orientacion > n.orientacion)
 	      or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas > n.zapatillas)
              or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini > n.bikini)
-                or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini == n.bikini and a.objetivos.size() < n.objetivos.size()))
+                or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini == n.bikini and a.objetivos.size() < n.objetivos.size())
+                    or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini == n.bikini and a.objetivos.size() == n.objetivos.size() and a.objetivos < n.objetivos))
 			return true;
 		else
 			return false;
@@ -586,12 +590,10 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
 
 
     while (!abiertos.empty() and (!current.st.objetivos.empty())) {
-//        while (cerrados.find(current.st) != cerrados.end()){
-//            abiertos.pop();
-//            current = abiertos.top();
-//        }
-
-        abiertos.pop();
+        while (cerrados.find(current.st) != cerrados.end()){
+            abiertos.pop();
+            current = abiertos.top();
+        }
         cerrados.insert(current.st);
 
         //expandimos hijo derecho
@@ -600,7 +602,6 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
         //si no esta en cerrados
         hijo_derecho.coste += determinarPeso(current.st,
                                              hijo_derecho.st); //calculamos el peso de pasar al hijo derecho
-//        actualizaObjetivos(hijo_derecho.st);
         if (cerrados.find(hijo_derecho.st) == cerrados.end()) {
             hijo_derecho.secuencia.push_back(actTURN_R);
             abiertos.push(hijo_derecho);
@@ -612,7 +613,6 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
         //si no esta en cerrados:
         hijo_izquierdo.coste += determinarPeso(current.st,
                                                hijo_izquierdo.st); //calculamos el peso de pasar al hijo izquierdo
-//        actualizaObjetivos(hijo_izquierdo.st);
         if (cerrados.find(hijo_izquierdo.st) == cerrados.end()) {
             hijo_izquierdo.secuencia.push_back(actTURN_L);
             abiertos.push(hijo_izquierdo);

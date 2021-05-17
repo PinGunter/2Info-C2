@@ -28,16 +28,9 @@ struct estado {
 class ComportamientoJugador : public Comportamiento {
   public:
     ComportamientoJugador(unsigned int size) : Comportamiento(size) {
-        char ** mapa_unk;
-        mapa_unk = new char * [size];
-        for (int i=1; i < size; i++){
-            mapa_unk[i] = new char[size];
-        }
-        list<estado> destino;
       hayPlan = false;
     }
     ComportamientoJugador(std::vector< std::vector< unsigned char> > mapaR) : Comportamiento(mapaR) {
-      // Inicializar Variables de Estado
       hayPlan = false;
 
 
