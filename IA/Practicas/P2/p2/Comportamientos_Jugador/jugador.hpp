@@ -22,7 +22,7 @@ struct estado {
   int columna;
   int orientacion;
   bool bikini, zapatillas;
-  list<estado> destinos;
+  list<estado> objetivos;
 };
 
 class ComportamientoJugador : public Comportamiento {
@@ -65,6 +65,7 @@ class ComportamientoJugador : public Comportamiento {
     bool pathFinding_3_objetivos(const estado &origen, const list<estado> & destinos, list<Action> &plan);  //falta implementar
     bool pathFinding_Reto(const estado &origen, const list<estado> &destinos, list<Action> &plan);
 
+    void actualizarItems(estado & actual);
 
     int determinarPeso(estado & actual, estado & siguiente);
     void PintaPlan(list<Action> plan);

@@ -26,7 +26,7 @@ Action ComportamientoJugador::think(Sensores sensores) {
 	cout << "Col : " << actual.columna << endl;
 	cout << "Ori : " << actual.orientacion << endl;
 
-	// Capturo los destinos
+	// Capturo los objetivos
 	cout << "sensores.num_destinos : " << sensores.num_destinos << endl;
 	objetivos.clear();
 	for (int i=0; i<sensores.num_destinos; i++){
@@ -85,19 +85,19 @@ bool ComportamientoJugador::pathFinding (int level, const estado &origen, const 
     list<estado>::const_iterator it = destino.cbegin();
     switch (level){
         case 0: cout << "Demo\n";
-						un_objetivo = objetivos.front();
+						un_objetivo = destino.front();
 						cout << "fila: " << un_objetivo.fila << " col:" << un_objetivo.columna << endl;
 			      return pathFinding_Profundidad(origen,un_objetivo,plan);
 						break;
 
 		case 1: cout << "Optimo numero de acciones\n";
 			      // Incluir aqui la llamada al busqueda en anchura
-						un_objetivo = objetivos.front();
+						un_objetivo = destino.front();
 						cout << "fila: " << un_objetivo.fila << " col:" << un_objetivo.columna << endl;
 					return pathFinding_Anchura(origen,un_objetivo,plan);
 						break;
 		case 2: cout << "Optimo en coste 1 Objetivo\n";
-						un_objetivo = objetivos.front();
+						un_objetivo = destino.front();
 						cout << "fila: " << un_objetivo.fila << " col:" << un_objetivo.columna << endl;
 						return pathFinding_CosteUniforme(origen,un_objetivo,plan);
 						break;
@@ -165,13 +165,14 @@ struct nodo{
 };
 
 bool masObjetivos(const estado & a, const estado & b){
-    return a.destinos.size() < b.destinos.size();
+    return a.objetivos.size() < b.objetivos.size();
 }
 
 bool operator<(const nodo &uno, const nodo &otro) { //operador para la priority queue
-    if ((otro.coste < uno.coste) or (otro.coste < uno.coste and masObjetivos(otro.st,uno.st)))
-        return true;
-     else return false;
+    if ((otro.coste < uno.coste) or
+        ((otro.coste == uno.coste) and (otro.st.objetivos.size() < uno.st.objetivos.size())))
+        return  true;
+    else return false;
 }
 
 bool operator==(const estado & uno, const estado & otro){
@@ -180,7 +181,8 @@ bool operator==(const estado & uno, const estado & otro){
             uno.bikini == otro.bikini &&
             uno.fila == otro.fila &&
             uno.columna == otro.columna &&
-            uno.orientacion == otro.orientacion;
+            uno.orientacion == otro.orientacion &&
+            uno.objetivos == otro.objetivos;
 }
 
 bool operator==(const nodo & uno, const nodo & otro){
@@ -198,14 +200,26 @@ struct ComparaEstados{
 	      (a.fila == n.fila and a.columna == n.columna and a.orientacion > n.orientacion)
 	      or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas > n.zapatillas)
              or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini > n.bikini)
-                or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini > n.bikini and
-                masObjetivos(n,a)))
+                or (a.fila == n.fila and a.columna == n.columna and a.orientacion == n.orientacion and a.zapatillas == n.zapatillas and a.bikini == n.bikini and a.objetivos.size() < n.objetivos.size()))
 			return true;
 		else
 			return false;
 	}
 };
 
+
+void ComportamientoJugador::actualizarItems(estado &actual) {
+    char casilla_actual = mapaResultado[actual.fila][actual.columna];
+
+    if (casilla_actual == 'K') {
+        actual.bikini = true;
+        actual.zapatillas = false; //solo se permite un objeto;
+    }
+    if (casilla_actual == 'D') {
+        actual.zapatillas = true;
+        actual.bikini = false; //solo se permite un objeto;
+    }
+}
 
 
 // Implementación de la busqueda en profundidad.
@@ -426,16 +440,6 @@ int ComportamientoJugador::determinarPeso(estado & actual, estado &siguiente){
 	//agua - a	 |	|- pesos mas grandes
 	//arena - t  |--
 
-	if (casilla_actual == 'K') {
-        actual.bikini = true;
-        actual.zapatillas = false; //solo se permite un objeto;
-    }
-	if (casilla_actual == 'D') {
-        actual.zapatillas = true;
-        actual.bikini = false; //solo se permite un objeto;
-    }
-
-
 	if  (siguiente.orientacion != actual.orientacion) { // si se rota
         if (casilla_actual == 'A'){ //Estamos en agua
             if (actual.bikini){
@@ -473,29 +477,20 @@ int ComportamientoJugador::determinarPeso(estado & actual, estado &siguiente){
             peso++;     //una casilla "normal"
         }
 	}
-
-	for (auto it = actual.destinos.begin(); it != actual.destinos.end(); ++it){
-	    if (actual.fila == (*it).fila and actual.columna == (*it).columna){
-	        actual.destinos.erase(it);
-	    }
-	}
-
-	return peso;
+    return peso;
 
 }
 
 
-void actualizaObjetivos(estado & st, const list<estado> & destinos){
-
-    //    int i=0;
-//    for (auto it = destinos.cbegin(); it != destinos.cend(); ++it){
-//        if (st.fila == (*it).fila and st.columna == (*it).columna){
-//            st.objetivos[i] = true;
-//            cout << "HE PASADO POR EL OBJETIVO [" << i << "] - (" << (*it).fila << ", " << (*it).columna << ") " << endl;
-//            cout << "LLEVO " << st.objetivos[0]+st.objetivos[1]+st.objetivos[2] << " OBJETIVOS COMPLETOS" << endl;
-//        }
-//        i++;
-//    }
+void actualizaObjetivos(estado & actual){
+    list<estado>::iterator a_borrar = actual.objetivos.end();
+    for (auto it = actual.objetivos.begin(); it != actual.objetivos.end(); ++it){
+        if (actual.fila == (*it).fila and actual.columna == (*it).columna){
+            a_borrar = it;
+        }
+    }
+    if (a_borrar != actual.objetivos.end())
+        actual.objetivos.erase(a_borrar);
 }
 
 bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, const estado &destino, list<Action> &plan) {
@@ -520,9 +515,9 @@ bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, cons
         nodo hijo_derecho = current;
         hijo_derecho.st.orientacion = (hijo_derecho.st.orientacion + 1) % 4;
         //si no esta en cerrados:
+        hijo_derecho.coste += determinarPeso(current.st,
+                                             hijo_derecho.st); //calculamos el peso de pasar al hijo derecho
         if (cerrados.find(hijo_derecho.st) == cerrados.end()) {
-            hijo_derecho.coste += determinarPeso(current.st,
-                                                 hijo_derecho.st); //calculamos el peso de pasar al hijo derecho
             hijo_derecho.secuencia.push_back(actTURN_R);
             abiertos.push(hijo_derecho);
         }
@@ -531,9 +526,9 @@ bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, cons
         nodo hijo_izquierdo = current;
         hijo_izquierdo.st.orientacion = (hijo_izquierdo.st.orientacion + 3) % 4;
         //si no esta en cerrados:
+        hijo_izquierdo.coste += determinarPeso(current.st,
+                                               hijo_izquierdo.st); //calculamos el peso de pasar al hijo izquierdo
         if (cerrados.find(hijo_izquierdo.st) == cerrados.end()) {
-            hijo_izquierdo.coste += determinarPeso(current.st,
-                                                   hijo_izquierdo.st); //calculamos el peso de pasar al hijo izquierdo
             hijo_izquierdo.secuencia.push_back(actTURN_L);
             abiertos.push(hijo_izquierdo);
         }
@@ -541,9 +536,10 @@ bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, cons
         //expandimos hijo de ir hacia delante
         nodo hijo_avanzar = current;
 
+        hijo_avanzar.coste += determinarPeso(current.st, hijo_avanzar.st);
         if (!HayObstaculoDelante(hijo_avanzar.st)) {
             if (cerrados.find(hijo_avanzar.st) == cerrados.end()) {
-                hijo_avanzar.coste += determinarPeso(current.st, hijo_avanzar.st);
+                actualizarItems(hijo_avanzar.st);
                 hijo_avanzar.secuencia.push_back(actFORWARD);
                 abiertos.push(hijo_avanzar);
             }
@@ -573,29 +569,39 @@ bool ComportamientoJugador::pathFinding_CosteUniforme(const estado &origen, cons
 }
 
 bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const list<estado> & destinos, list<Action> &plan){
-    cout << "Calculando plan costo uniforme" << endl;
+    cout << "Calculando plan óptimo de batería con 3 objetivos" << endl;
     plan.clear();
     priority_queue<nodo> abiertos;
     set<estado, ComparaEstados> cerrados;
 
     nodo current;
     current.st = origen;
+    current.coste = 0;
     current.secuencia.empty();
+    for (auto e : destinos){        // inicializamos los destinos
+        current.st.objetivos.push_back(e);
+    }
+    actualizaObjetivos(current.st); //comprobamos si esta en un objetivo al empezar el recorrido
     abiertos.push(current);
 
 
-    while (!abiertos.empty() and (!current.st.destinos.empty())) {
+    while (!abiertos.empty() and (!current.st.objetivos.empty())) {
+//        while (cerrados.find(current.st) != cerrados.end()){
+//            abiertos.pop();
+//            current = abiertos.top();
+//        }
+
         abiertos.pop();
         cerrados.insert(current.st);
 
         //expandimos hijo derecho
         nodo hijo_derecho = current;
         hijo_derecho.st.orientacion = (hijo_derecho.st.orientacion + 1) % 4;
-        //si no esta en cerrados:
+        //si no esta en cerrados
+        hijo_derecho.coste += determinarPeso(current.st,
+                                             hijo_derecho.st); //calculamos el peso de pasar al hijo derecho
+//        actualizaObjetivos(hijo_derecho.st);
         if (cerrados.find(hijo_derecho.st) == cerrados.end()) {
-            hijo_derecho.coste += determinarPeso(current.st,
-                                                 hijo_derecho.st); //calculamos el peso de pasar al hijo derecho
-//            actualizaObjetivos(hijo_derecho.st,destinos);
             hijo_derecho.secuencia.push_back(actTURN_R);
             abiertos.push(hijo_derecho);
         }
@@ -604,21 +610,21 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
         nodo hijo_izquierdo = current;
         hijo_izquierdo.st.orientacion = (hijo_izquierdo.st.orientacion + 3) % 4;
         //si no esta en cerrados:
+        hijo_izquierdo.coste += determinarPeso(current.st,
+                                               hijo_izquierdo.st); //calculamos el peso de pasar al hijo izquierdo
+//        actualizaObjetivos(hijo_izquierdo.st);
         if (cerrados.find(hijo_izquierdo.st) == cerrados.end()) {
-            hijo_izquierdo.coste += determinarPeso(current.st,
-                                                   hijo_izquierdo.st); //calculamos el peso de pasar al hijo izquierdo
-//            actualizaObjetivos(hijo_izquierdo.st,destinos);
             hijo_izquierdo.secuencia.push_back(actTURN_L);
             abiertos.push(hijo_izquierdo);
         }
 
         //expandimos hijo de ir hacia delante
         nodo hijo_avanzar = current;
-
+        hijo_avanzar.coste += determinarPeso(current.st, hijo_avanzar.st);
         if (!HayObstaculoDelante(hijo_avanzar.st)) {
+            actualizarItems(hijo_avanzar.st);
+            actualizaObjetivos(hijo_avanzar.st);
             if (cerrados.find(hijo_avanzar.st) == cerrados.end()) {
-                hijo_avanzar.coste += determinarPeso(current.st, hijo_avanzar.st);
-//                actualizaObjetivos(hijo_avanzar.st,destinos);
                 hijo_avanzar.secuencia.push_back(actFORWARD);
                 abiertos.push(hijo_avanzar);
             }
@@ -630,7 +636,7 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
     }
     cout << "Terminada la busqueda\n";
 
-//    if (current.st.destinos.empty()) {
+    if (current.st.objetivos.empty()) {
         cout << "Cargando el plan\n";
         plan = current.secuencia;
         cout << "Longitud del plan: " << plan.size() << endl;
@@ -638,9 +644,9 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
         // ver el plan en el mapa
         VisualizaPlan(origen, plan);
         return true;
-//   } else {
-//       cout << "No encontrado plan\n";
-//   }
+   } else {
+       cout << "No encontrado plan\n";
+   }
 
 
     return false;

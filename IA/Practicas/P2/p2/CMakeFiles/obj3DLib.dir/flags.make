@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/salva/LosMaravillososMundosDeBelkan/include
+CXX_INCLUDES = -I/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include
 
-CXX_FLAGS =  -fopenmp -pthread -std=c++11 -g
+CXX_FLAGS =  -fopenmp -pthread -std=c++11
 

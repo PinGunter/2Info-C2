@@ -6,31 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/entidad.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/entidad.cpp
 motorlib/entidad.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/motorlib/entidad.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/motorlib/entidad.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/mapa.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/mapa.cpp
 motorlib/mapa.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/motorlib/mapa.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/motorlib/mapa.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/monitor.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/monitor.cpp
 motorlib/monitor.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/motorlib/monitor.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/motorlib/monitor.hpp
 fstream
 -
 
-/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/motor_grafico.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/motor_grafico.cpp
 motorlib.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/motorlib.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/motorlib.hpp
 glui/glui.h
 -
 dirent.h
 -
 
-/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/motor_juego.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/motor_juego.cpp
 motorlib.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/motorlib.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/motorlib.hpp
 unistd.h
 -
 

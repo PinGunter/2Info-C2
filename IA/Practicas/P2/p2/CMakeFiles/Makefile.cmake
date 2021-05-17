@@ -30,7 +30,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeDetermineCompilerABI.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeDetermineCompilerId.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeDetermineSystem.cmake"
+  "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeFindBinUtils.cmake"
+  "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeFindCodeBlocks.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeGenericSystem.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake"
@@ -42,6 +44,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeTestCCompiler.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeTestCXXCompiler.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeTestCompilerCommon.cmake"
+  "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/CMakeUnixFindMake.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/ADSP-DetermineCompiler.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/ARMClang-DetermineCompiler.cmake"
@@ -103,6 +106,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/Platform/UnixPaths.cmake"
+  "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/ProcessorCount.cmake"
   "/home/salva/clion/bin/cmake/linux/share/cmake-3.19/Modules/SelectLibraryConfigurations.cmake"
   )
 

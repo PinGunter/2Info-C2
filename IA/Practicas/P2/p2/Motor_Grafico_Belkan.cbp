@@ -8,480 +8,578 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="BelkanSG">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/BelkanSG" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/BelkanSG" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 BelkanSG"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 BelkanSG"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="BelkanSG/fast">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/BelkanSG" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/BelkanSG" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 BelkanSG/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 BelkanSG/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Belkan">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/Belkan" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Belkan" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 Belkan"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 Belkan"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Belkan/fast">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/Belkan" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Belkan" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 Belkan/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 Belkan/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="motorLib">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/lib/libmotorLib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/lib/libmotorLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 motorLib"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 motorLib"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="motorLib/fast">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/lib/libmotorLib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/lib/libmotorLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 motorLib/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 motorLib/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="obj3DLib">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/lib/libobj3DLib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/lib/libobj3DLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 obj3DLib"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 obj3DLib"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="obj3DLib/fast">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/lib/libobj3DLib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/lib/libobj3DLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 obj3DLib/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 obj3DLib/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="GLUILib">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/lib/libGLUILib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/lib/libGLUILib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 GLUILib"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 GLUILib"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="GLUILib/fast">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/lib/libGLUILib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/lib/libGLUILib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 GLUILib/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 GLUILib/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="modelosBelkanLib">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/lib/libmodelosBelkanLib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/lib/libmodelosBelkanLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 modelosBelkanLib"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 modelosBelkanLib"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="modelosBelkanLib/fast">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/lib/libmodelosBelkanLib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/lib/libmodelosBelkanLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 modelosBelkanLib/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 modelosBelkanLib/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="comportamientosLib">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/lib/libcomportamientosLib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/lib/libcomportamientosLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 comportamientosLib"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 comportamientosLib"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="comportamientosLib/fast">
-				<Option output="/home/salva/LosMaravillososMundosDeBelkan/lib/libcomportamientosLib.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/salva/LosMaravillososMundosDeBelkan"/>
+				<Option output="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/lib/libcomportamientosLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/salva/LosMaravillososMundosDeBelkan/include"/>
+					<Add directory="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 comportamientosLib/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/salva/LosMaravillososMundosDeBelkan/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 comportamientosLib/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/aldeano.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/aldeano.cpp">
 			<Option target="comportamientosLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/aldeano.hpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/aldeano.hpp">
 			<Option target="comportamientosLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/jugador.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/jugador.cpp">
 			<Option target="comportamientosLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/Comportamientos_Jugador/jugador.hpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/Comportamientos_Jugador/jugador.hpp">
 			<Option target="comportamientosLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/bin_src/juego.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/bin_src/juego.cc">
 			<Option target="Belkan"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/bin_src/juegoSG.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/bin_src/juegoSG.cc">
 			<Option target="BelkanSG"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/comportamientos/comportamiento.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/comportamientos/comportamiento.cpp">
 			<Option target="comportamientosLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/algebra3.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/algebra3.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/arcball.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/arcball.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_add_controls.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_add_controls.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_bitmap_img_data.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_bitmap_img_data.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_bitmaps.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_bitmaps.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_button.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_button.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_checkbox.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_checkbox.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_column.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_column.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_commandline.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_commandline.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_control.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_control.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_edittext.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_edittext.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_filebrowser.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_filebrowser.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_list.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_list.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_listbox.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_listbox.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_mouse_iaction.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_mouse_iaction.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_node.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_node.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_panel.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_panel.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_radio.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_radio.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_rollout.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_rollout.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_rotation.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_rotation.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_scrollbar.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_scrollbar.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_separator.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_separator.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_spinner.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_spinner.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_statictext.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_statictext.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_string.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_string.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_textbox.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_textbox.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_translation.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_translation.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_tree.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_tree.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_treepanel.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_treepanel.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/glui_window.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/glui_window.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/quaternion.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/quaternion.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/glui/viewmodel.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/glui/viewmodel.cpp">
 			<Option target="GLUILib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/aldeano.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/aldeano.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/brazo.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/brazo.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/cabeza.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/cabeza.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/cintura.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/cintura.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/pierna.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/pierna.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/torso.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/torso.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/arbol/arbol.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/arbol/arbol.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/item/item.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/item/item.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/jugador/jugador3d.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/jugador/jugador3d.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/jugador/quesito.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/jugador/quesito.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/modelos/retrato.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/retrato.cpp">
 			<Option target="modelosBelkanLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/entidad.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/entidad.cpp">
 			<Option target="motorLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/mapa.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/mapa.cpp">
 			<Option target="motorLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/monitor.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/monitor.cpp">
 			<Option target="motorLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/motor_grafico.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/motor_grafico.cpp">
 			<Option target="motorLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/motor_juego.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/motor_juego.cpp">
 			<Option target="motorLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/motorlib/util.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/motorlib/util.cpp">
 			<Option target="motorLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/cono3d.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/cono3d.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/cono3dwire.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/cono3dwire.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/cubo3d.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/cubo3d.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/dodecaedro3d.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/dodecaedro3d.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/esfera3d.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/esfera3d.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/file_ply_stl.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/file_ply_stl.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/icosaedro3d.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/icosaedro3d.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/jpeg_reader/jpg_imagen.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/jpeg_reader/jpg_imagen.cpp">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/jpeg_reader/jpg_memsrc.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/jpeg_reader/jpg_memsrc.cpp">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/jpeg_reader/jpg_readwrite.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/jpeg_reader/jpg_readwrite.cpp">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/luz.cpp">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/luz.cpp">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/objeto3d.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/objeto3d.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/objrevolucion3d.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/objrevolucion3d.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/octaedro3d.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/octaedro3d.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/tetraedro3d.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/tetraedro3d.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/toro3d.cc">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/toro3d.cc">
 			<Option target="obj3DLib"/>
 		</Unit>
-		<Unit filename="/home/salva/LosMaravillososMundosDeBelkan/CMakeLists.txt">
+		<Unit filename="/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

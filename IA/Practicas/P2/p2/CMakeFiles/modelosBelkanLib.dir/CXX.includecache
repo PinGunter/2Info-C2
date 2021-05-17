@@ -6,51 +6,51 @@
 
 #IncludeRegexTransform: 
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/aldeano.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/aldeano.cpp
 modelos/aldeano/aldeano.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/modelos/aldeano/aldeano.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/modelos/aldeano/aldeano.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/brazo.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/brazo.cpp
 modelos/aldeano/brazo.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/modelos/aldeano/brazo.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/modelos/aldeano/brazo.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/cabeza.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/cabeza.cpp
 modelos/aldeano/cabeza.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/modelos/aldeano/cabeza.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/modelos/aldeano/cabeza.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/cintura.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/cintura.cpp
 modelos/aldeano/cintura.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/modelos/aldeano/cintura.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/modelos/aldeano/cintura.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/pierna.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/pierna.cpp
 modelos/aldeano/pierna.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/modelos/aldeano/pierna.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/modelos/aldeano/pierna.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/torso.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/torso.cpp
 modelos/aldeano/torso.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/aldeano/modelos/aldeano/torso.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/aldeano/modelos/aldeano/torso.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/arbol/arbol.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/arbol/arbol.cpp
 modelos/arbol/arbol.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/arbol/modelos/arbol/arbol.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/arbol/modelos/arbol/arbol.hpp
 GL/glut.h
 -
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/item/item.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/item/item.cpp
 modelos/item/item.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/item/modelos/item/item.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/item/modelos/item/item.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/jugador/jugador3d.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/jugador/jugador3d.cpp
 modelos/jugador/jugador3d.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/jugador/modelos/jugador/jugador3d.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/jugador/modelos/jugador/jugador3d.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/jugador/quesito.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/jugador/quesito.cpp
 modelos/jugador/quesito.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/jugador/modelos/jugador/quesito.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/jugador/modelos/jugador/quesito.hpp
 
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/retrato.cpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/retrato.cpp
 modelos/retrato.hpp
-/home/salva/LosMaravillososMundosDeBelkan/src/modelos/modelos/retrato.hpp
+/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/modelos/modelos/retrato.hpp
 
 include/modelos/aldeano/aldeano.hpp
 modelos/aldeano/torso.hpp

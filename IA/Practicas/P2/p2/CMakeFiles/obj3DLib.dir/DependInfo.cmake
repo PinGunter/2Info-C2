@@ -4,22 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/cono3d.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/cono3d.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/cono3dwire.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/cono3dwire.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/cubo3d.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/cubo3d.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/dodecaedro3d.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/dodecaedro3d.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/esfera3d.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/esfera3d.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/file_ply_stl.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/file_ply_stl.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/icosaedro3d.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/icosaedro3d.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/jpeg_reader/jpg_imagen.cpp" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/jpeg_reader/jpg_imagen.cpp.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/jpeg_reader/jpg_memsrc.cpp" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/jpeg_reader/jpg_memsrc.cpp.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/jpeg_reader/jpg_readwrite.cpp" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/jpeg_reader/jpg_readwrite.cpp.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/luz.cpp" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/luz.cpp.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/objeto3d.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/objeto3d.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/objrevolucion3d.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/objrevolucion3d.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/octaedro3d.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/octaedro3d.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/tetraedro3d.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/tetraedro3d.cc.o"
-  "/home/salva/LosMaravillososMundosDeBelkan/src/obj3dlib/toro3d.cc" "/home/salva/LosMaravillososMundosDeBelkan/CMakeFiles/obj3DLib.dir/src/obj3dlib/toro3d.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/cono3d.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/cono3d.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/cono3dwire.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/cono3dwire.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/cubo3d.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/cubo3d.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/dodecaedro3d.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/dodecaedro3d.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/esfera3d.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/esfera3d.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/file_ply_stl.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/file_ply_stl.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/icosaedro3d.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/icosaedro3d.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/jpeg_reader/jpg_imagen.cpp" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/jpeg_reader/jpg_imagen.cpp.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/jpeg_reader/jpg_memsrc.cpp" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/jpeg_reader/jpg_memsrc.cpp.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/jpeg_reader/jpg_readwrite.cpp" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/jpeg_reader/jpg_readwrite.cpp.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/luz.cpp" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/luz.cpp.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/objeto3d.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/objeto3d.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/objrevolucion3d.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/objrevolucion3d.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/octaedro3d.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/octaedro3d.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/tetraedro3d.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/tetraedro3d.cc.o"
+  "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/src/obj3dlib/toro3d.cc" "/home/salva/Uni/2Info-C2/IA/Practicas/P2/p2/CMakeFiles/obj3DLib.dir/src/obj3dlib/toro3d.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
