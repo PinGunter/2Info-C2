@@ -21,10 +21,12 @@ Action ComportamientoJugador::think(Sensores sensores) {
 	actual.orientacion = sensores.sentido;
 	actual.bikini = false;
 	actual.zapatillas = false;
-
 	cout << "Fila: " << actual.fila << endl;
 	cout << "Col : " << actual.columna << endl;
 	cout << "Ori : " << actual.orientacion << endl;
+
+    actualizarMapa(actual, sensores);
+
 
 	// Capturo los objetivos
 	cout << "sensores.num_destinos : " << sensores.num_destinos << endl;
@@ -37,8 +39,14 @@ Action ComportamientoJugador::think(Sensores sensores) {
 	}
 
 	//Si no hay plan construimos uno
-	if (!hayPlan){
-		hayPlan = pathFinding(sensores.nivel, actual, objetivos, plan);
+	if (sensores.nivel != 4){
+        if (!hayPlan){
+            hayPlan = pathFinding(sensores.nivel, actual, objetivos, plan);
+        }
+	} else{
+        if (!hayPlan or haActualizadoMapa(actual)){
+            hayPlan = pathFinding(sensores.nivel, actual, objetivos, plan);
+        }
 	}
 
 	if (hayPlan and plan.size() > 0){
@@ -47,11 +55,18 @@ Action ComportamientoJugador::think(Sensores sensores) {
 	} else{
 		cout << "No tengo planes" << endl;
 	}
+	if (sensores.nivel == 4) {
+        if (sensores.terreno[2] == 'P' or sensores.terreno[2] == 'M'
+            or sensores.superficie[2]== 'a'){
+            accion = actTURN_R;
+        }
+    }
+
 
 	// --- PARTE DEL TUTORIAL ---- \\\
 
 	// unsigned char contenidoCasilla;
-	// mapaResultado[sensores.posF][sensores.posC] = sensores.terreno[0];
+    //	 mapaResultado[sensores.posF][sensores.posC] = sensores.terreno[0];
 
 	// switch (sensores.sentido){
 	// 	case norte: contenidoCasilla = mapaResultado[sensores.posF-1][sensores.posC];
@@ -110,7 +125,7 @@ bool ComportamientoJugador::pathFinding (int level, const estado &origen, const 
                         return pathFinding_3_objetivos(origen,destino,plan);
                         break;
 		case 4: cout << "Algoritmo de busqueda usado en el reto\n";
-//						return pathFinding_Reto(origen,destino, plan);
+						return pathFinding_Reto(origen,destino, plan);
 						break;
 	}
 	return false;
@@ -195,6 +210,12 @@ bool operator<(const list<estado> & uno, const list<estado> & otro){
         }
     }
     return false;
+}
+
+bool estadoMenorQueOtro(const estado & uno, const estado & otro){   //funcion de comparacion para sort
+    if ((uno.fila < otro.fila) or (uno.fila == otro.fila and uno.columna < otro.columna))
+        return true;
+    else return false;
 }
 
 struct ComparaEstados{
@@ -651,3 +672,115 @@ bool ComportamientoJugador::pathFinding_3_objetivos(const estado &origen, const 
 
     return false;
 }
+
+
+void ComportamientoJugador::actualizarMapa(const estado & st, const Sensores & sensores){
+    bool cambia = false;
+    switch (st.orientacion){
+        case 0:
+            mapaResultado[st.fila-1][st.columna-1] = sensores.terreno[1];
+            mapaResultado[st.fila-1][st.columna] = sensores.terreno[2];
+            mapaResultado[st.fila-1][st.columna+1] = sensores.terreno[3];
+
+            mapaResultado[st.fila-2][st.columna-2] = sensores.terreno[4];
+            mapaResultado[st.fila-2][st.columna-1] = sensores.terreno[5];
+            mapaResultado[st.fila-2][st.columna] = sensores.terreno[6];
+            mapaResultado[st.fila-2][st.columna+1] = sensores.terreno[7];
+            mapaResultado[st.fila-2][st.columna+2] = sensores.terreno[8];
+
+            mapaResultado[st.fila-3][st.columna-3] = sensores.terreno[9];
+            mapaResultado[st.fila-3][st.columna-2] = sensores.terreno[10];
+            mapaResultado[st.fila-3][st.columna-1] = sensores.terreno[11];
+            mapaResultado[st.fila-3][st.columna] = sensores.terreno[12];
+            mapaResultado[st.fila-3][st.columna+1] = sensores.terreno[13];
+            mapaResultado[st.fila-3][st.columna+2] = sensores.terreno[14];
+            mapaResultado[st.fila-3][st.columna+3] = sensores.terreno[15];
+            break;
+        case 1:
+            mapaResultado[st.fila-1][st.columna+1] = sensores.terreno[1];
+            mapaResultado[st.fila][st.columna+1] = sensores.terreno[2];
+            mapaResultado[st.fila+1][st.columna+1] = sensores.terreno[3];
+
+            mapaResultado[st.fila-2][st.columna+2] = sensores.terreno[4];
+            mapaResultado[st.fila-1][st.columna+2] = sensores.terreno[5];
+            mapaResultado[st.fila][st.columna+2] = sensores.terreno[6];
+            mapaResultado[st.fila+1][st.columna+2] = sensores.terreno[7];
+            mapaResultado[st.fila+2][st.columna+2] = sensores.terreno[8];
+
+            mapaResultado[st.fila-3][st.columna+3] = sensores.terreno[9];
+            mapaResultado[st.fila-2][st.columna+3] = sensores.terreno[10];
+            mapaResultado[st.fila-1][st.columna+3] = sensores.terreno[11];
+            mapaResultado[st.fila][st.columna+3] = sensores.terreno[12];
+            mapaResultado[st.fila+1][st.columna+3] = sensores.terreno[13];
+            mapaResultado[st.fila+2][st.columna+3] = sensores.terreno[14];
+            mapaResultado[st.fila+3][st.columna+3] = sensores.terreno[15];
+            break;
+        case 2:
+            mapaResultado[st.fila+1][st.columna+1] = sensores.terreno[1];
+            mapaResultado[st.fila+1][st.columna] = sensores.terreno[2];
+            mapaResultado[st.fila+1][st.columna-1] = sensores.terreno[3];
+
+            mapaResultado[st.fila+2][st.columna+2] = sensores.terreno[4];
+            mapaResultado[st.fila+2][st.columna+1] = sensores.terreno[5];
+            mapaResultado[st.fila+2][st.columna] = sensores.terreno[6];
+            mapaResultado[st.fila+2][st.columna-1] = sensores.terreno[7];
+            mapaResultado[st.fila+2][st.columna-2] = sensores.terreno[8];
+
+            mapaResultado[st.fila+3][st.columna+3] = sensores.terreno[9];
+            mapaResultado[st.fila+3][st.columna+2] = sensores.terreno[10];
+            mapaResultado[st.fila+3][st.columna+1] = sensores.terreno[11];
+            mapaResultado[st.fila+3][st.columna] = sensores.terreno[12];
+            mapaResultado[st.fila+3][st.columna-1] = sensores.terreno[13];
+            mapaResultado[st.fila+3][st.columna-2] = sensores.terreno[14];
+            mapaResultado[st.fila+3][st.columna-3] = sensores.terreno[15];
+            break;
+        case 3:
+            mapaResultado[st.fila+1][st.columna-1] = sensores.terreno[1];
+            mapaResultado[st.fila][st.columna-1] = sensores.terreno[2];
+            mapaResultado[st.fila-1][st.columna-1] = sensores.terreno[3];
+
+            mapaResultado[st.fila+2][st.columna-2] = sensores.terreno[4];
+            mapaResultado[st.fila+1][st.columna-2] = sensores.terreno[5];
+            mapaResultado[st.fila][st.columna-2] = sensores.terreno[6];
+            mapaResultado[st.fila-1][st.columna-2] = sensores.terreno[7];
+            mapaResultado[st.fila-2][st.columna-2] = sensores.terreno[8];
+
+            mapaResultado[st.fila+3][st.columna-3] = sensores.terreno[9];
+            mapaResultado[st.fila+2][st.columna-3] = sensores.terreno[10];
+            mapaResultado[st.fila+1][st.columna-3] = sensores.terreno[11];
+            mapaResultado[st.fila][st.columna-3] = sensores.terreno[12];
+            mapaResultado[st.fila-1][st.columna-3] = sensores.terreno[13];
+            mapaResultado[st.fila-2][st.columna-3] = sensores.terreno[14];
+            mapaResultado[st.fila-3][st.columna-3] = sensores.terreno[15];
+            break;
+    }
+}
+
+bool ComportamientoJugador::haActualizadoMapa(const estado &st) {
+    bool ha_cambiado = false;
+    switch (st.orientacion){
+        case 0:
+            ha_cambiado = mapaResultado[st.fila-3][st.columna-3] == '?' or mapaResultado[st.fila-3][st.columna] == '?' or mapaResultado[st.fila-3][st.columna+3] == '?';
+            break;
+        case 1:
+            ha_cambiado = mapaResultado[st.fila-3][st.columna+3] == '?' or mapaResultado[st.fila][st.columna+3] == '?' or mapaResultado[st.fila+3][st.columna+3] == '?';
+            break;
+
+        case 2:
+            ha_cambiado = mapaResultado[st.fila+3][st.columna+3] == '?' or mapaResultado[st.fila+3][st.columna] == '?' or mapaResultado[st.fila+3][st.columna-3] == '?';
+            break;
+
+        case 3:
+            ha_cambiado = mapaResultado[st.fila+3][st.columna-3] == '?' or mapaResultado[st.fila][st.columna-3] == '?' or mapaResultado[st.fila-3][st.columna-3] == '?';
+            break;
+    }
+
+    return ha_cambiado;
+}
+
+
+bool ComportamientoJugador::pathFinding_Reto(const estado &origen, const list <estado> &destinos, list <Action> &plan) {
+    return pathFinding_CosteUniforme(origen,destinos.front(),plan);
+
+}
+

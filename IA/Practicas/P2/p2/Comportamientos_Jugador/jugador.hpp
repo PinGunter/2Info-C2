@@ -59,7 +59,8 @@ class ComportamientoJugador : public Comportamiento {
     bool pathFinding_Reto(const estado &origen, const list<estado> &destinos, list<Action> &plan);
 
     void actualizarItems(estado & actual);
-
+    void actualizarMapa(const estado & st, const Sensores & sensores);
+    bool haActualizadoMapa(const estado & st);
     int determinarPeso(estado & actual, estado & siguiente);
     void PintaPlan(list<Action> plan);
     bool HayObstaculoDelante(estado &st);
