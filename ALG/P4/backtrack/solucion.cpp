@@ -32,7 +32,7 @@ void print(const std::vector<int> &A) {
     std::cout << "\n";
 }
 
-void Solucion::resolver(int s, int k, int r) {
+void Solucion::resolver_BackTrack(int s, int k, int r) {
     if (numerosoluciones != 1) { //saber si ha encontrado la solucion optima
         solucion[k] = 1;
         if (s + personas[k] == obj) {
@@ -40,12 +40,12 @@ void Solucion::resolver(int s, int k, int r) {
             solucion_buena = solucion;
             print(solucion);
         } else if (s + personas[k] < obj) {    //si no te pasas => puede seguir explorando esa rama
-            resolver(s + personas[k], k + 1, r - personas[k]);
+            resolver_BackTrack(s + personas[k], k + 1, r - personas[k]);
         }
         solucion[k] = 0;
         if ((s + r - personas[k]) >= obj) {
             solucion[k] = 0;
-            resolver(s, k + 1, r - personas[k]);
+            resolver_BackTrack(s, k + 1, r - personas[k]);
         }
         if (abs(obj - s) < abs(obj - mejor_diferencia)){
             mejor_diferencia = s;
@@ -57,10 +57,10 @@ void Solucion::resolver(int s, int k, int r) {
 
 
 void Solucion::equilibrarEquipos() {
-    resolver(0,0,total);
+    resolver_BackTrack(0,0,total);
     if (numerosoluciones == 0){
         solucion_buena = solucion_dif_minima;
-        print(solucion_buena);
+//        print(solucion_buena);
     }
 }
 
@@ -80,4 +80,34 @@ std::vector<int> Solucion::getVectorEquipo() const {
 
 int Solucion::getTotal() const{
     return total;
+}
+
+void Solucion::resolver_FB(int s, int k) {
+    if (numerosoluciones == 0) {
+        if (k == personas.size()) {
+            if (s == obj) {
+                numerosoluciones++;
+                print(solucion);
+                solucion_buena = solucion;
+            }
+            return;
+        }
+        solucion[k] = 0;
+        resolver_FB(s, k + 1);
+        solucion[k] = 1;
+        resolver_FB(s + personas[k], k + 1);
+
+        if (abs(obj - s) < abs(obj - mejor_diferencia)){
+            mejor_diferencia = s;
+            solucion_dif_minima = solucion;
+        }
+    } else return;
+}
+
+void Solucion::equilibrarEquipos_FB() {
+    resolver_FB(0,0);
+    if (numerosoluciones == 0){
+        solucion_buena = solucion_dif_minima;
+//        print(solucion_buena);
+    }
 }

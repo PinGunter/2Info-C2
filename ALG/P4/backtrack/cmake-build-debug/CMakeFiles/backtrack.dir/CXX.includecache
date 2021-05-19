@@ -6,10 +6,12 @@
 
 #IncludeRegexTransform: 
 
-/home/salva/Uni/2Info-C2/ALG/P4/backtrack/main.cpp
+/home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.cpp
 solucion.h
 /home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.h
-algorithm
+iomanip
+-
+cmath
 -
 
 /home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.h

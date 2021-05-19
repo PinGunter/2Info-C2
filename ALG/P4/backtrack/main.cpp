@@ -44,12 +44,27 @@ int main(int argc, char ** argv)
     }
     arg1 = atoi(argv[1]);
 
-    int falso  [] = {7,3,2};
-//    vector<int> p = generaParticipantes(arg1,arg2);
-    vector<int> p (falso,falso+3);
+    int falso  [] = {1, 2, 7, 6, 10, 8};
+    vector<int> p = generaParticipantes(arg1,arg2);
+//    vector<int> p (falso,falso+6);
+//    sort(p.begin(),p.end());
+    cout << "BACKTRACKING" << endl;
     print(p);
-    Solucion s(p);
-    s.equilibrarEquipos();
-    cout << "Suma equipo 1: " << sumaVector(s.getVectorEquipo()) << endl;
-    cout << "Suma equipo 2: " << s.getTotal() - sumaVector(s.getVectorEquipo());
+    Solucion bt(p);
+    auto inicio_bt = clock();
+    bt.equilibrarEquipos();
+    auto tiempo_bt = clock() - inicio_bt;
+    cout << "Suma equipo 1: " << sumaVector(bt.getVectorEquipo()) << endl;
+    cout << "Suma equipo 2: " << bt.getTotal() - sumaVector(bt.getVectorEquipo()) << endl;
+    cout << "TIEMPO: " << (double) tiempo_bt / CLOCKS_PER_SEC << endl;
+
+    cout << "\nFUERZA BRUTA" << endl;
+    Solucion fb(p);
+    auto inicio_fb = clock();
+    fb.equilibrarEquipos_FB();
+    auto tiempo_fb = clock() - inicio_fb;
+    cout << "Suma equipo 1: " << sumaVector(fb.getVectorEquipo()) << endl;
+    cout << "Suma equipo 2: "<< fb.getTotal() - sumaVector(fb.getVectorEquipo()) << endl;
+    cout << "TIEMPO: " << (double) tiempo_fb / CLOCKS_PER_SEC << endl;
+
 }
