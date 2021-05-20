@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/salva/Uni/2Info-C2/ALG/P4/backtrack/main.cpp
+/home/salva/2Info-C2/ALG/P4/backtrack/solucion.cpp
 solucion.h
-/home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.h
-algorithm
+/home/salva/2Info-C2/ALG/P4/backtrack/solucion.h
+iomanip
 -
-fstream
+cmath
 -
 
-/home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.h
+/home/salva/2Info-C2/ALG/P4/backtrack/solucion.h
 vector
 -
 iostream

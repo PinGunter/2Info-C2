@@ -43,7 +43,7 @@ void Solucion::resolver_BackTrack(int s, int k, int r) {
             resolver_BackTrack(s + personas[k], k + 1, r - personas[k]);
         }
         solucion[k] = 0;
-        if ((s + r - personas[k]) >= obj) {
+        if ((s + r - personas[k] >= obj) && (s+personas[k+1] <= obj)) {
             solucion[k] = 0;
             resolver_BackTrack(s, k + 1, r - personas[k]);
         }
