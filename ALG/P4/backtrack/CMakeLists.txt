@@ -3,4 +3,4 @@ project(backtrack)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(backtrack main.cpp Player.cpp Player.h solucion.cpp solucion.h)
+add_executable(backtrack main.cpp solucion.cpp solucion.h)

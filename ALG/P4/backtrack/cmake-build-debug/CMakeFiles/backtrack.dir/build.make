@@ -62,10 +62,10 @@ RM = /home/salva/clion/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/salva/Uni/2Info-C2/ALG/P4/backtrack
+CMAKE_SOURCE_DIR = /home/salva/2Info-C2/ALG/P4/backtrack
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/salva/Uni/2Info-C2/ALG/P4/backtrack/cmake-build-debug
+CMAKE_BINARY_DIR = /home/salva/2Info-C2/ALG/P4/backtrack/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/backtrack.dir/depend.make
@@ -78,58 +78,43 @@ include CMakeFiles/backtrack.dir/flags.make
 
 CMakeFiles/backtrack.dir/main.cpp.o: CMakeFiles/backtrack.dir/flags.make
 CMakeFiles/backtrack.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salva/Uni/2Info-C2/ALG/P4/backtrack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/backtrack.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/backtrack.dir/main.cpp.o -c /home/salva/Uni/2Info-C2/ALG/P4/backtrack/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salva/2Info-C2/ALG/P4/backtrack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/backtrack.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/backtrack.dir/main.cpp.o -c /home/salva/2Info-C2/ALG/P4/backtrack/main.cpp
 
 CMakeFiles/backtrack.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/backtrack.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salva/Uni/2Info-C2/ALG/P4/backtrack/main.cpp > CMakeFiles/backtrack.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salva/2Info-C2/ALG/P4/backtrack/main.cpp > CMakeFiles/backtrack.dir/main.cpp.i
 
 CMakeFiles/backtrack.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/backtrack.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salva/Uni/2Info-C2/ALG/P4/backtrack/main.cpp -o CMakeFiles/backtrack.dir/main.cpp.s
-
-CMakeFiles/backtrack.dir/Player.cpp.o: CMakeFiles/backtrack.dir/flags.make
-CMakeFiles/backtrack.dir/Player.cpp.o: ../Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salva/Uni/2Info-C2/ALG/P4/backtrack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/backtrack.dir/Player.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/backtrack.dir/Player.cpp.o -c /home/salva/Uni/2Info-C2/ALG/P4/backtrack/Player.cpp
-
-CMakeFiles/backtrack.dir/Player.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/backtrack.dir/Player.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salva/Uni/2Info-C2/ALG/P4/backtrack/Player.cpp > CMakeFiles/backtrack.dir/Player.cpp.i
-
-CMakeFiles/backtrack.dir/Player.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/backtrack.dir/Player.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salva/Uni/2Info-C2/ALG/P4/backtrack/Player.cpp -o CMakeFiles/backtrack.dir/Player.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salva/2Info-C2/ALG/P4/backtrack/main.cpp -o CMakeFiles/backtrack.dir/main.cpp.s
 
 CMakeFiles/backtrack.dir/solucion.cpp.o: CMakeFiles/backtrack.dir/flags.make
 CMakeFiles/backtrack.dir/solucion.cpp.o: ../solucion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salva/Uni/2Info-C2/ALG/P4/backtrack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/backtrack.dir/solucion.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/backtrack.dir/solucion.cpp.o -c /home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salva/2Info-C2/ALG/P4/backtrack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/backtrack.dir/solucion.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/backtrack.dir/solucion.cpp.o -c /home/salva/2Info-C2/ALG/P4/backtrack/solucion.cpp
 
 CMakeFiles/backtrack.dir/solucion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/backtrack.dir/solucion.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.cpp > CMakeFiles/backtrack.dir/solucion.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salva/2Info-C2/ALG/P4/backtrack/solucion.cpp > CMakeFiles/backtrack.dir/solucion.cpp.i
 
 CMakeFiles/backtrack.dir/solucion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/backtrack.dir/solucion.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.cpp -o CMakeFiles/backtrack.dir/solucion.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salva/2Info-C2/ALG/P4/backtrack/solucion.cpp -o CMakeFiles/backtrack.dir/solucion.cpp.s
 
 # Object files for target backtrack
 backtrack_OBJECTS = \
 "CMakeFiles/backtrack.dir/main.cpp.o" \
-"CMakeFiles/backtrack.dir/Player.cpp.o" \
 "CMakeFiles/backtrack.dir/solucion.cpp.o"
 
 # External object files for target backtrack
 backtrack_EXTERNAL_OBJECTS =
 
 backtrack: CMakeFiles/backtrack.dir/main.cpp.o
-backtrack: CMakeFiles/backtrack.dir/Player.cpp.o
 backtrack: CMakeFiles/backtrack.dir/solucion.cpp.o
 backtrack: CMakeFiles/backtrack.dir/build.make
 backtrack: CMakeFiles/backtrack.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/salva/Uni/2Info-C2/ALG/P4/backtrack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable backtrack"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/salva/2Info-C2/ALG/P4/backtrack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable backtrack"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/backtrack.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -142,6 +127,6 @@ CMakeFiles/backtrack.dir/clean:
 .PHONY : CMakeFiles/backtrack.dir/clean
 
 CMakeFiles/backtrack.dir/depend:
-	cd /home/salva/Uni/2Info-C2/ALG/P4/backtrack/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salva/Uni/2Info-C2/ALG/P4/backtrack /home/salva/Uni/2Info-C2/ALG/P4/backtrack /home/salva/Uni/2Info-C2/ALG/P4/backtrack/cmake-build-debug /home/salva/Uni/2Info-C2/ALG/P4/backtrack/cmake-build-debug /home/salva/Uni/2Info-C2/ALG/P4/backtrack/cmake-build-debug/CMakeFiles/backtrack.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/salva/2Info-C2/ALG/P4/backtrack/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salva/2Info-C2/ALG/P4/backtrack /home/salva/2Info-C2/ALG/P4/backtrack /home/salva/2Info-C2/ALG/P4/backtrack/cmake-build-debug /home/salva/2Info-C2/ALG/P4/backtrack/cmake-build-debug /home/salva/2Info-C2/ALG/P4/backtrack/cmake-build-debug/CMakeFiles/backtrack.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/backtrack.dir/depend
 

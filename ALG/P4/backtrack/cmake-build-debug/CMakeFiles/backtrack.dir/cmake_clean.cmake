@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/backtrack.dir/Player.cpp.o"
   "CMakeFiles/backtrack.dir/main.cpp.o"
   "CMakeFiles/backtrack.dir/solucion.cpp.o"
   "backtrack"
