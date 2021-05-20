@@ -24,12 +24,12 @@ int sumaVector(const std::vector<int> & v){
     return suma;
 }
 
-void print(const std::vector<int> &A) {
+void print(const std::vector<int> &A, std::ostream & os) {
     for(int i = 0; i < A.size(); i++)
     {
-        std::cout << std::setw(6) << A[i] << " ";
+        os << std::setw(6) << A[i] << " ";
     }
-    std::cout << "\n";
+    os << "\n";
 }
 
 void Solucion::resolver_BackTrack(int s, int k, int r) {
@@ -60,7 +60,7 @@ void Solucion::equilibrarEquipos() {
     resolver_BackTrack(0,0,total);
     if (numerosoluciones == 0){
         solucion_buena = solucion_dif_minima;
-//        print(solucion_buena);
+        print(solucion_buena);
     }
 }
 
@@ -90,6 +90,10 @@ void Solucion::resolver_FB(int s, int k) {
                 print(solucion);
                 solucion_buena = solucion;
             }
+            if (abs(obj - s) < abs(obj - mejor_diferencia)){
+                mejor_diferencia = s;
+                solucion_dif_minima = solucion;
+            }
             return;
         }
         solucion[k] = 0;
@@ -97,10 +101,7 @@ void Solucion::resolver_FB(int s, int k) {
         solucion[k] = 1;
         resolver_FB(s + personas[k], k + 1);
 
-        if (abs(obj - s) < abs(obj - mejor_diferencia)){
-            mejor_diferencia = s;
-            solucion_dif_minima = solucion;
-        }
+
     } else return;
 }
 
@@ -108,6 +109,6 @@ void Solucion::equilibrarEquipos_FB() {
     resolver_FB(0,0);
     if (numerosoluciones == 0){
         solucion_buena = solucion_dif_minima;
-//        print(solucion_buena);
+        print(solucion_buena);
     }
 }

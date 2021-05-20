@@ -6,17 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.cpp
+/home/salva/Uni/2Info-C2/ALG/P4/backtrack/main.cpp
 solucion.h
 /home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.h
-iomanip
+algorithm
 -
-cmath
+fstream
 -
 
 /home/salva/Uni/2Info-C2/ALG/P4/backtrack/solucion.h
 vector
 -
 iostream
+-
+fstream
 -
 

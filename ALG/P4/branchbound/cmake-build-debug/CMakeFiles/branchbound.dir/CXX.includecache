@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/salva/Uni/2Info-C2/ALG/P4/branchbound/Solucion.cpp
+Solucion.h
+/home/salva/Uni/2Info-C2/ALG/P4/branchbound/Solucion.h
+queue
+-
+algorithm
+-
+
+/home/salva/Uni/2Info-C2/ALG/P4/branchbound/Solucion.h
+iostream
+-
+vector
+-
+

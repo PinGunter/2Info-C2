@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/branchbound.dir/main.cpp.o CMakeFiles/branchbound.dir/Solucion.cpp.o -o branchbound 

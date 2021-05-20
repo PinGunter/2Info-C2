@@ -7,8 +7,8 @@
 
 #include <vector>
 #include <iostream>
-
-void print(const std::vector<int> & A);
+#include <fstream>
+void print(const std::vector<int> & A, std::ostream & os = std::cout);
 int sumaVector(const std::vector<int> & A);
 class Solucion {
 

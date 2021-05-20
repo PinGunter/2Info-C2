@@ -1,5 +1,6 @@
 #include "solucion.h"
 #include <algorithm>
+#include <fstream>
 using namespace std;
 
 int puntuaciones_random(int max) {  // Entre 0 y 2147483647
@@ -44,10 +45,12 @@ int main(int argc, char ** argv)
     }
     arg1 = atoi(argv[1]);
 
-    int falso  [] = {1, 2, 7, 6, 10, 8};
+    ofstream fichero_backtrack("salida_backtrack.txt",ofstream::app);
+    ofstream fichero_fb("salida_fb.txt",ofstream::app);
+//    int falso  [] = {20, 3, 2,1 };
     vector<int> p = generaParticipantes(arg1,arg2);
-//    vector<int> p (falso,falso+6);
-//    sort(p.begin(),p.end());
+//    vector<int> p (falso,falso+4);
+    sort(p.begin(),p.end());
     cout << "BACKTRACKING" << endl;
     print(p);
     Solucion bt(p);
@@ -57,14 +60,18 @@ int main(int argc, char ** argv)
     cout << "Suma equipo 1: " << sumaVector(bt.getVectorEquipo()) << endl;
     cout << "Suma equipo 2: " << bt.getTotal() - sumaVector(bt.getVectorEquipo()) << endl;
     cout << "TIEMPO: " << (double) tiempo_bt / CLOCKS_PER_SEC << endl;
+    fichero_backtrack << arg1 << " " << (double) tiempo_bt / CLOCKS_PER_SEC << endl;
 
-    cout << "\nFUERZA BRUTA" << endl;
-    Solucion fb(p);
-    auto inicio_fb = clock();
-    fb.equilibrarEquipos_FB();
-    auto tiempo_fb = clock() - inicio_fb;
-    cout << "Suma equipo 1: " << sumaVector(fb.getVectorEquipo()) << endl;
-    cout << "Suma equipo 2: "<< fb.getTotal() - sumaVector(fb.getVectorEquipo()) << endl;
-    cout << "TIEMPO: " << (double) tiempo_fb / CLOCKS_PER_SEC << endl;
+cout << "\nFUERZA BRUTA" << endl;
+Solucion fb(p);
+auto inicio_fb = clock();
+fb.equilibrarEquipos_FB();
+auto tiempo_fb = clock() - inicio_fb;
+cout << "Suma equipo 1: " << sumaVector(fb.getVectorEquipo()) << endl;
+cout << "Suma equipo 2: "<< fb.getTotal() - sumaVector(fb.getVectorEquipo()) << endl;
+cout << "TIEMPO: " << (double) tiempo_fb / CLOCKS_PER_SEC << endl;
+fichero_fb << arg1 << " " << (double) tiempo_fb / CLOCKS_PER_SEC << endl;
 
+
+    fichero_backtrack.close(); //fichero_fb.close();
 }

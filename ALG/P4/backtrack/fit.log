@@ -1,0 +1,82 @@
+
+
+*******************************************************************************
+Wed May 19 21:06:49 2021
+
+
+FIT:    data read from "salida_backtrack.txt"
+        format = z
+        #datapoints = 3754
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*2**x+b
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1020 out of 3754
+x               = 1              
+z               = 0.000254       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed May 19 21:51:13 2021
+
+
+FIT:    data read from "salida_fb.txt"
+        format = z
+        #datapoints = 54
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*2**x+b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.1076899965e+35   0.00e+00  3.20e+16    1.000000e+00   1.000000e+00
+   5 4.8853418631e+01  -1.20e-02  3.20e+11   -3.557168e-18   1.000000e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 48.8534
+rel. change during last iteration : -1.20238e-07
+
+degrees of freedom    (FIT_NDF)                        : 52
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.969272
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.939489
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -3.55717e-18     +/- 2.997e-18    (84.24%)
+b               = 1                +/- 0.1357       (13.57%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.236  1.000 
+
+
+*******************************************************************************
+Wed May 19 21:52:15 2021
+
+
+FIT:    data read from "salida_fb.txt"
+        format = z
+        x range restricted to [0.00000 : 60.0000]
+        #datapoints = 54
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*b**x+c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 5.0255028035e+01   0.00e+00  5.77e-01   -3.557168e-18   1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Invert_RtR
