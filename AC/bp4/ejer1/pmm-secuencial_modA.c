@@ -72,9 +72,12 @@ int main(int argc, char** argv){
   clock_gettime(CLOCK_REALTIME,&inicio);
   
   for (int i=0; i < n; ++i){
-    for (int j=0; j < n; ++j){
+    for (int j=0; j < n; j+=4){
       for (int k=0; k < n; ++k){
         m3[i][j] += m1[i][k] * m2[k][j];
+        m3[i][j+1] += m1[i][k] * m2[k][j+1];
+        m3[i][j+2] += m1[i][k] * m2[k][j+2];
+        m3[i][j+3] += m1[i][k] * m2[k][j+3];
       }
     }
   }
