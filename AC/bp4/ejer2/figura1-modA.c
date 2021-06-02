@@ -46,8 +46,9 @@ int main(int argc, char ** argv)
     int ii, i, X1, X2;
     for (ii=0; ii<M;ii++) {
         X1=0; X2=0;
-        for(i=0; i<N;i++)  X1+=s[i].a << 1 +ii;
-        for(i=0; i<N;i++)  X2+=s[i].b << 1  + s[i].b -ii;
+        for(i=0; i<N;i++) { 
+            X1+=s[i].a << 1 +ii; X2+=s[i].b << 1  + s[i].b -ii;
+        }
 
         if (X1<X2)  R[ii]=X1;  else  R[ii]=X2;
     
