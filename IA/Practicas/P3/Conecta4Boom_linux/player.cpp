@@ -57,6 +57,7 @@ double ValoracionTest(const Environment &estado, int jugador){
 
 // Funcion heuristica (ESTA ES LA QUE TENEIS QUE MODIFICAR)
 double Valoracion(const Environment &estado, int jugador){
+   return ValoracionTest(estado,jugador);
 }
 
 
@@ -86,7 +87,7 @@ Environment::ActionType Player::Think(){
     const int PROFUNDIDAD_MINIMAX = 6;  // Umbral maximo de profundidad para el metodo MiniMax
     const int PROFUNDIDAD_ALFABETA = 8; // Umbral maximo de profundidad para la poda Alfa_Beta
 
-    Environment::ActionType accion; // acción que se va a devolver
+    Environment::ActionType accion; // acciï¿½n que se va a devolver
     bool aplicables[8]; // Vector bool usado para obtener las acciones que son aplicables en el estado actual. La interpretacion es
                         // aplicables[0]==true si PUT1 es aplicable
                         // aplicables[1]==true si PUT2 es aplicable
@@ -119,27 +120,27 @@ Environment::ActionType Player::Think(){
 
 
     //--------------------- COMENTAR Desde aqui
-    cout << "\n\t";
-    int n_opciones=0;
-    JuegoAleatorio(aplicables, opciones, n_opciones);
+   //  cout << "\n\t";
+   //  int n_opciones=0;
+   //  JuegoAleatorio(aplicables, opciones, n_opciones);
 
-    if (n_act==0){
-      (jugador_==1) ? cout << "Verde: " : cout << "Azul: ";
-      cout << " No puede realizar ninguna accion!!!\n";
-      //accion = Environment::actIDLE;
-    }
-    else if (n_act==1){
-           (jugador_==1) ? cout << "Verde: " : cout << "Azul: ";
-            cout << " Solo se puede realizar la accion "
-                 << actual_.ActionStr( static_cast< Environment::ActionType > (opciones[0])  ) << endl;
-            accion = static_cast< Environment::ActionType > (opciones[0]);
+   //  if (n_act==0){
+   //    (jugador_==1) ? cout << "Verde: " : cout << "Azul: ";
+   //    cout << " No puede realizar ninguna accion!!!\n";
+   //    //accion = Environment::actIDLE;
+   //  }
+   //  else if (n_act==1){
+   //         (jugador_==1) ? cout << "Verde: " : cout << "Azul: ";
+   //          cout << " Solo se puede realizar la accion "
+   //               << actual_.ActionStr( static_cast< Environment::ActionType > (opciones[0])  ) << endl;
+   //          accion = static_cast< Environment::ActionType > (opciones[0]);
 
-         }
-         else { // Hay que elegir entre varias posibles acciones
-            int aleatorio = rand()%n_opciones;
-            cout << " -> " << actual_.ActionStr( static_cast< Environment::ActionType > (opciones[aleatorio])  ) << endl;
-            accion = static_cast< Environment::ActionType > (opciones[aleatorio]);
-         }
+   //       }
+   //       else { // Hay que elegir entre varias posibles acciones
+   //          int aleatorio = rand()%n_opciones;
+   //          cout << " -> " << actual_.ActionStr( static_cast< Environment::ActionType > (opciones[aleatorio])  ) << endl;
+   //          accion = static_cast< Environment::ActionType > (opciones[aleatorio]);
+   //       }
 
     //--------------------- COMENTAR Hasta aqui
 
@@ -149,9 +150,29 @@ Environment::ActionType Player::Think(){
 
     // Opcion: Poda AlfaBeta
     // NOTA: La parametrizacion es solo orientativa
-    // valor = Poda_AlfaBeta(actual_, jugador_, 0, PROFUNDIDAD_ALFABETA, accion, alpha, beta);
-    //cout << "Valor MiniMax: " << valor << "  Accion: " << actual_.ActionStr(accion) << endl;
+    valor = Poda_AlfaBeta(actual_, jugador_, 0, PROFUNDIDAD_ALFABETA, accion, alpha, beta);
+    cout << "Valor MiniMax: " << valor << "  Accion: " << actual_.ActionStr(accion) << endl;
+
 
     return accion;
 }
 
+double Player::Poda_AlfaBeta(Environment act, int player, int inicio, int depth, Environment::ActionType & accion, double alpha, double beta){
+    bool posibles[8];
+    int n_posibles = act.possible_actions(posibles);
+    bool terminal = act.RevisarTablero() == 1 || act.RevisarTablero() == 2 ||act.RevisarTablero() == 0;
+
+    if (depth == 0 || terminal){
+        if (terminal){
+            switch (act.RevisarTablero()){
+                case 0:
+                break;
+                case 1:
+                break;
+                case 2:
+                break;
+            }
+        }
+    }
+
+}
