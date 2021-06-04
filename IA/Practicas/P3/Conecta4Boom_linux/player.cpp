@@ -4,7 +4,6 @@
 #include <queue>
 #include "player.h"
 #include "environment.h"
-
 using namespace std;
 
 const double masinf=9999999999.0, menosinf=-9999999999.0;
@@ -150,29 +149,52 @@ Environment::ActionType Player::Think(){
 
     // Opcion: Poda AlfaBeta
     // NOTA: La parametrizacion es solo orientativa
-    valor = Poda_AlfaBeta(actual_, jugador_, 0, PROFUNDIDAD_ALFABETA, accion, alpha, beta);
+    alpha = -99999999.9;
+    beta = 99999999.9;
+
+    valor = Poda_AlfaBeta(actual_, jugador_, PROFUNDIDAD_ALFABETA, accion, alpha, beta);
     cout << "Valor MiniMax: " << valor << "  Accion: " << actual_.ActionStr(accion) << endl;
 
 
     return accion;
 }
 
-double Player::Poda_AlfaBeta(Environment act, int player, int inicio, int depth, Environment::ActionType & accion, double alpha, double beta){
+double Player::Poda_AlfaBeta(Environment act, int player, int depth, Environment::ActionType & accion, double alpha, double beta){
     bool posibles[8];
     int n_posibles = act.possible_actions(posibles);
     bool terminal = act.RevisarTablero() == 1 || act.RevisarTablero() == 2 ||act.RevisarTablero() == 0;
-
+    double alpha_ = alpha, beta_ = beta;
+    Environment::ActionType siguiente;
+    int siguiente_accion_n;
+    Environment siguiente_tablero;
     if (depth == 0 || terminal){
-        if (terminal){
-            switch (act.RevisarTablero()){
-                case 0:
-                break;
-                case 1:
-                break;
-                case 2:
-                break;
-            }
-        }
+        return Valoracion(act, jugador_);
     }
 
+    if (jugador_ == act.JugadorActivo()){
+        for (int i=0; i < 8; i++){
+            if (posibles[i]){
+                siguiente_accion_n = act.Last_Action(jugador_);
+                siguiente_tablero = act.GenerateNextMove(siguiente_accion_n);
+                siguiente = static_cast<Environment::ActionType>(i);
+                alpha_ = max(alpha_, Poda_AlfaBeta(siguiente_tablero,jugador_ +1, depth-1,siguiente,alpha_,beta_));
+                if (beta_ <= alpha_){
+                    break;
+                }
+            }
+        } return alpha;
+    } else{
+        for (int i=0; i < 8; i++){
+            if (posibles[i]){
+                 siguiente_accion_n = act.Last_Action(jugador_);
+                siguiente_tablero = act.GenerateNextMove(siguiente_accion_n);
+                siguiente = static_cast<Environment::ActionType>(i);
+                alpha_ = max(alpha_, Poda_AlfaBeta(siguiente_tablero,jugador_ -1, depth-1,siguiente,alpha_,beta_));
+                if (beta_ <= alpha_){
+                    break;
+                }
+            }
+        } return beta_;
+
+    }
 }
