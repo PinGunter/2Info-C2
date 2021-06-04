@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/salva/Uni/2Info-C2/ALG/PD/Solucion.cpp
+iomanip
+-
+Solucion.h
+/home/salva/Uni/2Info-C2/ALG/PD/Solucion.h
+
+/home/salva/Uni/2Info-C2/ALG/PD/Solucion.h
+iostream
+-
+fstream
+-
+limits
+-
+
+/home/salva/Uni/2Info-C2/ALG/PD/main.cpp
+iostream
+-
+Solucion.h
+/home/salva/Uni/2Info-C2/ALG/PD/Solucion.h
+
