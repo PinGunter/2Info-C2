@@ -129,7 +129,3 @@ std::vector<int> Solucion::getAsignacion() {
     return asignacion;
 }
 
-//std::vector<int> Solucion::getAsignacion() const {
-//
-//}
-
