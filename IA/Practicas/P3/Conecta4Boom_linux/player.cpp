@@ -56,7 +56,102 @@ double ValoracionTest(const Environment &estado, int jugador){
 
 // Funcion heuristica (ESTA ES LA QUE TENEIS QUE MODIFICAR)
 double Valoracion(const Environment &estado, int jugador){
-   return ValoracionTest(estado,jugador);
+    int ganador = estado.RevisarTablero();
+
+    if (ganador==jugador)
+       return 99999999.0; // Gana el jugador que pide la valoracion
+    else if (ganador!=0)
+            return -99999999.0; // Pierde el jugador que pide la valoracion
+    else if (estado.Get_Casillas_Libres()==0)
+            return 0;  // Hay un empate global y se ha rellenado completamente el tablero
+    else{   //aqui se viene lo interesante
+        return miPuntuacion(estado, jugador);
+    }
+        
+}
+
+double miPuntuacion(const Environment & estado, int jugador){
+    int fichas_conexas = 0;
+    int filas_muybuenas[2] = {0};
+    int columnas_muybuenas[2] = {0};
+    int diagonales_muybuenas[2] = {0};
+    int filas_buenas[2] = {0};
+    int columnas_buenas[2] = {0};
+    int diagonales_buenas[2] = {0};
+    int jugador_opuesto = (jugador + 1 ) % 3 + 1;
+    int puntuacion = 0.0;
+    int jugador_actual;
+    //jugador actual
+    jugador_actual = jugador;
+    //filas
+     for (int i=0; i < 7; i++){
+        for (int j=0; j < 7; j++){
+            fichas_conexas = 0;
+            for (int k=j; k < 7 && estado.See_Casilla(i,k) == jugador_actual; k++){
+                fichas_conexas++;
+                j = k;
+            }
+            if (fichas_conexas >= 3){
+                filas_muybuenas[jugador_actual-1]++;
+            } else if (fichas_conexas == 2){
+                filas_buenas[jugador_actual-1]++;
+            }
+        }
+    }
+    //columnas
+    for (int j=0; j < 7; j++){
+        for (int i=0; i < 7; i++){
+            fichas_conexas = 0;
+            for (int k=i; k < 7 && estado.See_Casilla(k,j) == jugador_actual; k++){
+                fichas_conexas++;
+                i = k;
+            }
+            if (fichas_conexas >= 3){
+                columnas_muybuenas[jugador_actual-1]++;
+            }else if (fichas_conexas == 2){
+                columnas_buenas[jugador_actual-1]++;
+            }
+        }
+    }
+
+    puntuacion += 20*(columnas_muybuenas[jugador_actual-1] + filas_muybuenas[jugador_actual-1]) + 10*(columnas_buenas[jugador_actual-1] + filas_buenas[jugador_actual-1]);
+    //jugador contrario
+    jugador_actual = jugador_opuesto;
+    //filas
+     for (int i=0; i < 7; i++){
+        for (int j=0; j < 7; j++){
+            fichas_conexas = 0;
+            for (int k=j; k < 7 && estado.See_Casilla(i,k) == jugador_actual; k++){
+                fichas_conexas++;
+                j = k;
+            }
+            if (fichas_conexas >= 3){
+                columnas_muybuenas[jugador_actual-1]++;
+            }else if (fichas_conexas == 2){
+                filas_buenas[jugador_actual-1]++;
+            }
+        }
+    }
+    //columnas
+    for (int j=0; j < 7; j++){
+        for (int i=0; i < 7; i++){
+            fichas_conexas = 0;
+            for (int k=i; k < 7 && estado.See_Casilla(k,j) == jugador_actual; k++){
+                fichas_conexas++;
+                i = k;
+            }
+            if (fichas_conexas >= 3){
+                columnas_muybuenas[jugador_actual-1]++;
+            }else if (fichas_conexas == 2){
+                columnas_buenas[jugador_actual-1]++;
+            }
+        }
+    }
+
+    puntuacion -= 20*(columnas_muybuenas[jugador_actual-1] + filas_muybuenas[jugador_actual-1]) + 10*(columnas_buenas[jugador_actual-1] + filas_buenas[jugador_actual-1]);
+
+
+    return puntuacion + Puntuacion(jugador,estado);
 }
 
 
@@ -181,7 +276,7 @@ double Player::Poda_AlfaBeta(Environment act, int player, int depth, Environment
             ha_cambiado = alpha_;
             siguiente_tablero = posibles[i];
             siguiente_accion_n = siguiente_tablero.Last_Action(act.JugadorActivo());
-            siguiente_accion = static_cast<Environment::ActionType>(siguiente_accion_n);
+            siguiente_accion = static_cast<Environment::ActionType>(siguiente_accion_n);;
             alpha_ = max(alpha_, Poda_AlfaBeta(siguiente_tablero,jugador_opuesto, depth-1,siguiente_accion,alpha_,beta_));
             if (depth == DEPTH and (ha_cambiado != alpha_ or i==0)){  // se escoge la mejor jugada
                 accion = siguiente_accion;
