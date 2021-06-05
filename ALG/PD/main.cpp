@@ -22,8 +22,8 @@ int main(int argc, char **argv) {
     int optimo =  s.resolver();
     vector<int> v = s.getAsignacion();
     s.imprimir();
-    cout << "Solución: " << optimo << endl;
-    cout << "Asignación: " << endl;
+    cout << "Beneficio Máximo: " << optimo << endl;
+    cout << "Asignación óptima: " << endl;
     for (int i=0; i < v.size(); i++){
         cout << "Al proyecto " << i+1 << " se le asignan " << v[i] << " recursos" << endl;
     }
