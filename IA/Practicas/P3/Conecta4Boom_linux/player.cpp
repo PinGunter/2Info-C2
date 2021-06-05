@@ -152,47 +152,57 @@ Environment::ActionType Player::Think(){
     alpha = -99999999.9;
     beta = 99999999.9;
 
-    valor = Poda_AlfaBeta(actual_, jugador_, PROFUNDIDAD_ALFABETA, accion, alpha, beta);
+    valor = Poda_AlfaBeta(actual_, jugador_, DEPTH, accion, alpha, beta);
     cout << "Valor MiniMax: " << valor << "  Accion: " << actual_.ActionStr(accion) << endl;
-
+    cout << " ===== ACCION: =====" << endl;
+    cout << actual_.ActionStr(accion) << endl;
 
     return accion;
 }
 
 double Player::Poda_AlfaBeta(Environment act, int player, int depth, Environment::ActionType & accion, double alpha, double beta){
-    bool posibles[8];
-    int n_posibles = act.possible_actions(posibles);
-    bool terminal = act.RevisarTablero() == 1 || act.RevisarTablero() == 2 ||act.RevisarTablero() == 0;
+    // bool posibles[8];
+    Environment posibles[8];
+    int n_posibles = act.GenerateAllMoves(posibles);
+    bool terminal = act.JuegoTerminado();
     double alpha_ = alpha, beta_ = beta;
-    Environment::ActionType siguiente;
+    Environment::ActionType siguiente_accion;
     int siguiente_accion_n;
     Environment siguiente_tablero;
+    int ha_cambiado;
+    int jugador_opuesto = (jugador_ == 1) ? 2 : 1;
+
     if (depth == 0 || terminal){
         return Valoracion(act, jugador_);
     }
 
     if (jugador_ == act.JugadorActivo()){
-        for (int i=0; i < 8; i++){
-            if (posibles[i]){
-                siguiente_accion_n = act.Last_Action(jugador_);
-                siguiente_tablero = act.GenerateNextMove(siguiente_accion_n);
-                siguiente = static_cast<Environment::ActionType>(i);
-                alpha_ = max(alpha_, Poda_AlfaBeta(siguiente_tablero,jugador_ +1, depth-1,siguiente,alpha_,beta_));
-                if (beta_ <= alpha_){
-                    break;
-                }
+        for (int i=0; i < n_posibles; i++){
+            ha_cambiado = alpha_;
+            siguiente_tablero = posibles[i];
+            siguiente_accion_n = siguiente_tablero.Last_Action(act.JugadorActivo());
+            siguiente_accion = static_cast<Environment::ActionType>(siguiente_accion_n);
+            alpha_ = max(alpha_, Poda_AlfaBeta(siguiente_tablero,jugador_opuesto, depth-1,siguiente_accion,alpha_,beta_));
+            if (depth == DEPTH and (ha_cambiado != alpha_ or i==0)){  // se escoge la mejor jugada
+                accion = siguiente_accion;
             }
-        } return alpha;
+            if (beta_ <= alpha_){
+                break;
+            }
+            
+        } return alpha_;
     } else{
-        for (int i=0; i < 8; i++){
-            if (posibles[i]){
-                 siguiente_accion_n = act.Last_Action(jugador_);
-                siguiente_tablero = act.GenerateNextMove(siguiente_accion_n);
-                siguiente = static_cast<Environment::ActionType>(i);
-                alpha_ = max(alpha_, Poda_AlfaBeta(siguiente_tablero,jugador_ -1, depth-1,siguiente,alpha_,beta_));
-                if (beta_ <= alpha_){
-                    break;
-                }
+        for (int i=0; i < n_posibles; i++){
+            ha_cambiado = beta_;
+            siguiente_tablero = posibles[i];
+            siguiente_accion_n = siguiente_tablero.Last_Action(act.JugadorActivo());
+            siguiente_accion = static_cast<Environment::ActionType>(siguiente_accion_n);
+            beta_ = min(beta_, Poda_AlfaBeta(siguiente_tablero,jugador_opuesto, depth-1,siguiente_accion,alpha_,beta_));
+            if (depth == DEPTH and (ha_cambiado != beta_ or i==0)){  // se escoge la mejor jugada
+                accion = siguiente_accion;
+            }
+            if (beta_ <= alpha_){
+                break;
             }
         } return beta_;
 

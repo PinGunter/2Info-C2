@@ -1,6 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-
+#define DEPTH 8
 #include "environment.h"
 
 class Player{
