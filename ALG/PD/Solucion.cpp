@@ -67,14 +67,12 @@ Solucion::~Solucion(){
 }
 
 int Solucion::B(int n, int r) {
-//    cout << "n:" << n << " r:" << r << endl;
-//    imprimir();
     if (n == 0){
         return 0;
     }
     int prev = M[n-1][r];
     if (M[n-1][r] == -1){
-        M[n-1][r] = -2; //numeric_limits<int>::min(); //"-infinito"
+        M[n-1][r] = numeric_limits<int>::min(); //"-infinito"
         for (int k=0; k <= r; k++){
             prev = M[n-1][r];
             M[n-1][r] = max(M[n-1][r],B(n-1,r-k) + N[n-1][k]);
@@ -83,7 +81,6 @@ int Solucion::B(int n, int r) {
             }
         }
     }
-
 
     return M[n-1][r];
 }
@@ -100,24 +97,24 @@ void Solucion::imprimir() const {
         }
         cout << endl;
     }
-//
-//    cout << "MEMOIA: " << endl;
-//    for (int i=0; i < proyectos; i++){
-//        for (int j=0; j < recursos; j++){
-//            cout << setw(3) <<  M[i][j] << " ";
-//        }
-//        cout << endl;
-//    }
-//    cout << endl;
-//
-//    cout << "Asignacion: " << endl;
-//    for (int i=0; i < proyectos; i++){
-//        for (int j=0; j < recursos; j++){
-//            cout << setw(3) << Ar[i][j] << " ";
-//        }
-//        cout << endl;
-//    }
-//    cout << endl;
+
+    cout << "MEMOIA: " << endl;
+    for (int i=0; i < proyectos; i++){
+        for (int j=0; j < recursos; j++){
+            cout << setw(3) <<  M[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "Asignacion: " << endl;
+    for (int i=0; i < proyectos; i++){
+        for (int j=0; j < recursos; j++){
+            cout << setw(3) << Ar[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
 }
 
 std::vector<int> Solucion::getAsignacion() {

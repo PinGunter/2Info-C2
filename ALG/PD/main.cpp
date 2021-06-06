@@ -1,4 +1,6 @@
 #include <iostream>
+#include <ctime>
+#include <fstream>
 #include "Solucion.h"
 using namespace std;
 
@@ -18,10 +20,11 @@ int main(int argc, char **argv) {
 
     ifstream fichero(argv[1]);
     Solucion s(fichero);
-
     int optimo =  s.resolver();
     vector<int> v = s.getAsignacion();
+
     s.imprimir();
+
     cout << "Beneficio Máximo: " << optimo << endl;
     cout << "Asignación óptima: " << endl;
     for (int i=0; i < v.size(); i++){

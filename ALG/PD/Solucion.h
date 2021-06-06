@@ -20,7 +20,6 @@ private:
     int proyectos, recursos;
 public:
     Solucion(std::ifstream & fichero);
-
     ~Solucion();
     void imprimir() const;
 
