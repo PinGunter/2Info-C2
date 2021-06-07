@@ -81,8 +81,23 @@ double miPuntuacion(const Environment & estado, int jugador){
     int jugador_opuesto = (jugador + 1 ) % 3 + 1;
     int puntuacion = 0.0;
     int jugador_actual;
+    int casillas = 0;
     //jugador actual
     jugador_actual = jugador;
+
+    //conteo de casillas; basado en la heuristica por defecto
+    for (int i=0; i<7; i++)
+      for (int j=0; j<7; j++){
+         if (estado.See_Casilla(i,j)==jugador_actual){
+            if (j<3)
+               casillas += j;
+            else
+               casillas += (6-j);
+         }
+      }
+
+
+
     //filas
      for (int i=0; i < 7; i++){
         for (int j=0; j < 7; j++){
@@ -150,8 +165,9 @@ double miPuntuacion(const Environment & estado, int jugador){
 
     puntuacion -= 20*(columnas_muybuenas[jugador_actual-1] + filas_muybuenas[jugador_actual-1]) + 10*(columnas_buenas[jugador_actual-1] + filas_buenas[jugador_actual-1]);
 
+    puntuacion += casillas;
 
-    return puntuacion + Puntuacion(jugador,estado);
+    return puntuacion;
 }
 
 
