@@ -82,13 +82,14 @@ double miPuntuacion(const Environment & estado, int jugador){
     int puntuacion = 0.0;
     int jugador_actual;
     int casillas = 0;
+    int bomba_actual = 0;
     //jugador actual
     jugador_actual = jugador;
-
+    bomba_actual = jugador_actual+3; //ficha_bomba
     //conteo de casillas; basado en la heuristica por defecto
     for (int i=0; i<7; i++)
       for (int j=0; j<7; j++){
-         if (estado.See_Casilla(i,j)==jugador_actual){
+         if (estado.See_Casilla(i,j)==jugador_actual or estado.See_Casilla(i,j)==bomba_actual){
             if (j<3)
                casillas += j;
             else
@@ -102,7 +103,7 @@ double miPuntuacion(const Environment & estado, int jugador){
      for (int i=0; i < 7; i++){
         for (int j=0; j < 7; j++){
             fichas_conexas = 0;
-            for (int k=j; k < 7 && estado.See_Casilla(i,k) == jugador_actual; k++){
+            for (int k=j; k < 7 && (estado.See_Casilla(i,k) == jugador_actual or estado.See_Casilla(i,k) == bomba_actual); k++){
                 fichas_conexas++;
                 j = k;
             }
@@ -117,7 +118,7 @@ double miPuntuacion(const Environment & estado, int jugador){
     for (int j=0; j < 7; j++){
         for (int i=0; i < 7; i++){
             fichas_conexas = 0;
-            for (int k=i; k < 7 && estado.See_Casilla(k,j) == jugador_actual; k++){
+            for (int k=i; k < 7 && (estado.See_Casilla(k,j) == jugador_actual or estado.See_Casilla(k,j) == bomba_actual); k++){
                 fichas_conexas++;
                 i = k;
             }
@@ -132,11 +133,12 @@ double miPuntuacion(const Environment & estado, int jugador){
     puntuacion += 20*(columnas_muybuenas[jugador_actual-1] + filas_muybuenas[jugador_actual-1]) + 10*(columnas_buenas[jugador_actual-1] + filas_buenas[jugador_actual-1]);
     //jugador contrario
     jugador_actual = jugador_opuesto;
+    bomba_actual = jugador_actual+3;
     //filas
      for (int i=0; i < 7; i++){
         for (int j=0; j < 7; j++){
             fichas_conexas = 0;
-            for (int k=j; k < 7 && estado.See_Casilla(i,k) == jugador_actual; k++){
+            for (int k=j; k < 7 && (estado.See_Casilla(i,k) == jugador_actual or estado.See_Casilla(i,k) == bomba_actual); k++){
                 fichas_conexas++;
                 j = k;
             }
@@ -151,7 +153,7 @@ double miPuntuacion(const Environment & estado, int jugador){
     for (int j=0; j < 7; j++){
         for (int i=0; i < 7; i++){
             fichas_conexas = 0;
-            for (int k=i; k < 7 && estado.See_Casilla(k,j) == jugador_actual; k++){
+            for (int k=i; k < 7 && (estado.See_Casilla(k,j) == jugador_actual or estado.See_Casilla(k,j) == bomba_actual); k++){
                 fichas_conexas++;
                 i = k;
             }
